@@ -1,0 +1,155 @@
+﻿body {
+    background: url('/Images/background.png') top center fixed;
+    font-family: 'Open Sans';
+}
+
+
+/*#region container */
+.site-container {
+    background-color: #ffffff;
+}
+
+.main-container {
+    border-bottom: 1px solid #e6e7e8;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*#endregion */
+
+/*#region MenuTop */
+.navbar-top {
+    background-color: #006ab2;
+    text-transform: uppercase;
+}
+
+    .navbar-top .navbar-toggle span {
+        color: #ffffff;
+        font-size: 20px;
+    }
+
+    .navbar-top a {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .navbar-top li.active a, .navbar-top li a:hover, .navbar-top li a:focus, .navbar-top li:active a {
+        background: #fcc300;
+        color: #fff;
+        font-weight: bold;
+    }
+
+.navbar-nav-footer li {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+    .navbar-nav-footer li a, .navbar-nav-footer li.active a, .navbar-nav-footer li a:hover, .navbar-nav-footer li a:focus, .navbar-nav-footer li:active a {
+        color: #1f497d;
+        background-color: #ffffff;
+    }
+
+.navbar-profile li {
+    text-transform: uppercase;
+}
+
+.username-display {
+    text-transform: lowercase;
+}
+
+@media(min-width: 768px) {
+    .navbar-top .navbar-collapse {
+        padding: 0;
+    }
+
+    .navbar-top .navbar-header {
+        display: none;
+    }
+}
+
+/*#endregion */
+
+@media (min-width: 768px) {
+
+    .navbar-nav {
+        float: none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+    }
+}
+
+.brochure-bg {
+    border: 7px solid #d11919;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+    background-color: #a9caff;
+    color: #0f1c08;
+    margin-bottom: 15px;
+}
+
+ul.benefits li {
+    background-image: url("/Images/about/bullet.png");
+    background-repeat: no-repeat;
+    line-height: 21px;
+    margin: 5px 2px;
+    padding: 0 2px 15px 28px;
+}
+
+.navbar-nav-footer li.social-icon a {
+    padding: 9px 5px;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-nav-footer li.social-icon a {
+        display: block;
+        float: left;
+    }
+
+    .navbar-nav-footer li.social-icon img {
+        width: 30px;
+    }
+}
+
+html body {
+    background-image: none;
+    background-color: #2f75e4;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.footer {
+    background-color: #016448;
+}
+
+.contack-a {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+body .navbar-top a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: none;
+    font-size: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+    body .navbar-top a.navbar-brand {
+        padding-top: 20px;
+        padding-bottom: 15px;
+        font-size: 16px;
+    }
+
+.block-overflow {
+    overflow: hidden;
+    max-width: 100%;
+    display: block;
+}
+.clear-padding{ padding: 0 !important;}

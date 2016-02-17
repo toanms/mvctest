@@ -1,0 +1,85 @@
+﻿@using Ca.Skoolbo.Homesite.Helpers.Configs
+
+@{
+    ViewBag.Title = "Home";
+}
+@section scripts{
+    <script>
+        var webDashboard = "@WebConfigHelper.DashboardLink";
+        var urlTotalAnswer = "@Url.Action("Totalizer", "Leaderboard")";
+    </script>
+
+    <script src="~/Scripts/extension/acornmediaplayer/jquery.acornmediaplayer.js"></script>
+    <script src="~/Scripts/extension/acornmediaplayer/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="~/Scripts/extension/acornmediaplayer/modernizr.custom.js"></script>
+
+    <script src="~/Scripts/extension/jquery.lazy.min.js"></script>
+    <script src="~/Scripts/extension/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script src="~/Scripts/extension/jquery.nicescroll.min.js"></script>
+    <script src="~/Scripts/extension/jquery.countup/countUp.min.js"></script>
+    <script src="~/Scripts/extension/jquery.blockUI.js"></script>
+    <script src="~/Scripts/extension/jquery.countdown/jquery.countdown.min.js"></script>
+
+    <script src="~/Scripts/custom/home.js"></script>
+    <script src="~/Scripts/module/leaderboardconfig.js"></script>
+    <script src="~/Scripts/module/totalizer.js"></script>
+    <script src="~/Scripts/module/leaderboard.js"></script>
+}
+@section styles{
+    <link href="~/Scripts/extension/acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" />
+    <link href="~/Scripts/extension/acornmediaplayer/themes/darkglass/acorn.darkglass.css" rel="stylesheet" />
+    <link href="~/Scripts/extension/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <link href="~/Content/module/widget.css" rel="stylesheet" />
+    <link href="~/Content/module/leaderboard.css" rel="stylesheet" />
+    <link href="~/Content/custom/home.css" rel="stylesheet" />
+
+}
+
+<div class="col-lg-12 margin-bottom-10 margin-top-10">
+    <p class=" text-justify">
+        Skoolbo is a great new site to help with reading, maths and learning languages.
+        Children are immersed in an incredible learning world and are highly motivated by the inbuilt rewards. Parents and schools are equipped with an array of tools to help achieve wonderful educational outcomes for their children. And best of all – it’s free!
+    </p>
+
+</div>
+<div class="col-lg-12 clear-padding">
+    <div class="col-lg-8 home-banner">
+        <div id="carousel-banner" class="carousel slide carousel-banner" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-banner" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-banner" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <a href="@(WebConfigHelper.DashboardLink + WebConfigHelper.RegisterUrl)" title="Register Now">
+                        <img src="~/Images/banners/banner.jpg" class="img-responsive center-block" />
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="@(WebConfigHelper.DashboardLink + WebConfigHelper.RegisterUrl)" title="Register Now">
+                        <img src="~/Images/banners/banner-2.jpg" class="img-responsive center-block" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-4 home-video">
+        <div class="center-block" style="display: inline-block;">
+            <video id="home-video" poster="https://skoolbo.eduvision.tv/Images/EmbedImages/CA_ElSegundo_skoolbo_skoolbo_1187/6b7d4d06-386a-498c-9313-6eb9c598b85f.jpg">
+                <source type="video/mp4" src="http://video11.eduvision.tv/vod/CA_ElSegundo_skoolbo_skoolbo_1187/skoolbo_overview_on_vimeo_2_61ed56e9aa6a4f06a0fe9ca87e024c7a.mp4" />
+            </video>
+        </div>
+
+    </div>
+</div>
+
+@{Html.RenderAction("GetFeed", "Home");}
+
+<div class="col-md-12">
+    @{ Html.RenderAction("Widget", "Leaderboard"); }
+</div>
+
+<div class="col-md-12 margin-top-10">
+    @{ Html.RenderAction("LeaderboardMain", "Leaderboard"); }
+</div>

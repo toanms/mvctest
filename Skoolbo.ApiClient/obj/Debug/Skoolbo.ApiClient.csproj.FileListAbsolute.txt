@@ -1,0 +1,11 @@
+D:\Website\CA\Skoolbo.ApiClient\bin\Debug\Skoolbo.ApiClient.dll
+D:\Website\CA\Skoolbo.ApiClient\bin\Debug\Skoolbo.ApiClient.pdb
+D:\Website\CA\Skoolbo.ApiClient\bin\Debug\Newtonsoft.Json.dll
+D:\Website\CA\Skoolbo.ApiClient\bin\Debug\RestSharp.dll
+D:\Website\CA\Skoolbo.ApiClient\bin\Debug\Skoolbo.RestSharpExtension.dll
+D:\Website\CA\Skoolbo.ApiClient\bin\Debug\Skoolbo.RestSharpExtension.pdb
+D:\Website\CA\Skoolbo.ApiClient\bin\Debug\Newtonsoft.Json.xml
+D:\Website\CA\Skoolbo.ApiClient\bin\Debug\RestSharp.xml
+D:\Website\CA\Skoolbo.ApiClient\obj\Debug\Skoolbo.ApiClient.csprojResolveAssemblyReference.cache
+D:\Website\CA\Skoolbo.ApiClient\obj\Debug\Skoolbo.ApiClient.dll
+D:\Website\CA\Skoolbo.ApiClient\obj\Debug\Skoolbo.ApiClient.pdb

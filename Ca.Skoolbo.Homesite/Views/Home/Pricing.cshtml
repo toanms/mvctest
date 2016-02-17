@@ -1,0 +1,466 @@
+﻿@using Ca.Skoolbo.Homesite.Helpers.Configs
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Pricing";
+}
+@section styles{
+    <link href="~/Content/custom/pricing.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script src="~/Scripts/custom/pricing.js"></script>
+}
+
+<div class="col-lg-12 text-center bottom-color header-pricing">
+
+    <h1>Precios de Skoolbo</h1><h5>¡Queremos que todos puedan disfrutar los beneficios de Skoolbo!</h5><h5>No hay que pagar miles de dólares para obtener gran aprendizaje en línea</h5>
+</div><!-- children-->
+<div class="col-lg-12 bottom-color">
+    <div class="col-lg-4 text-center">
+        <img alt="students" src="/Images/pricing/new/students.png">
+    </div>
+    <div class="col-lg-8">
+        <h1>100% ¡GRATIS para TODOS los niños!</h1>
+        <div class="col-lg-4 video-thumb width-40-fixed">
+            <iframe width="220" height="140" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="//player.vimeo.com/video/114515692"></iframe>
+        </div>
+        <div class="col-lg-8 width-60-fixed">
+            <ul class="ul-check-list">
+                <li> Aprendizaje divertido y cautivando</li>
+                <li> Más de 60,000 preguntas</li>
+                <li> Preguntas se adaptan a la habilidad de cada niño</li>
+                <li> Juegos para multi-jugadores</li>
+                <li> Gráficos increíbles</li>
+                <li> 100% Segura y sin anuncios</li>
+            </ul>
+        </div>
+        <p>Apoya todos dispositivos: iOs, Android, Mac,o navegador web.</p>
+        <p>
+            Para empezar <a href="@WebConfigHelper.RegisterUrl">inscríbete</a> para una <b>cuenta gratis</b> para
+            <a class="goto" href="javascript:;" id="linkParent"> padres </a>o
+            <a class="goto" href="javascript:;" id="linkTeacher"> maestros </a>
+            <a class="goto" href="javascript:;" id="linkParent">
+                <img alt="" src="~/Images/pricing/new/arrow-13.png">
+            </a>
+        </p>
+    </div>
+</div><!-- Family Licence-->
+<div class="col-lg-12 bottom-color">
+    <div class="col-lg-4 text-center">
+        <img alt="parents" src="/Images/pricing/new/parents.png">
+    </div>
+    <div class="col-lg-8">
+        <h1 id="Parent">Versión Maravillosa y GRATIS para los Padres!</h1>
+        <div class="col-lg-6">
+            <ul class="ul-check-list margin-bottom-none">
+                <li>Certificados y premios</li>
+                <li>Juega junto con tus niños</li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <ul class="ul-check-list margin-bottom-none">
+                <li>Informes</li>
+                <li>Involucrar a los abuelos</li>
+            </ul>
+        </div>
+        <div class="col-lg-12">
+            <ul class="ul-check-list">
+                <li>La mejora promedio por tema después de 20 minutos: 41.3%</li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-lg-7 width-60-fixed plus-icon plus-icon-action">
+            @*<i></i>
+            <a href="javascript:;">Licencia de Oro Barato con prestaciones adicionales para venir pronto</a>*@
+        </div>
+        <div class="col-lg-5 width-40-fixed">
+            <a class="btn" href="@WebConfigHelper.RegisterUrl">Inscríbete Aquí</a>
+        </div>
+    </div>
+    <div class="col-lg-12 table-licence hidden">
+        <h2 class="text-bold">Family Licence</h2><table class="table-function">
+            <thead>
+                <tr>
+                    <th width="70%" class="text-left"></th>
+                    <th width="15%" class="text-center">Family Free</th>
+                    <th width="15%" class="text-center">Family Gold</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i class="fa fa-circle"></i>K-6 reading, comprehension, spelling and grammar program</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr><td><i class="fa fa-circle"></i>K-6 math program</td><td><i class="checked"></i></td><td><i class="checked"></i></td></tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Languages program (3 languages included) - Coming Soon</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Super immersive 3D learning worlds</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Adaptive, individualized program</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Multiple devices: iOS, Android, PC, Mac or web browser</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Play with family and friends</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Rewards and leaderboards and certificates</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Special Challenge Events</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Fanclub App for parents and grandparents - Coming Soon</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Newsfeed highlighting great achievements</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Reports highlighting specific strengths and weaknesses emailed quarterly</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Unlimited instant reports</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Compare with national averages</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Real time strength and weakness analyzer</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr><td><i class="fa fa-circle"></i>Upcoming difficulty predictor</td><td></td><td><i class="checked"></i></td></tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>SMS alerts on major achievements or difficulties</td>
+                    <td></td>
+                    <td>
+                        <i class="checked"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Skoolbo magazine home delivered (quarterly)</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Languages Plus (additional 23 languages)</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Parent awards to be given to children on basis of effort, behavior and healthy living</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Ability to create parent avatars to play automatically with your child &ndash; highly motivational!</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th width="70%" class="text-left"></th>
+                    <th width="15%" class="text-center"></th>
+                    <th width="15%" class="text-center">Coming Mid 2015<br>$6.95/month<br><br>$49.95 annual<br>(40% saving)</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div><!-- Teachers Licence-->
+<div class="col-lg-12 bottom-color">
+    <div class="col-lg-4 text-center">
+        <img alt="teachers" src="~/Images/pricing/new/teachers.png">
+    </div>
+    <div class="col-lg-8">
+        <h1 id="Teacher">Versión Maravillosa y GRATIS para los Maestros!</h1>
+        <div class="col-lg-6">
+            <ul class="ul-check-list margin-bottom-none">
+                <li>Mejora los resultados de aprendizaje</li>
+                <li>Alineado con el Programa SEP 2015</li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <ul class="ul-check-list margin-bottom-none">
+                <li>Aprendizaje diferenciado</li>
+                <li>Informes</li>
+            </ul>
+        </div>
+        <div class="col-lg-12">
+            <ul class="ul-check-list"><li>Establecer curículo específico para cada niño</li></ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-lg-7 width-60-fixed plus-icon plus-icon-action">
+            @*<i></i><a href="javascript:;">Licencia de Oro Barato con prestaciones adicionales para venir pronto</a>*@
+        </div>
+        <div class="col-lg-5 width-40-fixed">
+            <a class="btn" href="@WebConfigHelper.RegisterUrl">Inscríbete Aquí</a>
+        </div>
+    </div>
+    <div class="col-lg-12 table-licence hidden">
+        <h2 class="text-bold">Teacher Licence</h2><table class="table-function">
+            <thead><tr><th width="70%" class="text-left"></th><th width="15%" class="text-center">Teacher Free</th><th width="15%" class="text-center">Teacher Gold</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td><i class="fa fa-circle"></i>100% access for up to 40 children</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr><td><i class="fa fa-circle"></i>K-6 reading, comprehension, spelling and grammar program</td><td><i class="checked"></i></td><td><i class="checked"></i></td></tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>K-6 math program</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Languages program (3 languages included) - Coming Soon</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Health and fitness activities</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Interactive whiteboard activities</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Adaptive, individualized program</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Multiple devices: iOS, Android, PC, Mac or web browser</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Full home and school use</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Rewards and Leaderboards</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr><td><i class="fa fa-circle"></i>Certificates</td><td><i class="checked"></i></td><td><i class="checked"></i></td></tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Special Challenge Events</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Fan Club to head class challenges - Coming Soon</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Dedicated teacher app</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Newsfeed highlighting great achievements</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Alerts for students in need</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Reports emailed once a quarter</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Unlimited instant reports</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Compare with national averages</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Real time strength and weakness analyzer</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr><td><i class="fa fa-circle"></i>Exportable Report Card</td><td></td><td><i class="checked"></i></td></tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Determine the unique learning patterns of each student</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr><td><i class="fa fa-circle"></i>Class grouping allocator</td><td></td><td><i class="checked"></i></td></tr>
+                <tr><td><i class="fa fa-circle"></i>Curriculum and homework setting</td><td></td><td><i class="checked"></i></td></tr>
+                <tr><td><i class="fa fa-circle"></i>Languages Plus (additional 23 languages)</td><td></td><td><i class="checked"></i></td></tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Teacher awards to be given to children on basis of effort, behavior and healthy living</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Ability to create teacher avatars to play automatically with your students &ndash; highly motivational!</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th width="70%" class="text-left"></th>
+                    <th width="15%" class="text-center"></th>
+                    <th width="15%" class="text-center">Coming Mid 2015<br>$4.95/month<br><br>$29.95 annual<br>(50% saving)</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div><!-- School Licence-->
+<div class="col-lg-12 bottom-color">
+    <div class="col-lg-4 text-center">
+        <img alt="schools" src="~/Images/pricing/new/schools.png">
+    </div>
+    <div class="col-lg-8">
+        <h1 id="Teacher">Versión Maravillosa y GRATIS para las Escuelas!</h1>
+        <div class="col-lg-6">
+            <ul class="ul-check-list margin-bottom-none">
+                <li>Resultados agregados de cada clase</li>
+                <li>Recompensas y Noticias de Líderes de la Escuela</li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <ul class="ul-check-list margin-bottom-none">
+                <li>Informes trimestrales</li>
+                <li>Desafíos de la Escuela</li>
+            </ul>
+        </div>
+        <div class="col-lg-12">
+            <ul class="ul-check-list">
+                <li>Gerente de Implementación dedicado para la escuela</li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-lg-7 width-60-fixed plus-icon plus-icon-action">
+            @*<i></i><a href="javascript:;">Licencia de Oro Barato con prestaciones adicionales para venir pronto</a>*@
+        </div>
+        <div class="col-lg-5 width-40-fixed">
+            <a class="btn" href="@WebConfigHelper.RegisterUrl">Inscríbete Aquí</a>
+        </div>
+    </div>
+    <div class="col-lg-12 table-licence hidden">
+        <h2 class="text-bold">School Licence</h2><table class="table-function">
+            <thead>
+                <tr>
+                    <th width="70%" class="text-left"></th>
+                    <th width="15%" class="text-center">School Free</th>
+                    <th width="15%" class="text-center">School Gold</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Link all of your classes</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Rewards and Leaderboards</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Head to head school challenges (coming soon)</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Dedicated School Principal/Assistant Principal app - Coming Soon</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Newsfeed highlighting great achievements</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Reports emailed once a quarter</td>
+                    <td><i class="checked"></i></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr><td><i class="fa fa-circle"></i>Teacher Gold for all your teachers</td><td></td><td><i class="checked"></i></td></tr>
+                <tr><td><i class="fa fa-circle"></i>Unlimited instant reports</td><td></td><td><i class="checked"></i></td></tr>
+                <tr><td><i class="fa fa-circle"></i>Compare with national averages</td><td></td><td><i class="checked"></i></td></tr>
+                <tr><td><i class="fa fa-circle"></i>Student improvement analyzer</td><td></td><td><i class="checked"></i></td></tr>
+                <tr><td><i class="fa fa-circle"></i>Class improvement analyzer</td><td></td><td><i class="checked"></i></td></tr>
+                <tr><td><i class="fa fa-circle"></i>Exportable Report Card</td><td></td><td><i class="checked"></i></td></tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Determine the unique learning patterns of each student</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Intervention and monitoring</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Principal awards to be given to children on basis of effort, behavior and healthy living</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-circle"></i>Ability to create Principal avatars to play automatically with your students &ndash; highly motivational!</td>
+                    <td></td>
+                    <td><i class="checked"></i></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th width="70%" class="text-left">
+
+                    </th>
+                    <th width="15%" class="text-center"></th>
+                    <th width="15%" class="text-center">
+                        Coming Mid 2015<br>$36.95/month<br><br>$265 annual<br>(40% saving)
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

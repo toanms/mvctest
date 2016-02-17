@@ -1,0 +1,61 @@
+﻿.skill {
+    margin: 10px 0;
+    width: 100%;
+    display: table;
+}
+
+    .skill .title-content {
+        margin-top: 10px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        color: #ffffff;
+        border: 1px solid gray;
+        padding: 10px;
+        line-height: 30px;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+
+    .skill .skill-title-left {
+        background: #b43806;
+    }
+
+    .skill .skill-title-right {
+        background: #561ec6;
+    }
+
+    .skill [class^="skill-content-"] {
+        border: 1px solid gray;
+        vertical-align: top;
+    }
+
+        .skill [class^="skill-content-"] .skill-list-content {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            line-height: 25px;
+        }
+
+    .skill .skill-content-left {
+        background: #fff683;
+    }
+
+    .skill .skill-content-right {
+        background: #d99cf9;
+    }
+
+[class^="skill-content"] .skill-content-title {
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.skill-content-left .skill-content-title {
+    background: #ffa038;
+}
+
+.skill-content-right .skill-content-title {
+    background: #9a5eff;
+}

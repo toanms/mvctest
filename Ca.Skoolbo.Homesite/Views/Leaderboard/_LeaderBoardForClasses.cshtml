@@ -1,0 +1,38 @@
+﻿@model List<Ca.Skoolbo.Homesite.Models.LeaderboardModels.RankLeaderboardResponseModel>
+<h4 class="text-center">
+    Congratulations to this week’s top performing Classes!
+</h4>
+<div class="table-scroll">
+    <table class="table table-bordered table-view table-leaderboard">
+        <colgroup>
+            <col style="width: 5%;" />
+            <col style="width: 80%;" />
+            <col style="width: 15%" />
+        </colgroup>
+        <tbody>
+            @if (Model != null)
+            {
+                int index = 0;
+                foreach (var item in Model)
+                {
+                    index++;
+                    <tr>
+                        <td class="text-center dl-horizontal vert-align" style="width: 5%">@index</td>
+                        <td class="text-left player-info" style="font-size: 13px !important;">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-8">
+                                    Class @item.ClassName - @item.SchoolName
+                                </div>
+                                <div class="col-md-2 col-xs-4 text-right">
+                                    <img data-src="@item.SchoolStateLogoUrl" src="@item.StateDefault" class="pull-right country-image img-responsive lazy"/>
+                                </div>
+                            </div>
+                        </td>
+                        <td>@(string.Format("{0:##,###}", item.Score))</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+

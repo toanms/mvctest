@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "About";
+    ViewBag.ActiveMenu = "About";
+}
+@section styles
+{
+    <link href="~/Scripts/extension/acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" />
+    <link href="~/Scripts/extension/acornmediaplayer/themes/darkglass/acorn.darkglass.css" rel="stylesheet" />
+    <link href="~/Content/custom/about.css" rel="stylesheet" />
+    <link href="~/Content/custom/home.css?v=1" rel="stylesheet" />
+}
+@section scripts
+{
+
+    <script src="~/Scripts/iframeResizer.js"></script>
+    <script src="~/Scripts/extension/acornmediaplayer/jquery.acornmediaplayer.js"></script>
+    <script src="~/Scripts/extension/acornmediaplayer/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="~/Scripts/extension/acornmediaplayer/modernizr.custom.js"></script>
+    <script src="~/Scripts/custom/home.js"></script>
+    <script>
+
+        jQuery('#home-video').acornMediaPlayer({
+            theme: 'darkglass',
+            volumeSlider: 'vertical'
+        });
+    </script>
+}
+<div class="row clear-margin">
+    <div class="col-lg-10 center-block clear-float brochure-bg">
+        <h3>About Skoolbo</h3>
+        <p>Skoolbo is a learning company that uses games as the central medium for learning. The Skoolbo team of educators and developers spanning the globe are committed to creating accessible learning solutions for both developed and developing countries. Skoolbo’s dream is that every child learns to read and gains confidence with numbers. We have offices in Santa Rosa, London, Sydney, Los Angeles, Auckland, Mexico City, Mumbai, Ho Chi Minh and Singapore. Skoolbo is operated by Skoolbo Limited based in Santa Rosa and is a wholly owned subsidiary of Skoolbo Pte Ltd, a privately owned company registered in Singapore.</p>
+        <br/>
+        <div class="row clear-margin clear-padding">
+            <div class="col-lg-12 home-video">
+                <div class="center-block" style="display: inline-block;">
+                    <video id="home-video">
+                        <source type="video/mp4" src="http://video11.eduvision.tv/vod/CA_ElSegundo_skoolbo_skoolbo_1187/skoolbo_founder_on_vimeo_bb22e183b19b43e0ba12f09e2dfca123.mp4"/>
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row clear-margin">
+    <div class="col-lg-10 center-block clear-float brochure-bg">
+        <h3 class="text-center">Key Benefits</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled benefits">
+                    <li>
+                        <strong>Engaged children</strong>&ndash; The excitement shown by children using Skoolbo is infectious. They absolutely love it!
+                    </li>
+                    <li>
+                        <strong>Highly individualised curriculum</strong>&ndash; Skoolbo’s Spiral Learning Algorithm ensures every child is always receiving the right level of difficulty with the appropriate balance of new and revised content. Parents and teachers may also set particular activities for the child. Immediate feedback and support– children instantly know if they are on the right track and support is given to them precisely at the most teachable moments.
+                    </li>
+                    <li>
+                        <strong>High volume and fast paced</strong>&ndash; Efficient learning with children typically making more than 200 responses in a fifteen minute period.
+                    </li>
+                    <li>
+                        <strong>Rewards and recognition</strong>&ndash; The rewards mechanisms are designed to promote optimal learning patterns.
+                    </li>
+                    <li>
+                        <strong>Comprehensive</strong>&ndash; More than 60,000 questions for 4 to 12 year olds.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled benefits">
+
+                    <li>
+                        <strong>Highly meaningful reporting for parents and teachers</strong>&ndash; In addition to extensive reports, parents and teachers will also have the opportunity to receive emails and alerts notifying them of important developments in child achievement.
+                    </li>
+                    <li>
+                        <strong>Play with family and friends</strong>&ndash; Parents and grandparents may download the Fan Club app to play with the child.
+                    </li>
+                    <li>
+                        <strong>Independent learners</strong>&ndash; Skoolbo works perfectly at home and school situation with even the youngest learners. Simple sign in for young children!
+                    </li>
+                    <li>
+                        <strong>Data Driven</strong>&ndash; All aspects of Skoolbo are continually monitored and refined to maximise learning.
+                    </li>
+                    <li>
+                        <strong>Fully cross-platform</strong>&ndash; Skoolbo is available on PC, Mac, iPad, Win 8, Android and web browser.
+                    </li>
+                    <li>
+                        <strong>Offline mode</strong>&ndash; Skoolbo can work offline and sync data once an internet connection is found.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive" src="/Images/about/benefits.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row clear-margin">
+    <div class="col-lg-10 center-block clear-float brochure-bg">
+        <h2 class="text-center">Great Tools to Assist Differentiated Learning!</h2>
+        <br />
+        <div class="col-md-10 center-block clear-float">
+            <img class="img-responsive" src="/Images/about/learning.png">
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 about-spiral">
+                <h2 align="center">Skoolbo Spiral Learning Algorithm</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="img-responsive" src="/Images/about/spiral.png">
+                    </div>
+                    <div class="col-md-6">
+                        <p>The Skoolbo Spiral Learning Algorithm is designed to give every child the optimal curriculum regardless of his or her actual age. It starts by pre-testing the child in both literacy and numeracy and then continues to reassess after each game. An ideal blend of new content; not yet mastered content; and revision content is served to each child.</p>
+                        <p>Many teachers have indicated that this inbuilt differentiation is one of the strongest features of Skoolbo.</p>
+                        <p>Parents and teachers also have the ability to customise the program and set specific curricula for their children.</p>
+                        <p>It’s all about the Improvement!</p>
+                        <p>Improving educational outcomes is at the core of everything we do at Skoolbo. It is our reason for being and we are nothing short of obsessed with it. Skoolbo may look and feel like a game, but every component has the underlying rationale of maximising student improvement. Importantly, Skoolbo is a learning company that uses games as the central medium for learning. It is not a gaming company that simply adds some learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

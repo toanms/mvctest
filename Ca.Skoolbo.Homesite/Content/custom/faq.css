@@ -1,0 +1,8 @@
+﻿.panel-info > .panel-heading {
+    color: #000000;
+     font-weight: bold;
+}
+.panel-body > a {
+    color: blue;
+    font-weight: bold;
+}

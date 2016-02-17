@@ -1,0 +1,113 @@
+﻿@using Ca.Skoolbo.Homesite.Helpers.Configs
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - Skoolbo</title>
+
+    <link rel="icon" type="image/ico" href="/Images/favicon.ico">
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    @{ Html.RenderPartial("Partials/_Analysis"); }
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    @Styles.Render("~/Content/css")
+
+    <script type="text/javascript">
+        var rootUrl = '@Url.Content("~")';
+    </script>
+
+    @RenderSection("styles", required: false)
+
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+    <div class="container body-content clear-padding">
+        <div class="container">
+            <div class="row">
+                <img src="~/Images/header.png?v=1" class="img-responsive" />
+            </div>
+        </div>
+        <div class="container site-container">
+            <header>
+                <div class="row navbar-top">
+                    <div class="navbar-header ">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-top">
+                            <span class="glyphicon glyphicon-list"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#navbar-top">Menu</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-top">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="@Url.Content("~")">Home</a>
+                            </li>
+                            <li>
+                                <a href="@Url.RouteUrl("About")">About</a>
+                            </li>
+                            <li>
+                                <a href="@Url.RouteUrl("Ambassador")">Ambassador</a>
+                            </li>
+                            <li>
+                                <a href="@Url.RouteUrl("Partner")">Partner</a>
+                            </li>
+                            <li>
+                                <a href="@Url.RouteUrl("Creatagon")">Creatagon</a>
+                            </li>
+                            <li>
+                                <a href="@Url.RouteUrl("Faq")">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="@Url.RouteUrl("Contact")">Contact </a>
+                            </li>
+                            <li>
+                                <a href="@(WebConfigHelper.DashboardLink + WebConfigHelper.RegisterUrl)">Register</a>
+                            </li>
+                            <li>
+                                <a href="@Url.RouteUrl("Download")">Downloads</a>
+                            </li>
+                            <li>
+                                <a href="@(WebConfigHelper.DashboardLink)">Sign in</a>
+                            </li>
+                            <li>
+                                <a href="@Url.RouteUrl("Contest")">Contest</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class="row main-container">
+                @RenderBody()
+            </div>
+            <footer>
+                <div class="row">
+                    <ul class="nav navbar-nav navbar-nav-footer col-lg-11 col-sm-12 center-block clear-float">
+                        <li><a href="@Url.Action("TermsAndConditions", "Home")">Terms and Conditions</a></li>
+                        <li><a href="@Url.Action("PrivacyPolicy", "Home")">Privacy Policy</a></li>
+                        <li><a href="@Url.Action("ChildSafetyPolicy", "Home")">Child Safety Policy</a></li>
+                        <li><a href="@WebConfigHelper.BlogLink">Blog</a></li>
+                        <li class="social-icon">
+                            <a target="_blank" href="https://www.facebook.com/SkoolboPH"><img src="/Images/Icon/facebook.png" /></a>
+                            <a target="_blank" href="https://instagram.com/skoolboph"><img src="/Images/Icon/instagram.jpg" /></a>
+                            <a target="_blank" href='@("https://twitter.com/@SkoolboPH")'><img src="/Images/Icon/twitter.png" /></a>
+                            <a target="_blank" href="https://www.youtube.com/c/SkoolboPhilippines"><img src="/Images/Icon/youtube.png" /></a>
+                            <a target="_blank" href="mailto:@(WebConfigHelper.EmailInfo)"><img src="/Images/Icon/email.jpg" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @{Html.RenderPartial("Partials/_Chat");}
+
+    <script src="~/Scripts/main.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

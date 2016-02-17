@@ -1,0 +1,9 @@
+﻿.safety-list {
+    margin-bottom: 20px;
+}
+.safety-list > li {
+    margin-top: 30px;
+}
+.safety-list > li > ul > li {
+    margin-top: 10px;
+}

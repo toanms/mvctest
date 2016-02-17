@@ -1,0 +1,61 @@
+﻿@model Ca.Skoolbo.Homesite.ViewModels.LeaderboardMainViewModel
+<div class="clearfix"></div>
+<div class="leaderboard table-scroll-container" id="leaderboard">
+    <div role="tabpanel">
+        <div class="col-md-12 clear-padding border-bottom-gray">
+            <div class="col-md-5 clear-padding">
+                <ul class="nav nav-tabs clear-borderbottom" role="tablist" id="table-leaderboard">
+                    @{
+                        int index = 0;
+                    }
+                    @foreach (var tabItem in Model.Tabs.OrderBy(o => o.OrderBy))
+                    {
+                        <li role="presentation" class="@(index == 0 ? "active" : "")">
+                            <a href="#@(tabItem.OrderBy)" aria-controls="home" role="tab" data-href="@tabItem.Url" data-toggle="tab">
+                                @tabItem.DisplayName
+                            </a>
+                        </li>
+                        index++;
+                    }
+
+
+                </ul>
+            </div>
+            <div class="col-md-7 leaderboard-timer">
+
+                @if (Model.EventTime != null)
+                {
+                    var remainingDateTime = Model.EventTime;
+
+                    <span class="count-down pull-right test" data-startTime="@remainingDateTime.BeginTime.ToString("MM/dd/yyyy HH:mm:ss")"
+                          data-endTime="@remainingDateTime.EndTime.ToString("MM/dd/yyyy HH:mm:ss")"></span>
+                }
+
+            </div>
+            @*<div class="col-md-3">
+
+                <ul id="tabFilter" role="tablist" class="nav nav-tabs clear-borderbottom pull-right">
+                    <li class="active">
+                        <a href="javascript:;">
+                            MX
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            World
+                        </a>
+                    </li>
+                </ul>
+
+            </div>*@
+        </div>
+        <div class="clearfix"></div>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="table-content">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="clearfix"></div>

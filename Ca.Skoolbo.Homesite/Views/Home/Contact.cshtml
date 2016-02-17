@@ -1,0 +1,36 @@
+﻿@using Ca.Skoolbo.Homesite.Helpers.Configs
+@{
+    ViewBag.Title = "Contact";
+    ViewBag.ActiveMenu = "Contact";
+}
+<div class="col-lg-12 margin-top-10">
+    <h1 class="text-center text-bold">Contact </h1>
+    <h4 class="text-center">
+        <strong>
+            Skoolbo PH<br />
+            The Creatagon<br />
+            Unit 1, Orient Goldcrest<br />
+            Laguna Technopark, Building 2<br />
+            Santa Rosa City<br />
+            Laguna, 4026<br />
+        </strong>
+    </h4>
+    <div class="clear-float col-lg-7 center-block">
+        <h2>
+            <a class="block-overflow" href="https://www.facebook.com/SkoolboPH" target="_bank"> <img src="~/Images/Contact/facebook.png">&nbsp;facebook.com/SkoolboPH</a>
+        </h2>
+        <h2>
+            <a class="block-overflow" href="https://instagram.com/skoolboph" target="_bank"> <img src="~/Images/Contact/Instagram.jpg">&nbsp;instagram.com/skoolboph/</a>
+        </h2>
+        <h2>
+            <a class="block-overflow" href='@("https://twitter.com/@SkoolboPH")' target="_bank"> <img src="~/Images/Contact/twitter.png">&nbsp;@@SkoolboPH</a>
+        </h2>
+        <h2>
+            <a class="block-overflow" href="https://www.youtube.com/c/SkoolboPhilippines" target="_bank"> <img src="~/Images/Contact/YouTube.png">&nbsp;youtube.com/c/SkoolboPhilippines</a>
+        </h2>
+        <h2>
+            <a class="block-overflow" href="mailto:@(WebConfigHelper.EmailInfo)"> <img src="~/Images/Contact/email.jpg"> @(WebConfigHelper.EmailInfo)</a>
+        </h2>
+    </div>
+
+</div>
