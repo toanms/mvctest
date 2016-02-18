@@ -11,7 +11,7 @@
 
     @Scripts.Render("~/bundles/modernizr")
 
-    @{ Html.RenderPartial("Partials/_Analysis"); }
+    @*@{ Html.RenderPartial("Partials/_Analysis"); }*@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     @Styles.Render("~/Content/css")
 
@@ -88,13 +88,12 @@
                         <li><a href="@Url.Action("PrivacyPolicy", "Home")">Privacy Policy</a></li>
                         <li><a href="@Url.Action("ChildSafetyPolicy", "Home")">Child Safety Policy</a></li>
                         <li><a href="@WebConfigHelper.BlogLink">Blog</a></li>
-                        <li class="social-icon">
-                            <a target="_blank" href="https://www.facebook.com/SkoolboPH"><img src="/Images/Icon/facebook.png" /></a>
-                            <a target="_blank" href="https://instagram.com/skoolboph"><img src="/Images/Icon/instagram.jpg" /></a>
+                        @*<li class="social-icon">
+                            <a target="_blank" href="https://www.facebook.com/SkoolboCA"><img src="/Images/Icon/facebook.png" /></a>
                             <a target="_blank" href='@("https://twitter.com/@SkoolboPH")'><img src="/Images/Icon/twitter.png" /></a>
                             <a target="_blank" href="https://www.youtube.com/c/SkoolboPhilippines"><img src="/Images/Icon/youtube.png" /></a>
                             <a target="_blank" href="mailto:@(WebConfigHelper.EmailInfo)"><img src="/Images/Icon/email.jpg" /></a>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
             </footer>

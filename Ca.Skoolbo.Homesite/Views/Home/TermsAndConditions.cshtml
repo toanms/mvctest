@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Ca.Skoolbo.Homesite.Helpers.Configs
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Terms and Conditions";
 }
@@ -69,7 +70,7 @@
             <b>Links to other Websites</b>
             <ul>
                 <li>Any links to third party websites located on www.skoolbo.ca are provided for the User’s convenience only.</li>
-                <li>Skoolbo takes all reasonable steps to ensure any links to third party websites are appropriate. Skoolbo is not responsible for the content on any linked third party website. If the User chooses to access a third party website linked to from <a href="@Url.Action("Index", "Home")">www.skoolbo.ca</a>, it is at the User’s own risk. The User is encouraged to notify Skoolbo at <a href="mailto:info@skoolbo.ca">info@skoolbo.ca</a> if there are any inappropriate links on <a href="@Url.Action("Index")">www.skoolbo.ca.</a></li>
+                <li>Skoolbo takes all reasonable steps to ensure any links to third party websites are appropriate. Skoolbo is not responsible for the content on any linked third party website. If the User chooses to access a third party website linked to from <a href="@Url.Action("Index", "Home")">www.skoolbo.ca</a>, it is at the User’s own risk. The User is encouraged to notify Skoolbo at <a href="mailto:@(WebConfigHelper.EmailInfo)">@(WebConfigHelper.EmailInfo)</a> if there are any inappropriate links on <a href="@Url.Action("Index")">www.skoolbo.ca.</a></li>
 
             </ul>
         </li>
@@ -130,9 +131,9 @@
         <br />
         Skoolbo Canada Limited
         <br />
-        <a href="mailto:info@learnattax.com">info@learnattax.com</a>
+        <a href="mailto:@(WebConfigHelper.EmailInfo)">@(WebConfigHelper.EmailInfo)</a>
         <br />
-        Phone: 020 8133 5253
+        Phone: @(WebConfigHelper.PhoneNumber)
     </p>
 </div>
 

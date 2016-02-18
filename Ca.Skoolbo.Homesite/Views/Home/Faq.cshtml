@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Ca.Skoolbo.Homesite.Helpers.Configs
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Faq";
     ViewBag.ActiveMenu = "Faq";
@@ -12,44 +13,208 @@
     <h2 class="text-center">FAQ</h2>
     <div class="panel panel-info">
         <div class="panel-heading">
-            1. How do I get Skoolbo?
+            1.	What does the school license cover?
         </div>
         <div class="panel-body">
-            Visit <a href="@Url.Action("Index", "Home")">www.skoolbo.ph</a> and enter your email and contact information. You will be emailed with information for exclusive early registration when Skoolbo PH launches.
+            The license enables all students and teachers to use the Skoolbo program at both school and home on whatever platform (tablet, desktop, mobile, web) they wish.
         </div>
     </div>
     <div class="panel panel-info">
         <div class="panel-heading">
-            2. How much does it cost?
-        </div>
-        <div class="panel-body">Skoolbo is FREE!</div>
-    </div>
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            3. When is it coming to the Philippines?
-        </div>
-        <div class="panel-body">Skoolbo PH will launch before the new school year begins in August 2015.</div>
-    </div>
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            4. What devices can I play on?
-        </div>
-        <div class="panel-body">Skoolbo is available on all devices, and even has a web-browser version.</div>
-    </div>
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            5. Do I need connectivity to play?
-        </div>
-        <div class="panel-body">Skoolbo works in online and offline mode on your device! Your game data will automatically sync as soon as a connection is established.</div>
-    </div>
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            6. Can my kids play at home?
+            2.	How much will the school need to pay in future years?
         </div>
         <div class="panel-body">
-            YES! Playing Skoolbo at home is an excellent way your kids and students to practice and build foundational skills, without feeling like they are doing homework.
+            Nothing! Forever Free means that you will never pay the school licence fee and Skoolbo promises to never advertise directly to children.
         </div>
     </div>
 
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            3.	How will Skoolbo pay its bills?
+        </div>
+        <div class="panel-body">
+            Firstly, we do everything possible to keep our costs at a minimum – we don’t have fancy offices and we travel up the back of the plane! We’ve spent more than $5M creating Skoolbo, but through our partners at Microsoft we are able to supply the service for exceptionally low amounts per pupil.
+            We do of course have bills to pay and the main way that we will obtain revenue is through the parents who choose to purchase the inexpensive reports.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            4.	Why do you need teacher’s email addresses?
+        </div>
+        <div class="panel-body">
+            These form part of teachers’ logins together with a password that we will create for them. We do not share these email addresses with anyone else including parents, nor do we use them to advertise to teachers.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            5.	When can schools get started?
+        </div>
+        <div class="panel-body">
+            Right away! Skoolbo has already launched in Canada.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            6.	What age groups should I use it with?
+        </div>
+        <div class="panel-body">
+            Skoolbo is great for all elementary school children, but our particular favourites are the ones below 8 years of age. This is where we see the greatest improvement of all. Many schools also find considerable success with secondary pupils in need of further consolidation of key skills in Literacy and Numeracy. It should be noted that we have also had a great deal of success with pupils who have English as a second language.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            7.	What technology can schools use?
+        </div>
+        <div class="panel-body">
+            Skoolbo is available on:
+            <ul>
+                <li>Tablets - iPads, Androids and Win 8</li>
+                <li>Desktops - PCs and Macs</li>
+                <li>Smartphones</li>
+                <li>Through the web browser - this is an HTML 5 version and is playable on most modern internet browsers</li>
+            </ul>
+            The tablets and desktop versions are downloadable apps. These enjoy wonderful 3D graphics and include all of the additional features (Language Dragons, Pop Snaz) and they are the versions children most enjoy playing. The web browser version is a simplified environment that is useful when schools have difficulty deploying the app versions on their network. We strongly recommend tablets for children aged 6 and below.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            8.	Our school has high levels of pupil mobility. How easy is it to make changes to the teacher and student accounts?
+        </div>
+        <div class="panel-body">
+            Very easy! You can add and subtract pupils within the School Administration Dashboard. Pupils will be able to easily transfer their Skoolbo accounts to their new schools. This aspect is tremendously beneficial as it will help the new teacher quickly see the pupil’s learning profile.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            9.	Do children need headphones?
+        </div>
+        <div class="panel-body">
+            It is not essential but the experience for children is usually improved by the use of headphones as they will be able to hear more clearly. The use of headphones also helps to keep noise in the classroom to an acceptable level.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            10.	Do schools need a one-to-one technology environment?
+        </div>
+        <div class="panel-body">
+            Ideally children will access the program on a device that they alone are using. However this does not mean that you need a device for every child in your class. Many schools find that having one or two groups of children using Skoolbo, while the rest of the class is engaged in other activities, works very well.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            11.	Does Skoolbo also work offline?
+        </div>
+        <div class="panel-body">
+            Yes, Skoolbo works offline and syncs the data when it finds a connection. Children may use any device and their data automatically syncs to the cloud and across devices.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            12.	Can Skoolbo be played on an interactive whiteboard?
+        </div>
+        <div class="panel-body">
+            Yes, Skoolbo shows brilliantly on an interactive whiteboard. The actual program was designed more for single-child use, however we have seen many classes successfully employ it in this way. Furthermore, we have created whole-class activities especially designed for interactive whiteboards and data projectors. These are accessed via the Teacher App, also available for download on our downloads page.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            13.	Can the children use Skoolbo at home and is there an additional charge?
+        </div>
+        <div class="panel-body">
+            Yes, we encourage children to use Skoolbo at both home and school. They are able to use whatever devices they have access to at home, and the data will automatically flow between home and school.
+            No, there is no additional cost for pupils to use Skoolbo at home. The 3D apps are free to download and there are no "in app" purchases.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            14.	Is there any advertising on Skoolbo?
+        </div>
+        <div class="panel-body">
+            No, there is no advertising to children on Skoolbo.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            15.	Do parents have to purchase additional reports?
+        </div>
+        <div class="panel-body">
+            No. Shortly we will be releasing additional premium reports for parents which they may purchase for a small amount if they wish to. Children’s access to the game <strong>will not be affected</strong> if these reports are not purchased.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            16.	Will teachers receive premium reports?
+        </div>
+        <div class="panel-body">
+            Yes, teachers and schools will have access to a wide range of reports, all of which are included in your Forever Free license.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            17.	What is the recommended usage of Skoolbo?
+        </div>
+        <div class="panel-body">
+            We recommend 4-5 twenty minute sessions of Skoolbo a week for optimal learning.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            18.	Do the teachers need to set tasks for each child?
+        </div>
+        <div class="panel-body">
+            No, the Skoolbo Spiral Learning Algorithm ensures every child receives appropriately differentiated curriculum. A feature in the teacher’s dashboard allows the teacher to choose particular tasks for her pupils to more closely align with the topics they are working on at that time. Setting tasks is an optional feature available at the teacher’s disposal.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            19.	Have you finished developing Skoolbo?
+        </div>
+        <div class="panel-body">
+            No! We have spent four years and over 100,000 development hours creating Skoolbo. There's no question it's been a big effort, however we are still bubbling with ideas and have many exciting upcoming developments. Our full time development team comprises of dozens of super passionate and educators, programmers and graphic designers / animators.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            20.	How does Skoolbo ensure privacy and online safety?
+        </div>
+        <div class="panel-body">
+            Privacy and child safety are of utmost importance to us. Please refer to our Privacy Policy and Child Safety Policy for further details.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            21.	Can schools suggest improvements?
+        </div>
+        <div class="panel-body">
+            Yes please! We particularly love it when teachers, parents and especially children give us brilliant suggestions.
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            22.	What support can schools get?
+        </div>
+        <div class="panel-body">
+            Please contact us any time on <a href="mailto:@(WebConfigHelper.EmailInfo)">@(WebConfigHelper.EmailInfo)</a> or <strong>020 8133 5253</strong> where your enquiry will be answered by one of our Skoolbo Implementation Managers. Please let us know how we can help!
+        </div>
+    </div>
 </div>
 

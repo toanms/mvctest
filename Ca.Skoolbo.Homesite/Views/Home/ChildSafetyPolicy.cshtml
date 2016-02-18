@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Ca.Skoolbo.Homesite.Helpers.Configs
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Safety Policy";
 }
@@ -62,8 +63,8 @@
         <br/>
         Skoolbo Canada Limited
         <br/>
-        <a href="mailto:info@learnattax.com">info@learnattax.com</a>
+        <a href="mailto:@(WebConfigHelper.EmailInfo)">@(WebConfigHelper.EmailInfo)</a>
         <br/>
-        Phone: 020 8133 5253
+        Phone: @(WebConfigHelper.PhoneNumber)
     </p>
 </div>

@@ -8,6 +8,7 @@ namespace Ca.Skoolbo.Homesite.Helpers.Configs
         private const string BlogKey = "Blog";
         private const string RegisterUrlKey = "RegisterUrl";
         private const string EmailInfoKey = "EmailInfo";
+        private const string PhoneNumberKey = "PhoneNumber";
 
         private const string ApiClientKey = "ApiClient";
         private const string AzurestorageKey = "azurestorage";
@@ -44,6 +45,11 @@ namespace Ca.Skoolbo.Homesite.Helpers.Configs
         public static string EmailInfo
         {
             get { return GetConfig<string>(EmailInfoKey); }
+        }
+
+        public static string PhoneNumber
+        {
+            get { return GetConfig<string>(PhoneNumberKey); }
         }
 
         public static string ApiClient
