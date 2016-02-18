@@ -47,15 +47,15 @@
                             <li>
                                 <a href="@Url.RouteUrl("About")">About</a>
                             </li>
-                            <li>
+                            @*<li>
                                 <a href="@Url.RouteUrl("Ambassador")">Ambassador</a>
-                            </li>
-                            <li>
+                            </li>*@
+                            @*<li>
                                 <a href="@Url.RouteUrl("Partner")">Partner</a>
-                            </li>
-                            <li>
+                            </li>*@
+                            @*<li>
                                 <a href="@Url.RouteUrl("Creatagon")">Creatagon</a>
-                            </li>
+                            </li>*@
                             <li>
                                 <a href="@Url.RouteUrl("Faq")">FAQ</a>
                             </li>
@@ -71,9 +71,9 @@
                             <li>
                                 <a href="@(WebConfigHelper.DashboardLink)">Sign in</a>
                             </li>
-                            <li>
+                            @*<li>
                                 <a href="@Url.RouteUrl("Contest")">Contest</a>
-                            </li>
+                            </li>*@
                         </ul>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
             </div>
             <footer>
                 <div class="row">
-                    <ul class="nav navbar-nav navbar-nav-footer col-lg-11 col-sm-12 center-block clear-float">
+                    <ul class="nav navbar-nav navbar-nav-footer col-lg-8 center-block clear-float">
                         <li><a href="@Url.Action("TermsAndConditions", "Home")">Terms and Conditions</a></li>
                         <li><a href="@Url.Action("PrivacyPolicy", "Home")">Privacy Policy</a></li>
                         <li><a href="@Url.Action("ChildSafetyPolicy", "Home")">Child Safety Policy</a></li>

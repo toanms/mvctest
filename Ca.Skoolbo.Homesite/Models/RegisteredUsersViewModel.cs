@@ -7,6 +7,6 @@ namespace Ca.Skoolbo.Homesite.Models
 {
     public class RegisteredUsersViewModel
     {
-        public List<User> Users { get; set; }
+        //public List<User> Users { get; set; }
     }
 }
