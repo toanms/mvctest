@@ -220,7 +220,10 @@
     <Content Include="Images\Banners\banner-2.jpg" />
     <Content Include="Images\Banners\banner.jpg" />
     <Content Include="Images\Contact\email.jpg" />
+    <Content Include="Images\Contact\email.png" />
     <Content Include="Images\Contact\Instagram.jpg" />
+    <Content Include="Images\Contact\phone.png" />
+    <Content Include="Images\Contact\website.png" />
     <Content Include="Images\Contact\YouTube.png" />
     <Content Include="Images\Contest\register-win.png" />
     <Content Include="Images\Downloads\amazon.png" />
