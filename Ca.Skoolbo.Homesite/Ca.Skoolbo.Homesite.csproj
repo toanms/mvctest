@@ -198,6 +198,7 @@
     <Content Include="Content\bootstrap.custom.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom\about.css" />
+    <Content Include="Content\custom\contact.css" />
     <Content Include="Content\custom\contest.css" />
     <Content Include="Content\custom\download.css" />
     <Content Include="Content\custom\faq.css" />
