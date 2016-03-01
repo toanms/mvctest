@@ -214,6 +214,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\header.png" />
     <Content Include="Images\About\learning.png" />
     <Content Include="Images\About\spiral.png" />
     <Content Include="Images\Ambassador\Manny-post.png" />
@@ -241,8 +242,6 @@
     <Content Include="Images\Downloads\PopSnaz\SuperHeroStickers.png" />
     <Content Include="Images\Downloads\PopSnaz\TrophyPic.png" />
     <Content Include="Images\favicon.ico" />
-    <Content Include="Images\header.jpg" />
-    <Content Include="Images\header.png" />
     <Content Include="Images\Creatagon\CreatagonLogo.png" />
     <Content Include="Images\Creatagon\sample-creatagon-01.jpg" />
     <Content Include="Images\Contact\facebook.png" />
