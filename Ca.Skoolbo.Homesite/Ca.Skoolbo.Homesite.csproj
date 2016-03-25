@@ -394,6 +394,7 @@
     <Content Include="Views\Leaderboard\_LeaderBoardForSchools.cshtml" />
     <Content Include="Views\Leaderboard\_LeaderboardMain.cshtml" />
     <Content Include="Views\Leaderboard\_Widget.cshtml" />
+    <Content Include="Views\Home\TestFacebook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

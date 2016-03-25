@@ -1,0 +1,66 @@
+﻿
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <title> Award</title>
+    <meta property="og:url" content="@Html.Raw(Request.Url)" />
+    <meta property="og:title" content="Title here" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Congratulations to   on archiving  answers on Skoolbo" />
+  
+    <meta property="og:image" content="http://skoolbo.com/img/videos/video-img.png" />
+
+    <meta property="fb:app_id" content="505726399581679" />
+
+    <link rel="icon" type="image/ico" href="~/Images/favicon.ico" />
+   
+    
+
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '505726399581679',
+                xfbml: true,
+                version: 'v2.5'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+
+</head>
+<body>
+    <div id="fb-root"></div>
+
+    <div style="width: 100%; max-width: 700px; max-height: 100%; margin: 0 auto;">
+        <img id="main_image" src="http://dashboard.skoolbo.com/generatecertificate?token=cyXYpsnKe6OsuJzlZhu3PRpBON6pvrLolFfxv8a89xwprrhsycl%252b%252fBL1N7%252bbZM73yZy%252b%252bjOxSCvS6tIokx%252bczl%252bhXLd7Zp1Mq8lVBymYhHOub7%252bUAcNaoaRFEjq9aQZlAAFAOK4Y6I3eNRm152P7zftr9EHybZmScXjGgxgPYFDaaDBV26rc839Gy%252fwfZ96J4nW11lGHdG6e6kc3%252bu6%252bIn2kg9dHj1FFGK%252bL7%252bq2qoY%253d" alt="" style="display: block; margin: 0 auto; position: relative; height: 860px" />
+
+        <div class="pull-left hidden-print" style="width: 100%">
+            
+
+            <div class="pull-left print-box" data-href="@Request.Url" data-layout="button" style="height: 31px;">
+                <div class="fb-share-button"
+                     data-href="@Request.Url"
+                     data-layout="button_count">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="clearfix">
+
+        </div>
+    </div>
+
+   
+</body>
+</html>
