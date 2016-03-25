@@ -125,13 +125,6 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
         //mannypacquiao
 
-
-            [Route("TestFacebook")]
-        public ActionResult TestFacebook()
-        {
-            return PartialView();
-        }
-
         public  ActionResult GetFeed()
         {
             using (var webClient = new WebClient())
