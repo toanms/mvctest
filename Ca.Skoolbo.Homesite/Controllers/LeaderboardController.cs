@@ -23,7 +23,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
 
         // GET: Leaderboard
-        public ActionResult Widget(Location location = Location.Country)
+        public ActionResult Widget(Location location = Location.Global)
         {
             var widgetModel = new WidgetModel
             {
@@ -43,7 +43,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
             return View("_Widget", widgetModel);
         }
 
-        public ActionResult Totalizer(Location location = Location.Country, int startfix = 0)
+        public ActionResult Totalizer(Location location = Location.Global, int startfix = 0)
         {
             var leaderboardTotalAnswerModel = new TotalAnswerReponseModel();
             if (!Request.IsAjaxRequest())
@@ -234,7 +234,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
                             }).ToList();
         }
 
-        public List<TabModel> ResourceTabs(Location location = Location.Country)
+        public List<TabModel> ResourceTabs(Location location = Location.Global)
         {
             var tabs = new List<TabModel>();
             var tabStudents = new TabModel
