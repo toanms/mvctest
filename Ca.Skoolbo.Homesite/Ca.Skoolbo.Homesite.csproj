@@ -159,6 +159,7 @@
     <Compile Include="Helpers\EncryptHelper.cs" />
     <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Helpers\ModelStateErrorHelper.cs" />
+    <Compile Include="Helpers\WebClientHelper.cs" />
     <Compile Include="Models\FeedModel.cs" />
     <Compile Include="Models\FeedViewModel.cs" />
     <Compile Include="Models\LeaderboardModels\EventTimeModel.cs" />
