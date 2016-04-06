@@ -435,8 +435,8 @@
     <Content Include="Views\Leaderboard\_LeaderBoardForSchools.cshtml" />
     <Content Include="Views\Leaderboard\_LeaderboardMain.cshtml" />
     <Content Include="Views\Leaderboard\_Widget.cshtml" />
-    <None Include="Views\Home\HoldingPage.cshtml" />
     <Content Include="Views\Shared\_HoldingPageLayout.cshtml" />
+    <Content Include="Views\Home\HoldingPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
