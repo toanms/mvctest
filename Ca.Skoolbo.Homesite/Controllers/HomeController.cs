@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Xml.Linq;
+using Ca.Skoolbo.Homesite.Extensions;
 using Ca.Skoolbo.Homesite.Helpers;
 using Ca.Skoolbo.Homesite.Models;
 
@@ -15,7 +16,11 @@ namespace Ca.Skoolbo.Homesite.Controllers
 {
     public class HomeController : Controller
     {
+
         private string _feedLink = WebConfigurationManager.AppSettings["Blog"] + "?feed=rss2";
+
+
+
         public ActionResult Index()
         {
             return View();
@@ -39,12 +44,12 @@ namespace Ca.Skoolbo.Homesite.Controllers
             return View();
         }
 
-                [Route("creatagon", Name = "Creatagon")]
+        [Route("creatagon", Name = "Creatagon")]
         public ActionResult Creatagon()
         {
             return View();
         }
-        
+
         [Route("testimonials", Name = "Testimonials")]
         public ActionResult Testimonials()
         {
@@ -126,7 +131,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
         //mannypacquiao
 
-        public  ActionResult GetFeed()
+        public ActionResult GetFeed()
         {
             var data = WebClientHelper.Download(_feedLink);
             List<FeedModel> dataShow = new List<FeedModel>();
@@ -161,6 +166,28 @@ namespace Ca.Skoolbo.Homesite.Controllers
                 });
             });
             return PartialView(dataShow);
+        }
+
+
+        [HttpGet]
+        public ActionResult HoldingPage()
+        {
+            var model = new SubscribeModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult HoldingPage(SubscribeModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                BlobHelper blobHelper = new BlobHelper();
+                blobHelper.SaveToBlob(model.Email);
+                TempData["IsRegister"] = true;
+            }
+
+            return RedirectToAction("HoldingPage");
         }
 
         #region PrivateMethod

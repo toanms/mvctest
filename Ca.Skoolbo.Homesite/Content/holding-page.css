@@ -1,0 +1,12 @@
+﻿html body {
+    background-color: white;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+.container {background-color: #cfe2f3;}
+.holding-page .form-control {
+    height: 50px;
+    font-size: 20px;
+}
