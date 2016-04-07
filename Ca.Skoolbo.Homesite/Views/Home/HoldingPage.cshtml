@@ -13,10 +13,10 @@
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group">
-                    <div class="col-xs-8">
+                    <div class="col-sm-8 margin-bottom-10">
                         @Html.TextBoxFor(model => model.Email, new {@class = "form-control", @placeholder = "Email"})
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-sm-4 ">
                         <button class="btn btn-success form-control" type="submit">Subscribe</button>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
 
     </div>
 
-    <div class="col-sm-12 block-message margin-top-20">
+    <div class="col-md-12 block-message margin-top-20">
         <div class="message-content col-md-11 clear-float center-block">
             <h3>
                 Great News! Skoolbo is launching in Canada soon. Come and see how more than 200,000 classrooms around the world are having fun while achieving great outcomes in reading, math and languages.
