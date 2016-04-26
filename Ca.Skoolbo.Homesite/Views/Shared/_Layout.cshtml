@@ -47,15 +47,15 @@
                             <li>
                                 <a href="@Url.RouteUrl("About")">About</a>
                             </li>
-                            <li>
-                                <a href="@Url.RouteUrl("Ambassador")">Ambassador</a>
-                            </li>
-                            <li>
-                                <a href="@Url.RouteUrl("Partner")">Partner</a>
-                            </li>
-                            <li>
+                            @*<li>
+                                    <a href="@Url.RouteUrl("Ambassador")">Ambassador</a>
+                                </li>*@
+                            @*<li>
+                                    <a href="@Url.RouteUrl("Partner")">Partner</a>
+                                </li>*@
+                            @*<li>
                                 <a href="@Url.RouteUrl("Creatagon")">Creatagon</a>
-                            </li>
+                            </li>*@
                             <li>
                                 <a href="@Url.RouteUrl("Faq")">FAQ</a>
                             </li>
@@ -72,8 +72,8 @@
                                 <a href="@(WebConfigHelper.DashboardLink)">Sign in</a>
                             </li>
                             @*<li>
-                                <a href="@Url.RouteUrl("Contest")">Contest</a>
-                            </li>*@
+                                    <a href="@Url.RouteUrl("Contest")">Contest</a>
+                                </li>*@
                         </ul>
                     </div>
                 </div>
@@ -89,11 +89,11 @@
                         <li><a href="@Url.Action("ChildSafetyPolicy", "Home")">Child Safety Policy</a></li>
                         <li><a href="@WebConfigHelper.BlogLink">Blog</a></li>
                         @*<li class="social-icon">
-                            <a target="_blank" href="https://www.facebook.com/SkoolboCA"><img src="/Images/Icon/facebook.png" /></a>
-                            <a target="_blank" href='@("https://twitter.com/@SkoolboPH")'><img src="/Images/Icon/twitter.png" /></a>
-                            <a target="_blank" href="https://www.youtube.com/c/SkoolboPhilippines"><img src="/Images/Icon/youtube.png" /></a>
-                            <a target="_blank" href="mailto:@(WebConfigHelper.EmailInfo)"><img src="/Images/Icon/email.jpg" /></a>
-                        </li>*@
+                                <a target="_blank" href="https://www.facebook.com/SkoolboCA"><img src="/Images/Icon/facebook.png" /></a>
+                                <a target="_blank" href='@("https://twitter.com/@SkoolboPH")'><img src="/Images/Icon/twitter.png" /></a>
+                                <a target="_blank" href="https://www.youtube.com/c/SkoolboPhilippines"><img src="/Images/Icon/youtube.png" /></a>
+                                <a target="_blank" href="mailto:@(WebConfigHelper.EmailInfo)"><img src="/Images/Icon/email.jpg" /></a>
+                            </li>*@
                     </ul>
                 </div>
             </footer>
