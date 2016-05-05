@@ -15,3 +15,12 @@
     /*background: url('/Images/Contact/website.png') no-repeat left center transparent;*/
     /*width: auto;*/
 }
+
+.block-overflow img {
+    width: 80px;
+    height: 80px;
+}
+
+.address {
+    font-size: 16px;
+}

@@ -13,6 +13,9 @@
 
     @*@{ Html.RenderPartial("Partials/_Analysis"); }*@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+
     @Styles.Render("~/Content/css")
 
     <script type="text/javascript">
@@ -47,15 +50,15 @@
                             <li>
                                 <a href="@Url.RouteUrl("About")">About</a>
                             </li>
-                            @*<li>
-                                    <a href="@Url.RouteUrl("Ambassador")">Ambassador</a>
-                                </li>*@
+                            <li>
+                                <a href="@Url.RouteUrl("Pricing")">Pricing</a>
+                            </li>
                             @*<li>
                                     <a href="@Url.RouteUrl("Partner")">Partner</a>
                                 </li>*@
                             @*<li>
-                                <a href="@Url.RouteUrl("Creatagon")">Creatagon</a>
-                            </li>*@
+                                    <a href="@Url.RouteUrl("Creatagon")">Creatagon</a>
+                                </li>*@
                             <li>
                                 <a href="@Url.RouteUrl("Faq")">FAQ</a>
                             </li>

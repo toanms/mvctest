@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -18,9 +19,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
     {
 
         private string _feedLink = WebConfigurationManager.AppSettings["Blog"] + "?feed=rss2";
-
-
-
+        
         public ActionResult Index()
         {
             return View();
@@ -63,7 +62,6 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
 
         [Route("faq", Name = "Faq")]
-        [Route("pf", Name = "FaqMx")]
         public ActionResult Faq()
         {
             return View();
@@ -133,38 +131,47 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
         public ActionResult GetFeed()
         {
-            var data = WebClientHelper.Download(_feedLink);
             List<FeedModel> dataShow = new List<FeedModel>();
-            if (string.IsNullOrEmpty(data)) return PartialView(dataShow);
 
-            var xmlDoc = XDocument.Parse(data);
-            var channel = xmlDoc.Descendants("channel");
-            channel.ForEach(item =>
+            try
             {
-                var result = item.Descendants("item");
-                result.Take(3).ForEach(itemResult =>
+                var data = WebClientHelper.Download(_feedLink);
+
+                if (string.IsNullOrEmpty(data)) return PartialView(dataShow);
+
+                var xmlDoc = XDocument.Parse(data);
+                var channel = xmlDoc.Descendants("channel");
+                channel.ForEach(item =>
                 {
-                    var feedModel = new FeedModel
+                    var result = item.Descendants("item");
+                    result.Take(3).ForEach(itemResult =>
                     {
-                        Title = GetValueElement(itemResult, "title"),
-                        Date = GetValueElement(itemResult, "pubDate").ToDateTimeOrDefault(null),
-                        Image = GetAttribvalueElement(itemResult, "enclosure", "url"),
-                        Link = GetValueElement(itemResult, "link"),
-                        Summary = GetValueElement(itemResult, "description")
-                    };
-
-                    if (!string.IsNullOrEmpty(feedModel.Summary))
-                    {
-                        var tagP = feedModel.Summary.IndexOf("</p>", StringComparison.Ordinal);
-                        if (tagP != -1 && tagP != 2)
+                        var feedModel = new FeedModel
                         {
-                            feedModel.Summary = feedModel.Summary.Substring(0, tagP - 1);
-                        }
-                    }
+                            Title = GetValueElement(itemResult, "title"),
+                            Date = GetValueElement(itemResult, "pubDate").ToDateTimeOrDefault(null),
+                            Image = GetAttribvalueElement(itemResult, "enclosure", "url"),
+                            Link = GetValueElement(itemResult, "link"),
+                            Summary = GetValueElement(itemResult, "description")
+                        };
 
-                    dataShow.Add(feedModel);
+                        if (!string.IsNullOrEmpty(feedModel.Summary))
+                        {
+                            var tagP = feedModel.Summary.IndexOf("</p>", StringComparison.Ordinal);
+                            if (tagP != -1 && tagP != 2)
+                            {
+                                feedModel.Summary = feedModel.Summary.Substring(0, tagP - 1);
+                            }
+                        }
+
+                        dataShow.Add(feedModel);
+                    });
                 });
-            });
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine(e);
+            }
             return PartialView(dataShow);
         }
 

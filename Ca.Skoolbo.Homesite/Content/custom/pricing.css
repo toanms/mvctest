@@ -21,7 +21,7 @@ a {
 }
 
  .ul-check-list li {
-        list-style-image: url(/Images/pricing/new/checked.png);
+        list-style-image: url(/Images/Pricing/checked.png);
         padding-left: 5px;
     }
 .btn {
@@ -82,11 +82,11 @@ a {
     }
 
     .plus-icon i {
-        background: url(/Images/pricing/new/plus-new.png) left center no-repeat;
+        background: url(/Images/pricing/plus-new.png) left center no-repeat;
     }
 
     .minus-icon i {
-        background: url(/Images/pricing/new/minus-new.png) left center no-repeat;
+        background: url(/Images/pricing/minus-new.png) left center no-repeat;
     }
 
 .col-lg-12 .col-lg-6.plus-icon {
@@ -95,7 +95,7 @@ a {
 
 .checked {
     padding-left: 20px;
-    background: url(/Images/pricing/new/checked.png) left center no-repeat;
+    background: url(/Images/pricing/checked.png) left center no-repeat;
 }
 
 .btn, .btn-default, .btn:focus, .btn-default:focus {
@@ -158,15 +158,6 @@ a {
         font-size: 10px;
         margin: 0 10px;
     }
-
-@media (max-width: 767px) {
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-}
 
 @media (max-width: 1199px) {
     .width-60-fixed {
