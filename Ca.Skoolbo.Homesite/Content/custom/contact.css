@@ -2,14 +2,17 @@
     text-align: center;
     padding: 5px;
 }
+
 .region-wrapper {
     border: 1px solid #cccccc;
     background-color: #cccccc;
 }
+
 .list-region {
     padding: 5px;
 }
-.region-contact > a,.region-contact > span {
+
+.region-contact > a, .region-contact > span {
     display: block;
     padding-left: 20px;
     /*background: url('/Images/Contact/website.png') no-repeat left center transparent;*/
@@ -24,3 +27,12 @@
 .address {
     font-size: 16px;
 }
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    [class^=col-].center-block {
+        float: none;
+    }
+}
+
