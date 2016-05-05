@@ -88,7 +88,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mx.
+        ///   Looks up a localized string similar to Ca.
         /// </summary>
         public static string CountryCode {
             get {
@@ -124,7 +124,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MX Schools.
+        ///   Looks up a localized string similar to Schools.
         /// </summary>
         public static string CountrySchool {
             get {
