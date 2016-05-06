@@ -5,38 +5,78 @@
 }
 @section styles
 {
-    <link href="~/Content/custom/contact.css?v=2" rel="stylesheet" />
+    <link href="~/Content/custom/contact.css?v=3" rel="stylesheet" />
 }
 <div class="col-lg-12 margin-top-10">
-    <h1 class="text-center text-bold"> Skoolbo CA </h1>
-    <p class="text-center text-bold address"> 3877 Grand View Blvd</p>
-    <p class="text-center text-bold address">Los Angeles, CA 90066,</p>
-    <p class="text-center text-bold address">United States</p>
+  
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1 brochure-bg contact-top">
-            <div class="clear-float col-lg-7 center-block">
-                <h2>
-                    <a class="block-overflow" href="https://www.facebook.com/SkoolboCA" target="_bank">
-                        <img src="~/Images/Contact/facebook.png">&nbsp;facebook.com/SkoolboCA
-                    </a>
-                </h2>
-                <h2>
-                    <a class="block-overflow" href='@("https://twitter.com/@SkoolboCA")' target="_bank">
-                        <img src="~/Images/Contact/twitter.png">&nbsp;@@SkoolboCA
-                    </a>
-                </h2>
-                <h2>
-                    <a class="block-overflow" href="mailto:@(WebConfigHelper.EmailInfo)">
-                        <img src="~/Images/Contact/email.jpg"> @(WebConfigHelper.EmailInfo)
-                    </a>
-                </h2>
-                <h2>
-                    <a class="block-overflow" href="tel:@(WebConfigHelper.PhoneNumber)">
-                        <img src="~/Images/phone.png"> @(WebConfigHelper.PhoneNumber)
-                    </a>
-                </h2>
+            <h1 class="text-center text-bold"> Skoolbo CA </h1>
+            <p class="text-center text-bold address"> 3877 Grand View Blvd</p>
+            <p class="text-center text-bold address">Los Angeles, CA 90066,</p>
+            <p class="text-center text-bold address">United States</p>
+            
+            <div class="clearfix"></div>
+            <div class="clear-float col-lg-6 center-block">
+                <div class="row margin-bottom-10 margin-top-20">
+                    <div class="col-md-4">
+                        <a class="block-overflow text-right" href="https://www.facebook.com/SkoolboCA" target="_bank">
+                            <img src="~/Images/Contact/facebook.png">
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <h3>
+                            <a class="block-overflow" href="https://www.facebook.com/SkoolboCA" target="_bank">
+                                <strong>facebook.com/SkoolboCA</strong>
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+                <div class="row margin-bottom-10">
+                    <div class="col-md-4">
+                        <a class="block-overflow text-right" href='@("https://twitter.com/@SkoolboCA")' target="_bank">
+                            <img src="~/Images/Contact/twitter.png">
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <h3>
+                            <a class="block-overflow" href='@("https://twitter.com/@SkoolboCA")' target="_bank">
+                                <strong>@@SkoolboCA</strong>
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+                <div class="row margin-bottom-10">
+                    <div class="col-md-4">
+                        <a class="block-overflow text-right" href="mailto:@(WebConfigHelper.EmailInfo)">
+                            <img src="~/Images/Contact/email.jpg">
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <h3>
+                            <a class="block-overflow" href="mailto:@(WebConfigHelper.EmailInfo)">
+                                <strong>@(WebConfigHelper.EmailInfo)</strong>
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+                <div class="row margin-bottom-10">
+                    <div class="col-md-4">
+                        <a class="block-overflow text-right" href="tel:@(WebConfigHelper.PhoneNumber)">
+                            <img src="~/Images/phone.png">
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <h3>
+                            <a class="block-overflow" href="tel:@(WebConfigHelper.PhoneNumber)">
+                                @(WebConfigHelper.PhoneNumber)
+                            </a>
+                        </h3>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 
