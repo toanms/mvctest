@@ -257,6 +257,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\About\our_dream-tiny.jpg" />
     <Content Include="Images\Banners\canada_sliding_banner_register.png" />
+    <Content Include="Images\Banners\technology-codie-award-finalist.png" />
     <Content Include="Images\header.png" />
     <Content Include="Images\About\learning.png" />
     <Content Include="Images\About\spiral.png" />
