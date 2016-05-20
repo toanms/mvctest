@@ -34,7 +34,7 @@
     }
 
     .navbar-top li.active a, .navbar-top li a:hover, .navbar-top li a:focus, .navbar-top li:active a {
-        background: #fcc300;
+        background: #3c3b6e;
         color: #fff;
         font-weight: bold;
     }
