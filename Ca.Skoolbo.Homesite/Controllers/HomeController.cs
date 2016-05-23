@@ -18,7 +18,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
     public class HomeController : Controller
     {
 
-        private string _feedLink = WebConfigurationManager.AppSettings["Blog"] + "?feed=rss2";
+        private string _feedLink = WebConfigurationManager.AppSettings["Blog"] + "/feed/";
         
         public ActionResult Index()
         {
@@ -171,6 +171,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
             catch (Exception e)
             {
                 Trace.WriteLine(e);
+                Trace.Flush();
             }
             return PartialView(dataShow);
         }

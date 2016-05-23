@@ -7,6 +7,7 @@
     <script>
         var webDashboard = "@WebConfigHelper.DashboardLink";
         var urlTotalAnswer = "@Url.Action("Totalizer", "Leaderboard")";
+        var urlRss = "@WebConfigHelper.BlogLink/feed";
     </script>
 
     <script src="~/Scripts/extension/acornmediaplayer/jquery.acornmediaplayer.js"></script>
@@ -62,7 +63,7 @@
                 </div>
                 <div class="item">
                     <a href="http://blog.skoolbo.ca/introducing-classbo-ultimate-classroom-motivator/?utm_source=Website&utm_medium=ClassBo%20banner&utm_campaign=Banner%20traffic" title="Skoolbo" target="_bank">
-                        <img src="~/Images/Banners/classbo.png" class="img-responsive center-block" />
+                        <img src="~/Images/Banners/classbo.png" class="img-responsive center-block"/>
                     </a>
                 </div>
                 <div class="item">
@@ -70,7 +71,7 @@
                         <img src="~/Images/Banners/CODiE.png" class="img-responsive center-block"/>
                     </a>
                 </div>
-               
+
 
             </div>
         </div>
@@ -78,13 +79,13 @@
     </div>
     <div class="col-md-4 home-video">
         <a href="https://skoolbo.eduvision.tv/directplayer.aspx?q=CT1wecDsedDRFhuaRF4AzZ9jQS%252fNr2VIPtIM9BccklHv7GppWB72gr%252bJmZQlSHI%252b" target="_bank">
-            <img src="~/Images/Home/video-img.png" alt="skoolbo" class="img-responsive home-video-img" />
+            <img src="~/Images/Home/video-img.png" alt="skoolbo" class="img-responsive home-video-img"/>
         </a>
     </div>
 </div>
-
-@{Html.RenderAction("GetFeed", "Home");}
-
+<div class="rss">
+    
+</div>
 <div class="col-md-12">
     @{ Html.RenderAction("Widget", "Leaderboard"); }
 </div>

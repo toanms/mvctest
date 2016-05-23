@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using System;
+using System.Diagnostics;
+using System.Net;
 using System.Text;
 
 namespace Ca.Skoolbo.Homesite.Helpers
@@ -11,13 +13,13 @@ namespace Ca.Skoolbo.Homesite.Helpers
             {
                 using (var webClient = new WebClient())
                 {
-                    webClient.Encoding =
-                    Encoding.UTF8;
+                    webClient.Encoding = Encoding.UTF8;
                     return webClient.DownloadString(url);
                 }
             }
-            catch
+            catch (Exception e)
             {
+                Trace.WriteLine(e);
                 return string.Empty;
             }
         }
