@@ -16,6 +16,16 @@ function callTableScroll(para) {
     if ($elementTable.length > 0) {
       
         $elementTable.niceScroll(para);
+        var niceScroll = $elementTable.getNiceScroll()[0];
+
+       
+
+        niceScroll.onscrollend = function (data) {
+            $('.lazy').lazy({
+                bind: "event",
+                onFinishedAll: function () { }
+            });
+        };
     }
 }
 

@@ -61,7 +61,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://skoolbo-assets.s3.amazonaws.com/avatars/{0}.png.
+        ///   Looks up a localized string similar to http://skoolbo-assets.s3.amazonaws.com/avatars/{0}.png.
         /// </summary>
         public static string Avatar {
             get {
@@ -79,7 +79,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://skoolbo-assets.s3.amazonaws.com/avatars_128_no_background/{0}.png.
+        ///   Looks up a localized string similar to http://skoolbo-assets.s3.amazonaws.com/avatars_128_no_background/{0}.png.
         /// </summary>
         public static string Avatar128NoBackground {
             get {
@@ -106,7 +106,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://skoolbowebcore.s3.amazonaws.com/img/avatar/male/0.png.
+        ///   Looks up a localized string similar to http://skoolbowebcore.s3.amazonaws.com/img/avatar/male/0.png.
         /// </summary>
         public static string AvatarMaleDefault {
             get {
@@ -115,7 +115,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://skoolbowebcore.s3.amazonaws.com/img/categories/{0}.png.
+        ///   Looks up a localized string similar to http://skoolbowebcore.s3.amazonaws.com/img/categories/{0}.png.
         /// </summary>
         public static string Category {
             get {
@@ -124,7 +124,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://skoolbowebcore.s3.amazonaws.com/img/{0}/{1}.png.
+        ///   Looks up a localized string similar to http://skoolbowebcore.s3.amazonaws.com/img/{0}/{1}.png.
         /// </summary>
         public static string Password {
             get {

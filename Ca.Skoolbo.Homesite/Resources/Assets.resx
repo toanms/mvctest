@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Avatar" xml:space="preserve">
-    <value>https://skoolbo-assets.s3.amazonaws.com/avatars/{0}.png</value>
-    <comment>https://skoolbo-assets.s3.amazonaws.com/avatars/[dna.md5].png</comment>
+    <value>http://skoolbo-assets.s3.amazonaws.com/avatars/{0}.png</value>
+    <comment>http://skoolbo-assets.s3.amazonaws.com/avatars/[dna.md5].png</comment>
   </data>
   <data name="Avatar128" xml:space="preserve">
     <value>http://skoolbo-assets.s3.amazonaws.com/avatars_128/{0}.png</value>
     <comment>http://skoolbo-assets.s3.amazonaws.com/avatars_128/[dna.md5].png</comment>
   </data>
   <data name="Avatar128NoBackground" xml:space="preserve">
-    <value>https://skoolbo-assets.s3.amazonaws.com/avatars_128_no_background/{0}.png</value>
+    <value>http://skoolbo-assets.s3.amazonaws.com/avatars_128_no_background/{0}.png</value>
     <comment>http://skoolbo-assets.s3.amazonaws.com/avatars_128_no_background/[dna.md5].png</comment>
   </data>
   <data name="Avatar256NoBackground" xml:space="preserve">
@@ -137,15 +137,15 @@
     <value>http://skoolbowebcore.s3.amazonaws.com/img/avatar/female/0.png</value>
   </data>
   <data name="AvatarMaleDefault" xml:space="preserve">
-    <value>https://skoolbowebcore.s3.amazonaws.com/img/avatar/male/0.png</value>
+    <value>http://skoolbowebcore.s3.amazonaws.com/img/avatar/male/0.png</value>
   </data>
   <data name="Category" xml:space="preserve">
-    <value>https://skoolbowebcore.s3.amazonaws.com/img/categories/{0}.png</value>
-    <comment>https://skoolbowebcore.s3.amazonaws.com/img/categories/[CategoryCode].png</comment>
+    <value>http://skoolbowebcore.s3.amazonaws.com/img/categories/{0}.png</value>
+    <comment>http://skoolbowebcore.s3.amazonaws.com/img/categories/[CategoryCode].png</comment>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>https://skoolbowebcore.s3.amazonaws.com/img/{0}/{1}.png</value>
-    <comment>https://skoolbowebcore.s3.amazonaws.com/img/[PasswordType]/[ColorItem].png</comment>
+    <value>http://skoolbowebcore.s3.amazonaws.com/img/{0}/{1}.png</value>
+    <comment>http://skoolbowebcore.s3.amazonaws.com/img/[PasswordType]/[ColorItem].png</comment>
   </data>
   <data name="State" xml:space="preserve">
     <value>http://skoolbowebcore.s3.amazonaws.com/img/states/{0}/{1}.png</value>
