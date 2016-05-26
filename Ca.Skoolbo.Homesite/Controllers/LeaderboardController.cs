@@ -288,7 +288,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
             str = str.Trim();
 
-            var rgx = new Regex("@20" + "*.?");
+            var rgx = new Regex("(@[0-9]{4})$");
             return rgx.Replace(str, string.Empty).ToUpper();
         }
         #endregion
