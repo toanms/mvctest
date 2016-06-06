@@ -110,7 +110,8 @@ namespace Ca.Skoolbo.Homesite.Controllers
             var viewModel = new LeaderboardMainViewModel
             {
                 Location = location,
-                Tabs = ResourceTabs(location)
+                Tabs = ResourceTabs(location),
+                Locations= ResourceTabsLocation(location)
             };
 
             var currentDate = DateTime.Now;
@@ -237,27 +238,29 @@ namespace Ca.Skoolbo.Homesite.Controllers
         public List<TabModel> ResourceTabs(Location location = Location.Global)
         {
             var tabs = new List<TabModel>();
+
             var tabStudents = new TabModel
             {
-                Url = Url.Action("LeaderboardForCountry", "Leaderboard", new { location }),
+                Url = Url.Action("LeaderboardForCountry", "Leaderboard", new {  }),
                 DisplayName = location == Location.Global ? ResourceDisplay.GlobalStudentsTab : ResourceDisplay.CountryStudentsTab,
                 OrderBy = 1
             };
 
             var tabClasses = new TabModel
             {
-                Url = Url.Action("LeaderBoardForClasses", "Leaderboard", new { location }),
+                Url = Url.Action("LeaderBoardForClasses", "Leaderboard", new {  }),
                 DisplayName = location == Location.Global ? ResourceDisplay.GlobalClassesTab : ResourceDisplay.CountryClassesTab,
                 OrderBy = 5
             };
 
             var tabSchools = new TabModel
             {
-                Url = Url.Action("LeaderBoardForSchools", "Leaderboard", new { location }),
+                Url = Url.Action("LeaderBoardForSchools", "Leaderboard", new {  }),
                 DisplayName = location == Location.Global ? ResourceDisplay.GlobalSchoolsTab : ResourceDisplay.CountrySchoolsTab,
                 OrderBy = 10
             };
 
+            //tabs.Add(tabPersonalBests);
             tabs.Add(tabStudents);
             tabs.Add(tabClasses);
             tabs.Add(tabSchools);
@@ -265,6 +268,26 @@ namespace Ca.Skoolbo.Homesite.Controllers
             return tabs;
         }
 
+        public List<TabLocationModel> ResourceTabsLocation(Location location)
+        {
+            var tabs=new List<TabLocationModel>();
+
+            tabs.Add(new TabLocationModel()
+            {
+                Location = Location.Country,
+                DisplayName = location == Location.Global ? ResourceDisplay.GlobalCaTab : ResourceDisplay.CountryCaTab,
+                OrderBy = 1
+            });
+
+            tabs.Add(new TabLocationModel()
+            {
+                Location = Location.Global,
+                DisplayName = location == Location.Global ? ResourceDisplay.GlobalWorldTab : ResourceDisplay.CountryWorldTab,
+                OrderBy = 1
+            });
+
+            return tabs;
+        }
         public string GetInitialName(string str, string separator = "")
         {
             var displayName = string.Empty;
@@ -293,5 +316,6 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
         #endregion
 
+      
     }
 }

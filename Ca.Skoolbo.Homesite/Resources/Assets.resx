@@ -148,11 +148,11 @@
     <comment>http://skoolbowebcore.s3.amazonaws.com/img/[PasswordType]/[ColorItem].png</comment>
   </data>
   <data name="State" xml:space="preserve">
-    <value>http://skoolbowebcore.s3.amazonaws.com/img/states/{0}/{1}.png</value>
+    <value>http://skoolbowebcore.s3.amazonaws.com/img/states_1/{0}/{1}.png</value>
     <comment>http://skoolbowebcore.s3.amazonaws.com/img/states/[Country Code]/[State].png</comment>
   </data>
   <data name="StateDefault" xml:space="preserve">
-    <value>http://skoolbowebcore.s3.amazonaws.com/img/states/{0}/SIN.png</value>
+    <value>http://skoolbowebcore.s3.amazonaws.com/img/states_1/{0}/SIN.png</value>
     <comment>http://skoolbowebcore.s3.amazonaws.com/img/states/[Country Code]/SIN.png</comment>
   </data>
 </root>

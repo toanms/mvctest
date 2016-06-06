@@ -63,10 +63,11 @@
 
 
 .leaderboard-timer {
-    float: right;
-    padding-right: 10px;
+    /*float: right;*/
+    /*padding-right: 10px;*/
     font-weight: bold;
-    padding-top: 5px;
+    /*padding-top: 5px;*/
+    line-height: 44px;
 }
 
 .table-scroll-container .tab-content {

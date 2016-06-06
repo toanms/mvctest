@@ -133,7 +133,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://skoolbowebcore.s3.amazonaws.com/img/states/{0}/{1}.png.
+        ///   Looks up a localized string similar to http://skoolbowebcore.s3.amazonaws.com/img/states_1/{0}/{1}.png.
         /// </summary>
         public static string State {
             get {
@@ -142,7 +142,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://skoolbowebcore.s3.amazonaws.com/img/states/{0}/SIN.png.
+        ///   Looks up a localized string similar to http://skoolbowebcore.s3.amazonaws.com/img/states_1/{0}/SIN.png.
         /// </summary>
         public static string StateDefault {
             get {
