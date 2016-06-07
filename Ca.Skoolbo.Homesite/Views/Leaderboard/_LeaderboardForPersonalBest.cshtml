@@ -1,0 +1,55 @@
+﻿@using Ca.Skoolbo.Homesite.Helpers.Configs
+@using Ca.Skoolbo.Homesite.Resources
+@model List<Ca.Skoolbo.Homesite.Models.LeaderboardModels.LeaderboardPersonalBestModel>
+@{
+    var stateDefault = string.Format(Assets.State, WebConfigHelper.FolderImageS3.ToUpper(), "SIN");
+}
+
+<h4 class="text-center">
+    Congratulations to this week’s top performing students!
+</h4>
+<div class="table-scroll">
+    <table class="table table-bordered table-view table-leaderboard">
+        <colgroup>
+            <col style="width: 5%" />
+            <col style="width: 85%;" />
+            <col style="width: 10%" />
+        </colgroup>
+        <tbody>
+            @if (Model != null)
+            {
+                int index = 0;
+                foreach (var item in Model)
+                {
+                    index++;
+                    <tr>
+                        <td class="text-center dl-horizontal vert-align" style="width: 5%">@index</td>
+                        <td class="text-left player-info" style="font-size: 13px !important;">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-8">
+                                    <img src="@Assets.AvatarMaleDefault" data-src="@item.Avatar" alt="@(item.Displayname)" class="lazy" />
+                                    @(item.Displayname)
+                                    @if (!string.IsNullOrEmpty(item.SchoolName))
+                                    {
+                                        <span>  - @item.SchoolName</span>
+                                    }
+                                    @if (!string.IsNullOrEmpty(item.CategoryName))
+                                    {
+                                        <i> in @item.CategoryName</i>
+                                    }
+                                </div>
+                                <div class="col-md-2 col-xs-4 text-right">
+                                    @item.Time
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="text-center">
+                            <img width="40" data-src="@item.StateLogo" src="@stateDefault" class="country-image img-responsive lazy" />
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

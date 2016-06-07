@@ -1,14 +1,10 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Skoolbo.ApiClient.Models.AnalysisLeaderboardModels
+namespace Ca.Skoolbo.Homesite.Models.LeaderboardModels
 {
     public class PersonalBestModel
     {
-        public PersonalBestModel()
-        {
-           
-        }
         [JsonProperty("created")]
         public DateTime Created { get; set; }
         [JsonProperty("data")]
@@ -34,7 +30,7 @@ namespace Skoolbo.ApiClient.Models.AnalysisLeaderboardModels
             {
                 if (!string.IsNullOrEmpty(UserJson))
                 {
-                   return JsonConvert.DeserializeObject<UserPersonalBest>(UserJson);
+                    return JsonConvert.DeserializeObject<UserPersonalBest>(UserJson);
                 }
                 return null;
             }
@@ -70,16 +66,8 @@ namespace Skoolbo.ApiClient.Models.AnalysisLeaderboardModels
         public string LuckyPrizeExpired { get; set; }
         [JsonProperty("player_id")]
         public string PlayerId { get; set; }
-
         [JsonProperty("school_code")]
         public string SchoolCode { get; set; }
-
-        [JsonProperty("school_name")]
-        public string SchoolName { get; set; }
-
-        [JsonProperty("state")]
-        public string State { get; set; }
-
         [JsonProperty("vehicle")]
         public string Vehicle { get; set; }
     }

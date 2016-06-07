@@ -8,6 +8,7 @@ namespace Ca.Skoolbo.Homesite.Helpers.Configs
         private const string BlogKey = "Blog";
         private const string RegisterUrlKey = "RegisterUrl";
         private const string EmailInfoKey = "EmailInfo";
+        private const string RegionKey = "Region";
         private const string PhoneNumberKey = "PhoneNumber";
 
         private const string ApiClientKey = "ApiClient";
@@ -25,6 +26,11 @@ namespace Ca.Skoolbo.Homesite.Helpers.Configs
                 return default(T);
 
             return ConvertHelper.ConvertToType<T>(value);
+        }
+
+        public static string Region
+        {
+            get { return GetConfig<string>(RegionKey); }
         }
 
         public static string DashboardLink

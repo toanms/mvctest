@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using Ca.Skoolbo.Homesite.Helpers;
 using Ca.Skoolbo.Homesite.Helpers.Configs;
+using Ca.Skoolbo.Homesite.Models;
 using Ca.Skoolbo.Homesite.Models.LeaderboardModels;
 using Ca.Skoolbo.Homesite.Resources;
 using Ca.Skoolbo.Homesite.ViewModels;
@@ -111,7 +114,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
             {
                 Location = location,
                 Tabs = ResourceTabs(location),
-                Locations= ResourceTabsLocation(location)
+                Locations = ResourceTabsLocation(location)
             };
 
             var currentDate = DateTime.Now;
@@ -124,11 +127,20 @@ namespace Ca.Skoolbo.Homesite.Controllers
             return PartialView("_LeaderboardMain", viewModel);
         }
 
+        public ActionResult LeaderboardForPersonalBest(Location location = Location.Country)
+        {
+            var leaderboardDataOutPut = _analysisLeaderboardClient.GetPersonalBest(50);
+
+            var leaderboardData = LeaderboardHelper.ProcessDataPersonalBests(leaderboardDataOutPut);
+
+            return PartialView("_LeaderboardForPersonalBest", leaderboardData);
+        }
+
         public ActionResult LeaderboardForCountry(Location location = Location.Country)
         {
             var leaderboardDataOutPut = _analysisLeaderboardClient.GetLeaderboardStudents(TimerFilter, location == Location.Global, WebConfigHelper.MasterToken);
 
-            var leaderboardData = LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
+            var leaderboardData = LeaderboardHelper.LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
 
             return PartialView("_LeaderboardForCountry", leaderboardData);
         }
@@ -137,7 +149,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
         {
             var leaderboardDataOutPut = _analysisLeaderboardClient.GetLeaderboardClasses(string.Empty, location == Location.Global, WebConfigHelper.MasterToken);
 
-            var leaderboardData = LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
+            var leaderboardData = LeaderboardHelper.LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
 
             return PartialView("_LeaderBoardForClasses", leaderboardData);
         }
@@ -146,7 +158,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
         {
             var leaderboardDataOutPut = _analysisLeaderboardClient.GetLeaderboardSchools(string.Empty, location == Location.Global, WebConfigHelper.MasterToken);
 
-            var leaderboardData = LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
+            var leaderboardData =LeaderboardHelper.LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
 
             return PartialView("_LeaderBoardForSchools", leaderboardData);
         }
@@ -194,9 +206,9 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
             var supperChamps = new WidgetItemModel(model.CurrentSuperChampCount,
                 location == Location.Country ? ResourceDisplay.GlobalSuperChamps : ResourceDisplay.CountrySuperChamps)
-                {
-                    Image = Url.Content("~/Images/Leaderboad/supperChamps.png")
-                };
+            {
+                Image = Url.Content("~/Images/Leaderboad/supperChamps.png")
+            };
 
             return new List<WidgetItemModel>
                         {
@@ -208,59 +220,40 @@ namespace Ca.Skoolbo.Homesite.Controllers
                         };
         }
 
-        private List<RankLeaderboardResponseModel> LeaderboardModelToRankLeaderBoard(LeaderBoardModel leaderBoardResult)
-        {
-            if (leaderBoardResult.Ranks == null) return null;
-
-            var data = leaderBoardResult;
-
-            return data.Ranks.GroupBy(c => c.PlayerId)
-                            .SelectMany(sm => sm)
-                            .Select(c =>
-                            {
-                                var item = new RankLeaderboardResponseModel
-                                {
-                                    ClassName = RemoveClassSuffix(c.ClassName),
-                                    State = c.State,
-                                    DisplayName = GetInitialName(c.DisplayName),
-                                    SchoolCode = c.SchoolCode,
-                                    Dna = c.Dna,
-                                    PlayerId = c.PlayerId,
-                                    SchoolName = c.SchoolCode == "SIN" ? "Skoolbo International" : c.SchoolName,
-                                    Score = c.Score,
-                                    Region = c.Region,
-                                };
-
-                                return item;
-                            }).ToList();
-        }
 
         public List<TabModel> ResourceTabs(Location location = Location.Global)
         {
             var tabs = new List<TabModel>();
 
+            var tabPersonalBest = new TabModel
+            {
+                Url = Url.Action("LeaderboardForPersonalBest", "Leaderboard", new { }),
+                DisplayName = location == Location.Global ? ResourceDisplay.GlobalPersonalBestTab : ResourceDisplay.CountryPersonalBestTab,
+                OrderBy = 0
+            };
+
             var tabStudents = new TabModel
             {
-                Url = Url.Action("LeaderboardForCountry", "Leaderboard", new {  }),
+                Url = Url.Action("LeaderboardForCountry", "Leaderboard", new { }),
                 DisplayName = location == Location.Global ? ResourceDisplay.GlobalStudentsTab : ResourceDisplay.CountryStudentsTab,
                 OrderBy = 1
             };
 
             var tabClasses = new TabModel
             {
-                Url = Url.Action("LeaderBoardForClasses", "Leaderboard", new {  }),
+                Url = Url.Action("LeaderBoardForClasses", "Leaderboard", new { }),
                 DisplayName = location == Location.Global ? ResourceDisplay.GlobalClassesTab : ResourceDisplay.CountryClassesTab,
                 OrderBy = 5
             };
 
             var tabSchools = new TabModel
             {
-                Url = Url.Action("LeaderBoardForSchools", "Leaderboard", new {  }),
+                Url = Url.Action("LeaderBoardForSchools", "Leaderboard", new { }),
                 DisplayName = location == Location.Global ? ResourceDisplay.GlobalSchoolsTab : ResourceDisplay.CountrySchoolsTab,
                 OrderBy = 10
             };
 
-            //tabs.Add(tabPersonalBests);
+            tabs.Add(tabPersonalBest);
             tabs.Add(tabStudents);
             tabs.Add(tabClasses);
             tabs.Add(tabSchools);
@@ -270,7 +263,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
         public List<TabLocationModel> ResourceTabsLocation(Location location)
         {
-            var tabs=new List<TabLocationModel>();
+            var tabs = new List<TabLocationModel>();
 
             tabs.Add(new TabLocationModel()
             {
@@ -288,34 +281,9 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
             return tabs;
         }
-        public string GetInitialName(string str, string separator = "")
-        {
-            var displayName = string.Empty;
-            if (!string.IsNullOrEmpty(str))
-            {
-                var splitName = str.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (var nameItem in splitName)
-                {
-                    if (!string.IsNullOrEmpty(nameItem))
-                    {
-                        displayName += nameItem.Substring(0, 1).ToUpper() + separator;
-                    }
-                }
-            }
-            return displayName;
-        }
 
-        public string RemoveClassSuffix(string str)
-        {
-            if (string.IsNullOrEmpty(str) || str == "@SB") return string.Empty;
-
-            str = str.Trim();
-
-            var rgx = new Regex("(@[0-9]{4})$");
-            return rgx.Replace(str, string.Empty).ToUpper();
-        }
         #endregion
 
-      
+
     }
 }
