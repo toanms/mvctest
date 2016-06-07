@@ -32,6 +32,9 @@
     width: 40px;
     margin-right: 10px;
 }
+.state-image {
+    min-width: 40px;
+}
 
 .table.table-view tbody tr td.text-left {
     text-align: left;

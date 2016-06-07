@@ -12,8 +12,8 @@
     <table class="table table-bordered table-view table-leaderboard">
         <colgroup>
             <col style="width: 5%" />
-            <col style="width: 85%;" />
-            <col style="width: 10%" />
+            <col style="" />
+            <col style="width: 6%" />
         </colgroup>
         <tbody>
             @if (Model != null)
@@ -45,7 +45,9 @@
                         </td>
 
                         <td class="text-center">
-                            <img width="40" data-src="@item.StateLogo" src="@stateDefault" class="country-image img-responsive lazy" />
+                            <div class="padding-right-10">
+                                <img data-src="@item.StateLogo" src="@stateDefault" class=" state-image img-responsive lazy"/>
+                            </div>
                         </td>
                     </tr>
                 }
