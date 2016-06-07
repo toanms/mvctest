@@ -190,7 +190,8 @@ namespace Ca.Skoolbo.Homesite.Controllers
                 location == Location.Country ? ResourceDisplay.GlobalPersonalBest : ResourceDisplay.CountryPersonalBest,
                 location == Location.Country ? WebConfigHelper.DashboardLink + "personalbest" : string.Empty)
             {
-                Image = Url.Content("~/Images/Leaderboad/personalBest.png")
+                Image = Url.Content("~/Images/Leaderboad/personalBest.png"),
+                Url = WebConfigHelper.DashboardLink+ "personalBest"
             };
 
             var school = new WidgetItemModel(model.SchoolRegistered,
