@@ -36,6 +36,12 @@
     }
 }
 
+@media only screen and (max-width : 992px) {
+    .block-overflow {
+        text-align: center;
+    }
+}
+
 .margin-top-20 {
-    margin-top: 20px
+    margin-top: 20px;
 }
