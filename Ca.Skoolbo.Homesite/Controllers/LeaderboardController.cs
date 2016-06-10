@@ -142,7 +142,13 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
             var leaderboardData = LeaderboardHelper.LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
 
-            return PartialView("_LeaderboardForCountry", leaderboardData);
+            var viewModel = new LeaderboardViewModel()
+            {
+                LeaderboardData = leaderboardData,
+                Location = location
+            };
+
+            return PartialView("_LeaderboardForCountry", viewModel);
         }
 
         public ActionResult LeaderBoardForClasses(Location location = Location.Country)
@@ -151,7 +157,13 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
             var leaderboardData = LeaderboardHelper.LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
 
-            return PartialView("_LeaderBoardForClasses", leaderboardData);
+            var viewModel = new LeaderboardViewModel()
+            {
+                LeaderboardData = leaderboardData,
+                Location = location
+            };
+
+            return PartialView("_LeaderBoardForClasses", viewModel);
         }
 
         public ActionResult LeaderBoardForSchools(Location location = Location.Country)
@@ -160,7 +172,12 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
             var leaderboardData =LeaderboardHelper.LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
 
-            return PartialView("_LeaderBoardForSchools", leaderboardData);
+            var viewModel=new LeaderboardViewModel()
+            {
+                LeaderboardData = leaderboardData,
+                Location = location
+            };
+            return PartialView("_LeaderBoardForSchools", viewModel);
         }
 
         #region Private Method

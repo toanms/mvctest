@@ -49,7 +49,10 @@ namespace Ca.Skoolbo.Homesite.Models.LeaderboardModels
         {
             get
             {
-                return string.Format(Assets.State, WebConfigHelper.FolderImageS3.ToUpper(), Region.ToUpper());
+                var region = (Region ?? WebConfigHelper.FolderImageS3.ToUpper()).ToUpper();
+
+                return string.Format(Assets.State, region, region);
+                //return string.Format(Assets.State, WebConfigHelper.FolderImageS3.ToUpper(), Region.ToUpper());
             }
         }
 

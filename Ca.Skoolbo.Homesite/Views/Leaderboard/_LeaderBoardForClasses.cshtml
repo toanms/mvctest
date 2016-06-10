@@ -1,4 +1,5 @@
-﻿@model List<Ca.Skoolbo.Homesite.Models.LeaderboardModels.RankLeaderboardResponseModel>
+﻿@using Ca.Skoolbo.Homesite.Models.LeaderboardModels
+@model LeaderboardViewModel
 <h4 class="text-center">
     Congratulations to this week’s top performing Classes!
 </h4>
@@ -13,7 +14,7 @@
             @if (Model != null)
             {
                 int index = 0;
-                foreach (var item in Model)
+                foreach (var item in Model.LeaderboardData)
                 {
                     index++;
                     <tr>
@@ -24,7 +25,8 @@
                                     Class @item.ClassName - @item.SchoolName
                                 </div>
                                 <div class="col-md-2 col-xs-4 text-right">
-                                    <img data-src="@item.SchoolStateLogoUrl" src="@item.StateDefault" class="pull-right country-image img-responsive lazy"/>
+                                    <img src="@item.StateDefault" data-src="@(Model.Location==Location.Country?item.SchoolStateLogoUrl:item.CountryLogoUrl)" class="pull-right  img-responsive lazy" />
+                                    @*<img data-src="@item.SchoolStateLogoUrl" src="@item.StateDefault" class="pull-right country-image img-responsive lazy"/>*@
                                 </div>
                             </div>
                         </td>

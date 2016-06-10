@@ -214,6 +214,7 @@
     <Compile Include="Models\FeedViewModel.cs" />
     <Compile Include="Models\LeaderboardModels\EventTimeModel.cs" />
     <Compile Include="Models\LeaderboardModels\LeaderboardPersonalBestModel.cs" />
+    <Compile Include="Models\LeaderboardModels\LeaderboardViewModel.cs" />
     <Compile Include="Models\LeaderboardModels\Location.cs" />
     <Compile Include="Models\LeaderboardModels\RankLeaderboardResponseModel.cs" />
     <Compile Include="Models\LeaderboardModels\TabLocationModel.cs" />
