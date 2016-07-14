@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace Ca.Skoolbo.Homesite.Helpers
 {
@@ -23,6 +24,16 @@ namespace Ca.Skoolbo.Homesite.Helpers
 
             return hashString.PadLeft(32, '0');
 
+        }
+
+        public static string GeneratePaymentKey(string text="")
+        {
+            var tick = DateTime.Now.Ticks;
+            var ran = new Random();
+            double num1 = ran.Next(1000, 2000);
+            double num2 = ran.Next(2001, 3000);
+            var keyText= $"{text}{tick}-{num1 % num2}";
+            return keyText.Md5();
         }
     }
 }

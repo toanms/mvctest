@@ -1,4 +1,5 @@
-﻿@using Ca.Skoolbo.Homesite.Helpers.Configs
+﻿@using Ca.Skoolbo.Homesite.Helpers
+@using Ca.Skoolbo.Homesite.Helpers.Configs
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Download";
@@ -22,35 +23,35 @@
 
         <div class="block-guid-item">
             @DownloadGuid("~/Images/Downloads/pdf-file.png",
-                           "https://skoolbo.s3.amazonaws.com/guides_ca/Parent%20Guide%20CAN%206%20APR%202016.pdf",
-                           "",
-                           "Parents Guide")
+                    "https://skoolbo.s3.amazonaws.com/guides_ca/Parent%20Guide%20CAN%206%20APR%202016.pdf",
+                    "",
+                    "Parents Guide")
 
         </div>
         <div class="block-guid-item">
             @DownloadGuid("~/Images/Downloads/pdf-file.png",
-                           "https://skoolbo.s3.amazonaws.com/guides_ca/Teacher%20Guide%20CA%205%20May%202016.pdf",
-                           "",
-                           "Teacher Guide")
+                    "https://skoolbo.s3.amazonaws.com/guides_ca/Teacher%20Guide%20CA%205%20May%202016.pdf",
+                    "",
+                    "Teacher Guide")
         </div>
         <div class="block-guid-item">
             @DownloadGuid("~/Images/Downloads/pdf-file.png",
-                           "https://skoolbo.s3.amazonaws.com/guides_ca/SkoolboCA-%20Technical%20Guide%20Dec%2011%20%282%29.pdf",
-                           "",
-                           "School technical Guide")
+                    "https://skoolbo.s3.amazonaws.com/guides_ca/SkoolboCA-%20Technical%20Guide%20Dec%2011%20%282%29.pdf",
+                    "",
+                    "School technical Guide")
         </div>
         <div class="block-guid-item">
             @DownloadGuid("~/Images/Downloads/pdf-file.png",
-                           "https://skoolbo.s3.amazonaws.com/guides_ca/CA_parents_letter_.pdf",
-                           "",
-                           "Letter for School to send to Parents")
+                    "https://skoolbo.s3.amazonaws.com/guides_ca/CA_parents_letter_.pdf",
+                    "",
+                    "Letter for School to send to Parents")
         </div>
 
         <div class="block-guid-item">
             @DownloadGuid("~/Images/Downloads/excel-file.png",
-                           "https://skoolbo.s3.amazonaws.com/guides_ca/Student_Accounts_-_Bulk_Upload-CAN%20version.xlsx",
-                           "",
-                           "Student Accounts - Bulk Upload")
+                    "https://skoolbo.s3.amazonaws.com/guides_ca/Student_Accounts_-_Bulk_Upload-CAN%20version.xlsx",
+                    "",
+                    "Student Accounts - Bulk Upload")
         </div>
         <div class="clearfix"></div>
     </div>
@@ -66,7 +67,7 @@
                     <a data-toggle="tab" role="tab" aria-controls="skoolbo-teacher-app" href="#skoolbo-teacher-app">SKOOLBO TEACHER APP</a>
                 </li>*@
             <li class="clear-padding" role="presentation">
-                <a class="clear-padding" data-toggle="tab" role="tab" aria-controls="skoolbo-popsnaz" href="#skoolbo-popsnaz"><img src="~/Images/Downloads/PopSnaz/popsnaz-logo.png"/></a>
+                <a class="clear-padding" data-toggle="tab" role="tab" aria-controls="skoolbo-popsnaz" href="#skoolbo-popsnaz"><img src="~/Images/Downloads/PopSnaz/popsnaz-logo.png" /></a>
             </li>
             <li class="clear-padding " role="presentation">
                 <a class="clear-padding" data-toggle="tab" role="tab" aria-controls="skoolbo-zippy-shine" href="#skoolbo-zippy-shine">
@@ -80,7 +81,7 @@
             <div class="row block-list-download">
 
                 <div class="col-md-1"></div>
-               
+
 
                 <div class="col-md-10">
 
@@ -96,41 +97,32 @@
                         </div>*@
                     <div class="col-md-6 text-center">
                         @DownloadAppBlock("https://skoolbo.s3.amazonaws.com/v2/b2101/SkoolboCA_v2.1.1.msi",
-                                           "~/Images/Downloads/icon-07.png",
-                                           "2.1.1",
-                                           "20 May, 2016",
-                                           "Download Skoolbo for <b>PC</b>")
+         "~/Images/Downloads/icon-07.png",
+         "2.1.1",
+         "20 May, 2016",
+         "Download Skoolbo for <b>PC</b>")
                     </div>
                     <div class="col-md-6 text-center">
                         @DownloadAppBlock("https://skoolbo.s3.amazonaws.com/v2/b2101/SkoolboCA_v2.1.1.dmg",
-                                           "~/Images/Downloads/icon-06.png",
-                                           "2.1.1",
-                                           "20 May, 2016",
-                                           "Download Skoolbo for <b>MAC</b>")
+         "~/Images/Downloads/icon-06.png",
+         "2.1.1",
+         "20 May, 2016",
+         "Download Skoolbo for <b>MAC</b>")
                     </div>
                     <div class="col-md-6 text-center">
                         @DownloadAppBlock("https://itunes.apple.com/us/app/skoolbo-canada/id1115592163?ls=1&mt=8",
-                                           "~/Images/Downloads/icon-04.png",
-                                           "2.1.1",
-                                           "23 May, 2016",
-                                           "Download Skoolbo for <b>iOS</b>")
+         "~/Images/Downloads/icon-04.png",
+         "2.1.1",
+         "23 May, 2016",
+         "Download Skoolbo for <b>iOS</b>")
                     </div>
                     <div class="col-md-6 text-center">
                         @DownloadAppBlock("https://play.google.com/store/apps/details?id=com.skoolbo.coreskillsca",
-                                           "~/Images/Downloads/icon-05.png",
-                                           "2.1.1",
-                                           "23 May, 2016",
-                                           "Download Skoolbo for <b>ANDROID</b>")
+         "~/Images/Downloads/icon-05.png",
+         "2.1.1",
+         "23 May, 2016",
+         "Download Skoolbo for <b>ANDROID</b>")
                     </div>
-
-                    @*<div class="col-md-4 text-center">
-                            <a target="_blank" href="https://www.microsoft.com/en-us/store/apps/skoolbo-mexico/9nblggh1zkz5"><img src="~/Images/Downloads/icon-08.png"></a>
-                            <ul class="download-info">
-                                <li class="button-download"><a class="button-image" target="_blank" href="https://www.microsoft.com/en-us/store/apps/skoolbo-mexico/9nblggh1zkz5">Download Skoolbo for <b>Windows Store app</b></a></li>
-                                <li class="ver"><a target="_blank" href="https://www.microsoft.com/en-us/store/apps/skoolbo-mexico/9nblggh1zkz5">ver 1.9.3</a></li>
-                                <li class="date"><a target="_blank" href="https://www.microsoft.com/en-us/store/apps/skoolbo-mexico/9nblggh1zkz5">24 Aug, 2015</a></li>
-                            </ul>
-                        </div>*@
                 </div>
 
                 <div class="col-md-1"></div>
@@ -138,90 +130,7 @@
             <div class="clearfix">
 
             </div>
-            @*<div class="row block-list-download">
-
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-
-                        <div class="col-md-3 text-center">
-                                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.skoolbo.coreskillsmx"><img src="~/Images/Downloads/icon-05.png"></a>
-                                <ul class="download-info">
-                                    <li class="button-download"><a class="button-image" target="_blank" href="https://play.google.com/store/apps/details?id=com.skoolbo.coreskillsmx">Download Skoolbo for <b>ANDROID</b></a></li>
-                                    <li class="ver"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.skoolbo.coreskillsmx">ver 1.9.3</a></li>
-                                    <li class="date"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.skoolbo.coreskillsmx">24 Aug, 2015</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <a target="_blank" href="https://www.microsoft.com/en-us/store/apps/skoolbo-mexico/9nblggh1zkz5"><img src="~/Images/Downloads/icon-08.png"></a>
-                                <ul class="download-info">
-                                    <li class="button-download"><a class="button-image" target="_blank" href="https://www.microsoft.com/en-us/store/apps/skoolbo-mexico/9nblggh1zkz5">Download Skoolbo for <b>Windows Store app</b></a></li>
-                                    <li class="ver"><a target="_blank" href="https://www.microsoft.com/en-us/store/apps/skoolbo-mexico/9nblggh1zkz5">ver 1.9.3</a></li>
-                                    <li class="date"><a target="_blank" href="https://www.microsoft.com/en-us/store/apps/skoolbo-mexico/9nblggh1zkz5">24 Aug, 2015</a></li>
-                                </ul>
-                            </div>
-                        <div class="col-md-3 text-center">
-                                <a target="_blank" href="http://www.amazon.com/Skoolbo-Pte-Ltd-Common-Core/dp/B00XHDEVPW"><img src="~/Images/Downloads/amazon.png"></a>
-                                <ul class="download-info">
-                                    <li class="button-download"><a class="button-image" target="_blank" href="http://www.amazon.com/Skoolbo-Pte-Ltd-Common-Core/dp/B00XHDEVPW">Download Skoolbo for <b>Amazon</b></a></li>
-                                    <li class="ver"><a target="_blank" href="http://www.amazon.com/Skoolbo-Pte-Ltd-Common-Core/dp/B00XHDEVPW">ver 1.8.2</a></li>
-                                    <li class="date"><a target="_blank" href="http://www.amazon.com/Skoolbo-Pte-Ltd-Common-Core/dp/B00XHDEVPW">11 May, 2015</a></li>
-                                </ul>
-                            </div>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>*@
-
         </div>
-        @*<div class="tab-pane" id="skoolbo-teacher-app" role="tabpanel">
-                <div class="row block-list-download">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <div class="col-md-6 text-center">
-                            <a target="_blank" href="http://skoolbo.s3.amazonaws.com/TeacherApp.msi"><img src="~/Images/Downloads/icon-07.png"></a>
-                            <ul class="download-info download-info-teacher-app">
-                                <li class="button-download"><a class="button-image" target="_blank" href="http://skoolbo.s3.amazonaws.com/TeacherApp.msi">Download Skoolbo Teacher App for <b>PC</b></a></li>
-                                <li class="ver"><a target="_blank" href="http://skoolbo.s3.amazonaws.com/TeacherApp.msi">1.2.1</a></li>
-                                <li class="date"><a target="_blank" href="http://skoolbo.s3.amazonaws.com/TeacherApp.msi">24 July, 2015</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <a target="_blank" href="http://skoolbo.s3.amazonaws.com/TeacherApp.dmg"><img src="~/Images/Downloads/icon-06.png"></a>
-                            <ul class="download-info download-info-teacher-app">
-                                <li class="button-download"><a class="button-image" target="_blank" href="http://skoolbo.s3.amazonaws.com/TeacherApp.dmg">Download Skoolbo Teacher App for <b>Mac</b></a></li>
-                                <li class="ver"><a target="_blank" href="http://skoolbo.s3.amazonaws.com/TeacherApp.dmg">1.2.1</a></li>
-                                <li class="date"><a target="_blank" href="http://skoolbo.s3.amazonaws.com/TeacherApp.dmg">24 July, 2015</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-                <div class="row block-list-download">
-
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
-                        <div class="col-md-12 text-center">
-                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.skoolbo.teacherApp"><img src="~/Images/Downloads/icon-05.png"></a>
-                            <ul class="download-info download-info-teacher-app">
-                                <li class="button-download"><a class="button-image" target="_blank" href="https://play.google.com/store/apps/details?id=com.skoolbo.teacherApp">Download Skoolbo Teacher App for <b>Android</b></a></li>
-                                <li class="ver"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.skoolbo.teacherApp">1.2.1</a></li>
-                                <li class="date"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.skoolbo.teacherApp">4 August, 2015</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="col-md-12 text-center">
-                            <a target="_blank" href="https://itunes.apple.com/us/app/skoolbo-teacher-app/id1025740809?mt=8"><img src="~/Images/Downloads/icon-04.png"></a>
-                            <ul class="download-info download-info-teacher-app">
-                                <li class="button-download"><a class="button-image" target="_blank" href="https://itunes.apple.com/us/app/skoolbo-teacher-app/id1025740809?mt=8">Download Skoolbo Teacher App for <b>iOS</b></a></li>
-                                <li class="ver"><a target="_blank" href="https://itunes.apple.com/us/app/skoolbo-teacher-app/id1025740809?mt=8">1.02.1</a></li>
-                                <li class="date"><a target="_blank" href="https://itunes.apple.com/us/app/skoolbo-teacher-app/id1025740809?mt=8">11 August, 2015</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div>*@
         <div class="tab-pane" id="skoolbo-popsnaz" role="tabpanel">
             <div class="row block-list-download">
                 <div class="col-md-1"></div>
@@ -230,10 +139,10 @@
                     <h3 class="text-center">Print and color your own Skoolbo trophy or print off a superhero award.</h3><br><br>
                     <div class="col-md-10 col-md-offset-1">
                         <div class="col-md-6 text-center">
-                            @DownloadPopSnaZBlock("~/Images/Downloads/PopSnaz/TrophyPic.png", Url.Action("DownloadFile", new {id = "3D-Cup"}))
+                            @DownloadPopSnaZBlock("~/Images/Downloads/PopSnaz/TrophyPic.png", Url.Action("DownloadFile", new { id = "3D-Cup" }))
                         </div>
                         <div class="col-md-6 text-center">
-                            @DownloadPopSnaZBlock("~/Images/Downloads/PopSnaz/SuperHeroStickers.png", Url.Action("DownloadFile", new {id = "SuperHero"}))
+                            @DownloadPopSnaZBlock("~/Images/Downloads/PopSnaz/SuperHeroStickers.png", Url.Action("DownloadFile", new { id = "SuperHero" }))
                         </div>
                     </div>
                 </div>
@@ -245,31 +154,53 @@
         </div>
         <div class="tab-pane " id="skoolbo-zippy-shine" role="tabpanel">
             <div class="row block-list-download">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10 col-md-offset-1 margin-bottom-10">
                     <div class="col-md-6 text-center">
                         @DownloadAppBlock("https://itunes.apple.com/ca/app/zippy-shine/id1119099226?mt=8",
-                                           "~/Images/Downloads/icon-04.png",
-                                           "1.0.1",
-                                           "8 July, 2016",
-                                           "Download Zippy Shine for <b>iOS</b>")
+                         "~/Images/Downloads/icon-04.png",
+                         "1.0.1",
+                         "8 July, 2016",
+                         "Download Zippy Shine for <b>iOS</b>")
                     </div>
                     <div class="col-md-6 text-center">
                         @DownloadAppBlock("https://play.google.com/store/apps/details?id=com.skoolbo.zippyshine",
-                                           "~/Images/Downloads/icon-05.png",
-                                           "1.0.1",
-                                           "5 July, 2016",
-                                           "Download Zippy Shine for <b>ANDROID</b>")
+                         "~/Images/Downloads/icon-05.png",
+                         "1.0.1",
+                         "5 July, 2016",
+                         "Download Zippy Shine for <b>ANDROID</b>")
                     </div>
 
-                
                 </div>
 
+                <div class="col-md-10 col-md-offset-1 margin-top-10">
+                    <div class="col-md-6 text-center">
+                        @DownloadAppPaymentZippyShine("https://itunes.apple.com/ca/app/zippy-shine/id1119099226?mt=8",
+                            "~/Images/Downloads/icon-07.png",
+                            "1.0.1",
+                            "14 July, 2016",
+                            "Download Zippy Shine for <b>PC</b>",
+                            EncryptHelper.GeneratePaymentKey("PC")
+                            )
+                    </div>
+
+                    <div class="col-md-6 text-center">
+                        @DownloadAppPaymentZippyShine("https://play.google.com/store/apps/details?id=com.skoolbo.zippyshine",
+                         "~/Images/Downloads/icon-06.png",
+                         "1.0.1",
+                         "14 July, 2016",
+                         "Download Zippy Shine for <b>MAC</b>",
+                         EncryptHelper.GeneratePaymentKey("MAC")
+                         )
+                    </div>
+                </div>
                 <div class="col-md-1"></div>
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
 </div>
+
+
 @helper DownloadPopSnaZBlock(string imageUrl, string url)
 {
     <a download="@Url.Content(imageUrl)" href="@url">
@@ -284,18 +215,59 @@
 
 @helper DownloadAppBlock(string appUrl, string imgUrl, string version, string release, string name)
 {
-    <a target="_blank" href="@appUrl">
-        <img src="@Url.Content(imgUrl)">
-    </a>
-    <ul class="download-info">
-        <li class="button-download">
-            <a class="button-image" target="_blank" href="@appUrl">
-                @Html.Raw(name)
-            </a>
-        </li>
-        <li class="ver"><a target="_blank" href="@appUrl">ver @version</a></li>
-        <li class="date"><a target="_blank" href="@appUrl">@release</a></li>
-    </ul>
+    <div class="download-box">
+        <a class="download-box-image" target="_blank" href="@appUrl">
+            <img class="img-responsive" src="@Url.Content(imgUrl)">
+        </a>
+        <a class="download-box-des" target="_blank" href="@appUrl">
+            @Html.Raw(name)
+        </a>
+        <a class="download-box-ver" target="_blank" href="@appUrl">ver @version</a>
+        <a class="download-box-date" target="_blank" href="@appUrl">@release</a>
+        @*<ul class="download-info">
+                <li class="button-download">
+                    <a class="button-image" target="_blank" href="@appUrl">
+                        @Html.Raw(name)
+                    </a>
+                </li>
+                <li class="ver"><a target="_blank" href="@appUrl">ver @version</a></li>
+                <li class="date"><a target="_blank" href="@appUrl">@release</a></li>
+            </ul>*@
+    </div>
+
+}
+
+@helper DownloadAppPaymentZippyShine(string appUrl, string imgUrl, string version, string release, string name, string key)
+{
+    <div class="download-box">
+        <a class="download-box-image" target="_blank" href="@appUrl">
+            <img class="img-responsive" src="@Url.Content(imgUrl)">
+        </a>
+        <a class="download-box-des" target="_blank" href="@appUrl">
+            @Html.Raw(name)
+        </a>
+        <a class="download-box-ver" target="_blank" href="@appUrl">ver @version</a>
+        <a class="download-box-date" target="_blank" href="@appUrl">@release</a>
+        <div class="download-box-payment">
+            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="business" value="shane.hill-facilitator@skoolbo.com">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="item_name" value="Zippy Shine CA test">
+                <input type="hidden" name="amount" value="2.79">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="cancel_return" value="http://skoolbo.ca/downloads">
+                <input type="hidden" name="return" value="@Url.Action("Success","ZippyShinePayment",new {id=key},Request.Url.Scheme)">
+                <input type="hidden" name="rm" value="1">
+                <input type="hidden" name="custom" value="@key">
+                <input type="hidden" name="payer_business_name" value="Skoolbo">
+                <input type="hidden" name="notify_url" value="http://auth.zippyshine.com/payment/notify">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+            </form>
+
+        </div>
+    </div>
+
 }
 
 @helper DownloadGuid(string imageUrl, string url, string date, string name)

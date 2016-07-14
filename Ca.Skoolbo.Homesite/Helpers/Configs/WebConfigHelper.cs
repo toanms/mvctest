@@ -14,6 +14,7 @@ namespace Ca.Skoolbo.Homesite.Helpers.Configs
         private const string ApiClientKey = "ApiClient";
         private const string AzurestorageKey = "azurestorage";
         private const string ApiGlobalClientKey = "ApiGlobalClient";
+        private const string ApiZippyShinePaymentClientKey = "ApiZippyShinePaymentClient";
         private const string MasterTokenKey = "MasterToken";
         private const string FolderImageS3Key = "FolderImageS3";
 
@@ -71,6 +72,11 @@ namespace Ca.Skoolbo.Homesite.Helpers.Configs
         public static string ApiGlobalClient
         {
             get { return GetConfig<string>(ApiGlobalClientKey); }
+        }
+
+        public static string ApiZippyShinePaymentClient
+        {
+            get { return GetConfig<string>(ApiZippyShinePaymentClientKey); }
         }
 
         public static string MasterToken

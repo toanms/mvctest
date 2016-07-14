@@ -193,6 +193,7 @@
     <Compile Include="BootStrapper\Bootstrapper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeaderboardController.cs" />
+    <Compile Include="Controllers\ZippyShinePaymentController.cs" />
     <Compile Include="Extensions\AppConfigExtension.cs" />
     <Compile Include="Extensions\BlobHelper.cs" />
     <Compile Include="Extensions\CsvHelperExtension.cs" />
@@ -495,6 +496,7 @@
     <Content Include="Views\Shared\_HoldingPageLayout.cshtml" />
     <Content Include="Views\Home\HoldingPage.cshtml" />
     <Content Include="Views\Leaderboard\_LeaderboardForPersonalBest.cshtml" />
+    <Content Include="Views\ZippyShinePayment\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\CA\category-language\" />
