@@ -17,18 +17,18 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
 
 
-        [Route("payment-success")]
-        public ActionResult Success(string id)
-        {
-            //    if (string.IsNullOrEmpty(id))
-            //        return RedirectToAction("Download", "Home");
+        //[Route("payment-success")]
+        //public ActionResult Success(string id)
+        //{
+        //    if (string.IsNullOrEmpty(id))
+        //        return RedirectToAction("Download", "Home");
 
-            var payment = _paymentClient.GetLicenseByKey(id);
+        //    var payment = _paymentClient.GetLicenseByKey(id);
 
-            //if (payment != null)
-                return View(payment);
+        //    if (payment != null)
+        //        return View(payment);
 
-            return RedirectToAction("Download", "Home");
-        }
+        //    return RedirectToAction("Download", "Home");
+        //}
     }
 }
