@@ -59,19 +59,19 @@ namespace Ca.Skoolbo.Homesite.BootStrapper
             builder.Register<IRestSharpGlobalService>(context => new RestSharpGlobalService(restGlobalClientFactory, loggingFactory)).InstancePerLifetimeScope();
 
 
-            Func<IRestClient> restZippyShineClientFactory = () =>
-            {
-                var restClient = new RestClient(WebConfigHelper.ApiZippyShinePaymentClient)
-                {
-                    Encoding = Encoding.UTF8
-                };
+            //Func<IRestClient> restZippyShineClientFactory = () =>
+            //{
+            //    var restClient = new RestClient(WebConfigHelper.ApiZippyShinePaymentClient)
+            //    {
+            //        Encoding = Encoding.UTF8
+            //    };
 
-                restClient.AddHandler("application/json", new RestSharpJsonDeserializer());
+            //    restClient.AddHandler("application/json", new RestSharpJsonDeserializer());
 
-                return restClient;
-            };
+            //    return restClient;
+            //};
 
-            builder.Register<IRestSharpGlobalService>(context => new RestSharpGlobalService(restZippyShineClientFactory, loggingFactory)).InstancePerLifetimeScope();
+            //builder.Register<IRestSharpGlobalService>(context => new RestSharpGlobalService(restZippyShineClientFactory, loggingFactory)).InstancePerLifetimeScope();
         }
     }
 }
