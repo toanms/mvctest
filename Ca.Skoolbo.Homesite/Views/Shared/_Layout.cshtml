@@ -73,12 +73,12 @@
                             @*<li>
                                     <a href="@Url.RouteUrl("Creatagon")">Creatagon</a>
                                 </li>*@
-                            <li>
+                            @*<li>
                                 <a href="@Url.RouteUrl("Faq")">FAQ</a>
-                            </li>
-                            <li>
+                            </li>*@
+                            @*<li>
                                 <a href="@Url.RouteUrl("Contact")">Contact </a>
-                            </li>
+                            </li>*@
                             <li>
                                 <a href="@(WebConfigHelper.RegisterUrl)">Register</a>
                             </li>
@@ -91,6 +91,11 @@
                             @*<li>
                                     <a href="@Url.RouteUrl("Contest")">Contest</a>
                                 </li>*@
+                            <li class="nav-play-btn">
+                                <a href="@(WebConfigHelper.DashboardLink)students/>login">
+                                    <img src="~/Images/Play2D_button.png" height="26" />
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -100,11 +105,14 @@
             </div>
             <footer>
                 <div class="row">
-                    <ul class="nav navbar-nav navbar-nav-footer col-lg-8 center-block clear-float">
+                    <ul class="nav navbar-nav navbar-nav-footer ">
                         <li><a href="@Url.Action("TermsAndConditions", "Home")">Terms and Conditions</a></li>
                         <li><a href="@Url.Action("PrivacyPolicy", "Home")">Privacy Policy</a></li>
                         <li><a href="@Url.Action("ChildSafetyPolicy", "Home")">Child Safety Policy</a></li>
                         <li><a href="@WebConfigHelper.BlogLink">Blog</a></li>
+                        <li><a href="@Url.Action("Faq", "Home")">FAQ</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
+
                         @*<li class="social-icon">
                                 <a target="_blank" href="https://www.facebook.com/SkoolboCA"><img src="/Images/Icon/facebook.png" /></a>
                                 <a target="_blank" href='@("https://twitter.com/@SkoolboPH")'><img src="/Images/Icon/twitter.png" /></a>

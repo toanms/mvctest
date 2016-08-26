@@ -160,3 +160,9 @@ body .navbar-top a {
 a {
     color: #00f;
 }
+
+
+.navbar-nav > li.nav-play-btn > a {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
