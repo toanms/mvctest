@@ -345,6 +345,7 @@
     <Content Include="Images\About\benefits.png" />
     <Content Include="Images\phone.png" />
     <Content Include="Images\Contact\twitter.png" />
+    <Content Include="Images\Play2D_button.png" />
     <Content Include="Images\Pricing\arrow-13.png" />
     <Content Include="Images\Pricing\checked.png" />
     <Content Include="Images\Pricing\minus-new.png" />
