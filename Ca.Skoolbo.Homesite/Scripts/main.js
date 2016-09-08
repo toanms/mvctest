@@ -1,26 +1,15 @@
 ﻿$(document).ready(function () {
-    var navbarTop = $(".navbar-top");
-    if (navbarTop.length > 0) {
-        var classActive = "active";
-        var pathname = window.location.pathname;
-        var navbarItem = $(".navbar-top").find("li");
-        var countNavbarItem = navbarItem.length;
-        if (countNavbarItem > 0) {
-
-            navbarItem.removeClass(classActive);
-            for (var i = 0; i < countNavbarItem; i++) {
-                var item = $(navbarItem[i]);
-                if (item.length > 0) {
-                    var tagA = item.find("a");
-                    if (tagA.length > 0) {
-                        var href = tagA.attr("href");
-                        if (href.indexOf(pathname) !== -1) {
-                            item.addClass(classActive);
-                            break;
-                        }
-                    }
-                }
+    var classActive = "active";
+    var pathname = window.location.pathname;
+    if (pathname === "/") {
+        $(".navbar-top ul.navbar-nav li:first").addClass(classActive).find("a").addClass(classActive);
+    } else {
+        $.each($(".navbar-top ul.navbar-nav li a, footer ul.navbar-nav-footer li a"),
+        function (i, e) {
+            var $this = $(this);
+            if ($this.attr("href").indexOf(pathname) !== -1) {
+                $this.addClass(classActive).parent("li").addClass(classActive);
             }
-        }
+        });
     }
 });

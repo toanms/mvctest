@@ -39,16 +39,7 @@
         font-weight: bold;
     }
 
-.navbar-nav-footer li {
-    padding: 20px;
-    font-size: 16px;
-    font-weight: 600;
-}
 
-    .navbar-nav-footer li a, .navbar-nav-footer li.active a, .navbar-nav-footer li a:hover, .navbar-nav-footer li a:focus, .navbar-nav-footer li:active a {
-        color: #1f497d;
-        background-color: #ffffff;
-    }
 
 .navbar-profile li {
     text-transform: uppercase;
@@ -98,20 +89,6 @@ ul.benefits li {
     padding: 0 2px 15px 28px;
 }
 
-.navbar-nav-footer li.social-icon a {
-    padding: 9px 5px;
-}
-
-@media screen and (min-width: 768px) {
-    .navbar-nav-footer li.social-icon a {
-        display: block;
-        float: left;
-    }
-
-    .navbar-nav-footer li.social-icon img {
-        width: 30px;
-    }
-}
 
 html body {
     background-image: none;
@@ -165,4 +142,53 @@ a {
 .navbar-nav > li.nav-play-btn > a {
     padding-top: 7px;
     padding-bottom: 7px;
+}
+
+footer .navbar-nav-footer {
+    height: 80px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    footer .navbar-nav-footer {
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    footer .navbar-nav-footer {
+        height: 170px;
+    }
+}
+
+.navbar-nav-footer li {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+    .navbar-nav-footer li a {
+        color: #1f497d;
+        background-color: #ffffff;
+    }
+
+        .navbar-nav-footer li.active a, .navbar-nav-footer li a:hover, .navbar-nav-footer li a:focus, .navbar-nav-footer li:active a {
+            background-color: #1f497d;
+            color: #ffffff;
+        }
+
+    .navbar-nav-footer li.social-icon a {
+        padding: 9px 5px;
+    }
+
+@media screen and (min-width: 768px) {
+    .navbar-nav-footer li.social-icon a {
+        display: block;
+        float: left;
+    }
+
+    .navbar-nav-footer li.social-icon img {
+        width: 30px;
+    }
 }
