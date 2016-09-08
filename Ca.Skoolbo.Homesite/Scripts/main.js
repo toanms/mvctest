@@ -7,7 +7,7 @@
         $.each($(".navbar-top ul.navbar-nav li a, footer ul.navbar-nav-footer li a"),
         function (i, e) {
             var $this = $(this);
-            if ($this.attr("href").indexOf(pathname) !== -1) {
+            if ($this.attr("href").indexOf(pathname) !== -1 && pathname === "/") {
                 $this.addClass(classActive).parent("li").addClass(classActive);
             }
         });
