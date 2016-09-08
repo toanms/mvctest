@@ -100,7 +100,7 @@ html body {
 }
 
 .footer {
-    background-color: #016448;
+    background-color: #FF0000;
 }
 
 .contack-a {
@@ -169,8 +169,7 @@ footer .navbar-nav-footer {
 }
 
     .navbar-nav-footer li a {
-        color: #1f497d;
-        background-color: #ffffff;
+        color: #ffffff;
     }
 
         .navbar-nav-footer li.active a, .navbar-nav-footer li a:hover, .navbar-nav-footer li a:focus, .navbar-nav-footer li:active a {
