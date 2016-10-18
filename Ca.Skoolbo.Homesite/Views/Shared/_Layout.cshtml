@@ -24,7 +24,6 @@
 
     @Scripts.Render("~/bundles/modernizr")
 
-    @*@{ Html.RenderPartial("Partials/_Analysis"); }*@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <link href="~/Content/font-awesome.css" rel="stylesheet" />
@@ -67,18 +66,6 @@
                             <li>
                                 <a href="@Url.RouteUrl("Pricing")">Pricing</a>
                             </li>
-                            @*<li>
-                                    <a href="@Url.RouteUrl("Partner")">Partner</a>
-                                </li>*@
-                            @*<li>
-                                    <a href="@Url.RouteUrl("Creatagon")">Creatagon</a>
-                                </li>*@
-                            @*<li>
-                                <a href="@Url.RouteUrl("Faq")">FAQ</a>
-                            </li>*@
-                            @*<li>
-                                <a href="@Url.RouteUrl("Contact")">Contact </a>
-                            </li>*@
                             <li>
                                 <a href="@(WebConfigHelper.RegisterUrl)">Register</a>
                             </li>
@@ -113,13 +100,6 @@
                             <li><a href="@WebConfigHelper.BlogLink" target="_blank">Blog</a></li>
                             <li><a href="@Url.Action("Faq", "Home")">FAQ</a></li>
                             <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
-
-                            @*<li class="social-icon">
-                <a target="_blank" href="https://www.facebook.com/SkoolboCA"><img src="/Images/Icon/facebook.png" /></a>
-                <a target="_blank" href='@("https://twitter.com/@SkoolboPH")'><img src="/Images/Icon/twitter.png" /></a>
-                <a target="_blank" href="https://www.youtube.com/c/SkoolboPhilippines"><img src="/Images/Icon/youtube.png" /></a>
-                <a target="_blank" href="mailto:@(WebConfigHelper.EmailInfo)"><img src="/Images/Icon/email.jpg" /></a>
-            </li>*@
                         </ul>
                     </div>
                 </div>
@@ -132,7 +112,7 @@
 
     @{Html.RenderPartial("Partials/_Chat");}
 
-    <script src="~/Scripts/main.js"></script>
+    <script src="~/Scripts/custom/site.js"></script>
 
     @RenderSection("scripts", required: false)
 </body>
