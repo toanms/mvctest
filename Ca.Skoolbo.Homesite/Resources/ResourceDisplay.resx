@@ -123,11 +123,14 @@
   <data name="CountryAvgImprovement" xml:space="preserve">
     <value>Avg Improvement</value>
   </data>
+  <data name="CountryCaTab" xml:space="preserve">
+    <value>CA</value>
+  </data>
   <data name="CountryClassesTab" xml:space="preserve">
     <value>Classes</value>
   </data>
   <data name="CountryCode" xml:space="preserve">
-    <value>Mx</value>
+    <value>Ca</value>
   </data>
   <data name="CountryMillionClub" xml:space="preserve">
     <value>Million Club</value>
@@ -139,7 +142,7 @@
     <value>Personal Best</value>
   </data>
   <data name="CountrySchool" xml:space="preserve">
-    <value>MX Schools</value>
+    <value>Schools</value>
   </data>
   <data name="CountrySchoolsTab" xml:space="preserve">
     <value>Schools</value>
@@ -155,6 +158,9 @@
   </data>
   <data name="GlobalAvgImprovement" xml:space="preserve">
     <value>Avg Improvement</value>
+  </data>
+  <data name="GlobalCaTab" xml:space="preserve">
+    <value>CA</value>
   </data>
   <data name="GlobalClassesTab" xml:space="preserve">
     <value>Classes</value>

@@ -7,6 +7,7 @@ using Ca.Skoolbo.Homesite.Helpers.Configs;
 using RestSharp;
 using Skoolbo.ApiClient.AnalysisLeaderboardClients;
 using Skoolbo.ApiClient.RestSharpGlobalServices;
+using Skoolbo.ApiClient.ZippyShinePaymentClients;
 using Skoolbo.RestSharpExtension.Extensions;
 using Skoolbo.RestSharpExtension.Services;
 
@@ -21,6 +22,7 @@ namespace Ca.Skoolbo.Homesite.BootStrapper
 
          
             builder.RegisterType<AnalysisLeaderboardClient>().As<IAnalysisLeaderboardClient>().InstancePerLifetimeScope();
+            builder.RegisterType<ZippyShinePaymentClient>().As<IZippyShinePaymentClient>().InstancePerLifetimeScope();
 
 
             Func<IRestClient> restClientFactory = () =>
@@ -55,6 +57,21 @@ namespace Ca.Skoolbo.Homesite.BootStrapper
             };
 
             builder.Register<IRestSharpGlobalService>(context => new RestSharpGlobalService(restGlobalClientFactory, loggingFactory)).InstancePerLifetimeScope();
+
+
+            //Func<IRestClient> restZippyShineClientFactory = () =>
+            //{
+            //    var restClient = new RestClient(WebConfigHelper.ApiZippyShinePaymentClient)
+            //    {
+            //        Encoding = Encoding.UTF8
+            //    };
+
+            //    restClient.AddHandler("application/json", new RestSharpJsonDeserializer());
+
+            //    return restClient;
+            //};
+
+            //builder.Register<IRestSharpGlobalService>(context => new RestSharpGlobalService(restZippyShineClientFactory, loggingFactory)).InstancePerLifetimeScope();
         }
     }
 }

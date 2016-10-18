@@ -18,13 +18,13 @@ function expandableAndCollapsible() {
         if (plus) {
             $(this).removeClass("plus-icon");
             $(this).addClass("minus-icon");
-            $(this).closest(".row").find(".table-licence").removeClass("hidden").addClass("show");
+            $(this).closest(".block-price").find(".table-licence").removeClass("hidden").addClass("show");
         }
 
         if (minus) {
             $(this).removeClass("minus-icon");
             $(this).addClass("plus-icon");
-            $(this).closest(".row").find(".table-licence").removeClass("show").addClass("hidden");
+            $(this).closest(".block-price").find(".table-licence").removeClass("show").addClass("hidden");
         }
     });
 }

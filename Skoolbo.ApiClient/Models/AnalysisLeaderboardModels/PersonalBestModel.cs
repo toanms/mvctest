@@ -70,8 +70,16 @@ namespace Skoolbo.ApiClient.Models.AnalysisLeaderboardModels
         public string LuckyPrizeExpired { get; set; }
         [JsonProperty("player_id")]
         public string PlayerId { get; set; }
+
         [JsonProperty("school_code")]
         public string SchoolCode { get; set; }
+
+        [JsonProperty("school_name")]
+        public string SchoolName { get; set; }
+
+        [JsonProperty("state")]
+        public string State { get; set; }
+
         [JsonProperty("vehicle")]
         public string Vehicle { get; set; }
     }

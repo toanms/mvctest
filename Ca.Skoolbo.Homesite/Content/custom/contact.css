@@ -1,1 +1,47 @@
-﻿
+﻿.region-item {
+    text-align: center;
+    padding: 5px;
+}
+
+.region-wrapper {
+    border: 1px solid #cccccc;
+    background-color: #cccccc;
+}
+
+.list-region {
+    padding: 5px;
+}
+
+.region-contact > a, .region-contact > span {
+    display: block;
+    padding-left: 20px;
+    /*background: url('/Images/Contact/website.png') no-repeat left center transparent;*/
+    /*width: auto;*/
+}
+
+.block-overflow img {
+    width: 80px;
+    height: 80px;
+}
+
+.address {
+    font-size: 16px;
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    [class^=col-].center-block {
+        float: none;
+    }
+}
+
+@media only screen and (max-width : 992px) {
+    .block-overflow {
+        text-align: center;
+    }
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}

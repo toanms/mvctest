@@ -79,6 +79,15 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CA.
+        /// </summary>
+        public static string CountryCaTab {
+            get {
+                return ResourceManager.GetString("CountryCaTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Classes.
         /// </summary>
         public static string CountryClassesTab {
@@ -88,7 +97,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mx.
+        ///   Looks up a localized string similar to Ca.
         /// </summary>
         public static string CountryCode {
             get {
@@ -124,7 +133,7 @@ namespace Ca.Skoolbo.Homesite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MX Schools.
+        ///   Looks up a localized string similar to Schools.
         /// </summary>
         public static string CountrySchool {
             get {
@@ -174,6 +183,15 @@ namespace Ca.Skoolbo.Homesite.Resources {
         public static string GlobalAvgImprovement {
             get {
                 return ResourceManager.GetString("GlobalAvgImprovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CA.
+        /// </summary>
+        public static string GlobalCaTab {
+            get {
+                return ResourceManager.GetString("GlobalCaTab", resourceCulture);
             }
         }
         

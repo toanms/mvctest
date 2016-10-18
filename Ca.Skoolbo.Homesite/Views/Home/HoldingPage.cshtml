@@ -1,0 +1,68 @@
+﻿@model Ca.Skoolbo.Homesite.Models.SubscribeModel
+@{
+    Layout = "~/Views/Shared/_HoldingPageLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="holding-page">
+    <div class="row margin-top-20">
+        <div class="col-md-10 col-md-offset-1">
+            @using (Html.BeginForm("HoldingPage", "Home", FormMethod.Post, new {@class = "form-horizontal subscribe-form"}))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="col-sm-8 margin-bottom-10">
+                        @Html.TextBoxFor(model => model.Email, new {@class = "form-control", @placeholder = "Email"})
+                    </div>
+                    <div class="col-sm-4 ">
+                        <button class="btn btn-success form-control" type="submit">Subscribe</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+
+    </div>
+
+    <div class="col-md-12 block-message margin-top-20">
+        <div class="message-content col-md-11 clear-float center-block">
+            <h3>
+                Great News! Skoolbo is launching in Canada soon. Come and see how more than 200,000 classrooms around the world are having fun while achieving great outcomes in reading, math and languages.
+                <br/>
+                <br/>
+                Please enter your email and we will let you know when we are ready to play!
+            </h3>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @if (TempData["IsRegister"] != null)
+    {
+        <div class="modal fade isregister-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success" role="alert">Thank you for your interest. We will notify you when it’s ready</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <script>
+            $(document).ready(function () {
+                $(".isregister-modal").modal("show");
+            });
+        </script>
+    }
+}

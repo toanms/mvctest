@@ -13,16 +13,17 @@
             {
                 foreach (var item in Model.Widgets)
                 {
-                    <div class="span2">
-                        <div class="widget-title">
-                            <img class="widget-image" width="50" height="50" src="@item.Image">
-                            <span class="widget-value">@item.ValueDisplay</span>
-                        </div>
+                    if (string.IsNullOrEmpty(item.Url))
+                    {
+                        @WidgetTemplate(item)
+                    }
+                    else
+                    {
+                        <a href="@item.Url" title="@item.DisplayName" target="_blank">
+                            @WidgetTemplate(item)
+                        </a>
+                    }
 
-                        <p class="widget-name">
-                            @item.DisplayName
-                        </p>
-                    </div>
                 }
             }
         </div>
@@ -39,4 +40,18 @@
         </div>
     </div>
     <div class="clearfix"></div>
+}
+
+@helper WidgetTemplate(WidgetItemModel item)
+{
+    <div class="span2">
+        <div class="widget-title">
+            <img class="widget-image" width="50" height="50" src="@item.Image">
+            <span class="widget-value">@item.ValueDisplay</span>
+        </div>
+
+        <p class="widget-name">
+            @item.DisplayName
+        </p>
+    </div>
 }

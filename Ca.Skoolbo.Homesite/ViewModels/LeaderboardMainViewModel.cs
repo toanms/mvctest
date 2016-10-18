@@ -10,5 +10,6 @@ namespace Ca.Skoolbo.Homesite.ViewModels
         public List<TabModel> Tabs { get; set; }
 
         public EventTimeModel EventTime { get; set; }
+        public List<TabLocationModel> Locations { get; set; }
     }
 }

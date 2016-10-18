@@ -1,0 +1,49 @@
+﻿/*https://github.com/aburakab/ASP-MVC-Tooltip-Validation*/
+
+.tooltip.error .tooltip-inner {
+    background: red;
+    max-width: 100%;
+    /* If max-width does not work, try using width instead */
+    width: 100%;
+}
+
+.tooltip.error.top .tooltip-arrow {
+    border-top-color: red;
+}
+
+.tooltip.error.top-left .tooltip-arrow {
+    border-top-color: red;
+}
+
+.tooltip.error.top-right .tooltip-arrow {
+    border-top-color: red;
+}
+
+.tooltip.error.right .tooltip-arrow {
+    border-right-color: red;
+}
+
+.tooltip.error.left .tooltip-arrow {
+    border-left-color: red;
+}
+
+.tooltip.error.bottom .tooltip-arrow {
+    border-bottom-color: red;
+    left: 20px !important;
+}
+
+.tooltip.error.bottom-left .tooltip-arrow {
+    border-bottom-color: red;
+}
+
+.tooltip.error.bottom-right .tooltip-arrow {
+    border-bottom-color: red;
+}
+
+.tooltip.error.bottom {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    left: 20px !important;
+}

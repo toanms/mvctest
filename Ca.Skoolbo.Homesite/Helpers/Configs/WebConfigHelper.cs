@@ -8,11 +8,13 @@ namespace Ca.Skoolbo.Homesite.Helpers.Configs
         private const string BlogKey = "Blog";
         private const string RegisterUrlKey = "RegisterUrl";
         private const string EmailInfoKey = "EmailInfo";
+        private const string RegionKey = "Region";
         private const string PhoneNumberKey = "PhoneNumber";
 
         private const string ApiClientKey = "ApiClient";
         private const string AzurestorageKey = "azurestorage";
         private const string ApiGlobalClientKey = "ApiGlobalClient";
+        private const string ApiZippyShinePaymentClientKey = "ApiZippyShinePaymentClient";
         private const string MasterTokenKey = "MasterToken";
         private const string FolderImageS3Key = "FolderImageS3";
 
@@ -25,6 +27,11 @@ namespace Ca.Skoolbo.Homesite.Helpers.Configs
                 return default(T);
 
             return ConvertHelper.ConvertToType<T>(value);
+        }
+
+        public static string Region
+        {
+            get { return GetConfig<string>(RegionKey); }
         }
 
         public static string DashboardLink
@@ -65,6 +72,11 @@ namespace Ca.Skoolbo.Homesite.Helpers.Configs
         public static string ApiGlobalClient
         {
             get { return GetConfig<string>(ApiGlobalClientKey); }
+        }
+
+        public static string ApiZippyShinePaymentClient
+        {
+            get { return GetConfig<string>(ApiZippyShinePaymentClientKey); }
         }
 
         public static string MasterToken

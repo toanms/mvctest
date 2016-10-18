@@ -1,4 +1,5 @@
 ﻿
+var $elementTable = null;
 function callTableScroll(para) {
     var scrollValue = {
         cursorcolor: "#006ab2",
@@ -13,9 +14,20 @@ function callTableScroll(para) {
     para = $.extend(scrollValue, para);
 
     var $elementTable = $(para.elementtable);
+
     if ($elementTable.length > 0) {
       
+
         $elementTable.niceScroll(para);
+        var niceScroll = $elementTable.getNiceScroll()[0];
+       
+
+        niceScroll.onscrollend = function (data) {
+            $('.lazy').lazy({
+                bind: "event",
+                onFinishedAll: function () { }
+            });
+        };
     }
 }
 
@@ -57,57 +69,86 @@ function countDownFunc(element) {
     }
 }
 
+function getLeaderboard() {
+
+    var href = $("#table-leaderboard .active a").data("href");
+    href += "?location=" + $("#tabFilter .active a").data("location");
+
+    var $tableContent = $("#table-content");
+
+    $tableContent.block(blockUIConfig);
+
+    $.get(href, function (data) {
+
+        $tableContent.html(data);
+
+        $('.lazy').lazy({
+            bind: "event",
+            onFinishedAll: function () { }
+        });
+
+        callTableScroll();
+
+
+    }).always(function () {
+
+        $tableContent.unblock();
+    });
+}
+
 
 $(document).ready(function () {
  
     var $leaderboard = $("#leaderboard");
     var $tableaderboard = $("#table-leaderboard");
 
-    $leaderboard.block(blockUIConfig);
+    //$leaderboard.block(blockUIConfig);
+
     if ($tableaderboard.length > 0) {
         var tabActive = $tableaderboard.find("li.active");
         if (tabActive.length > 0) {
-            var tagA = tabActive.find("a[role='tab']").data("href");
-            $.get(tagA, function (data) {
+            getLeaderboard();
+            //var tagA = tabActive.find("a[role='tab']").data("href");
+            //$.get(tagA, function (data) {
 
-                $("#table-content").html(data);
-                $('.lazy').lazy({
-                    bind: "event",
-                    onFinishedAll: function () { }
-                });
-                callTableScroll();
+            //    $("#table-content").html(data);
+            //    $('.lazy').lazy({
+            //        bind: "event",
+            //        onFinishedAll: function () { }
+            //    });
+            //    callTableScroll();
 
-            }).always(function () {
-                $leaderboard.unblock();
-            });
+            //}).always(function () {
+                //$leaderboard.unblock();
+            //});
         }
     }
 
-    
 
     $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+        getLeaderboard();
 
-        var href = $(e.target).data("href");
+        //var href = $(e.target).data("href");
 
-        var $tableContent = $("#table-content");
+        //var $tableContent = $("#table-content");
 
-        $tableContent.block(blockUIConfig);
+        //$tableContent.block(blockUIConfig);
 
-        $.get(href, function (data) {
+        //$.get(href, function (data) {
 
-            $tableContent.html(data);
+        //    $tableContent.html(data);
 
-            $('.lazy').lazy({
-                bind: "event",
-                onFinishedAll: function () { }
-            });
+        //    $('.lazy').lazy({
+        //        bind: "event",
+        //        onFinishedAll: function () { }
+        //    });
 
-            callTableScroll();
-        }).always(function () {
+        //    callTableScroll();
+        //}).always(function () {
 
-            $tableContent.unblock();
+        //    $tableContent.unblock();
             
-        });
+        //});
 
     });
   

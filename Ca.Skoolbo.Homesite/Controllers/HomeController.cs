@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -8,13 +9,17 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Xml.Linq;
+using Ca.Skoolbo.Homesite.Extensions;
+using Ca.Skoolbo.Homesite.Helpers;
 using Ca.Skoolbo.Homesite.Models;
 
 namespace Ca.Skoolbo.Homesite.Controllers
 {
     public class HomeController : Controller
     {
-        private string _feedLink = WebConfigurationManager.AppSettings["Blog"] + "?feed=rss2";
+
+        private string _feedLink = WebConfigurationManager.AppSettings["Blog"] + "/feed/";
+        
         public ActionResult Index()
         {
             return View();
@@ -38,12 +43,12 @@ namespace Ca.Skoolbo.Homesite.Controllers
             return View();
         }
 
-                [Route("creatagon", Name = "Creatagon")]
+        [Route("creatagon", Name = "Creatagon")]
         public ActionResult Creatagon()
         {
             return View();
         }
-        
+
         [Route("testimonials", Name = "Testimonials")]
         public ActionResult Testimonials()
         {
@@ -57,7 +62,6 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
 
         [Route("faq", Name = "Faq")]
-        [Route("pf", Name = "FaqMx")]
         public ActionResult Faq()
         {
             return View();
@@ -125,13 +129,13 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
         //mannypacquiao
 
-        public  ActionResult GetFeed()
+        public ActionResult GetFeed()
         {
-            using (var webClient = new WebClient())
+            List<FeedModel> dataShow = new List<FeedModel>();
+
+            try
             {
-                webClient.Encoding = Encoding.UTF8;
-                var data =  webClient.DownloadString(_feedLink);
-                var dataShow = new List<FeedModel>();
+                var data = WebClientHelper.Download(_feedLink);
 
                 if (string.IsNullOrEmpty(data)) return PartialView(dataShow);
 
@@ -150,7 +154,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
                             Link = GetValueElement(itemResult, "link"),
                             Summary = GetValueElement(itemResult, "description")
                         };
-                        
+
                         if (!string.IsNullOrEmpty(feedModel.Summary))
                         {
                             var tagP = feedModel.Summary.IndexOf("</p>", StringComparison.Ordinal);
@@ -163,8 +167,35 @@ namespace Ca.Skoolbo.Homesite.Controllers
                         dataShow.Add(feedModel);
                     });
                 });
-                return PartialView(dataShow);
             }
+            catch (Exception e)
+            {
+                Trace.WriteLine(e);
+                Trace.Flush();
+            }
+            return PartialView(dataShow);
+        }
+
+
+        [HttpGet]
+        public ActionResult HoldingPage()
+        {
+            var model = new SubscribeModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult HoldingPage(SubscribeModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                BlobHelper blobHelper = new BlobHelper();
+                blobHelper.SaveToBlob(model.Email);
+                TempData["IsRegister"] = true;
+            }
+
+            return RedirectToAction("HoldingPage");
         }
 
         #region PrivateMethod

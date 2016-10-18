@@ -151,6 +151,16 @@
         margin: 5px 0;
     }
 
+    .widget a .widget-name {
+        font-weight: bold;
+    }
+
+    .widget a:hover .widget-name,
+    .widget a:hover .widget-value {
+        color: #00f;
+        text-decoration: underline;
+    }
+
 @media (max-width: 970px) {
     .total-answer {
         clear: both;
