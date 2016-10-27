@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Ca.Skoolbo.Homesite.Helpers;
 using Ca.Skoolbo.Homesite.Helpers.Configs;
-using Ca.Skoolbo.Homesite.Models;
 using Ca.Skoolbo.Homesite.Models.LeaderboardModels;
 using Ca.Skoolbo.Homesite.Resources;
 using Ca.Skoolbo.Homesite.ViewModels;
