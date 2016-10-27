@@ -417,6 +417,12 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="App_Data\CA\category.csv" />
     <Content Include="App_Data\CA\course.csv" />
+    <Content Include="App_Data\CA\category-language\category_en-us_es-419.csv" />
+    <Content Include="App_Data\CA\category-language\category_en-us_fr.csv" />
+    <Content Include="App_Data\CA\category-language\category_en-us_zh.csv" />
+    <Content Include="App_Data\CA\category-language\category_es-419_en-us.csv" />
+    <Content Include="App_Data\CA\category-language\category_fr_en-us.csv" />
+    <Content Include="App_Data\CA\category-language\category_zh_en-us.csv" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\addEventListener.js" />
     <Content Include="Scripts\bindChan.js" />
@@ -498,9 +504,7 @@
     <Content Include="Views\Leaderboard\_LeaderboardForPersonalBest.cshtml" />
     <Content Include="Views\ZippyShinePayment\Success.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\CA\category-language\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
