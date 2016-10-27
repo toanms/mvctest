@@ -68,7 +68,7 @@ namespace Ca.Skoolbo.Homesite.Helpers
                     _categories = _categories.Concat(dictionary).ToDictionary(c => c.Key, c => c.Value);
                 }
             }
-            return _categories;
+            return _categories.Where(w => w.Value != null && !w.Value.CategoryName.Contains("Test")).ToDictionary(w => w.Key, w => w.Value);
         }
 
         public static Dictionary<string, List<Category>> CategoriesByCourse()
@@ -121,39 +121,5 @@ namespace Ca.Skoolbo.Homesite.Helpers
 
             return categoryStore;
         }
-
-        //public static Category GetCategoryByKey(string key)
-        //{
-        //    var categoryList = CategoryList();
-
-        //    return categoryList.GetValue(key);
-        //}
-
-        //public static List<Category> GetListCategoryByKey(string key)
-        //{
-        //    var categoriesByCourse = CategoriesByCourse();
-
-        //    return categoriesByCourse.GetValue(key);
-        //}
-
-        //public static bool CategoryExits(string key)
-        //{
-        //    return CategoryList().IsExists(key);
-        //}
-        //public static bool CourseExits(string key)
-        //{
-        //    return CategoriesByCourse().IsExists(key);
-        //}
-        //public static T GetProperyCategoryByKey<T>(string key, Func<Category, T> selector)
-        //{
-        //    var category = GetCategoryByKey(key);
-
-        //    if (category == null)
-        //        return default(T);
-
-        //    var value = selector(category);
-
-        //    return value;
-        //}
     }
 }
