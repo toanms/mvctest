@@ -14,11 +14,9 @@ namespace Ca.Skoolbo.Homesite.Helpers
 {
     public static class LeaderboardHelper
     {
-
+        private static readonly Dictionary<string, Category> Categories  = CategoryStore.CategoryList();
         public static List<LeaderboardPersonalBestModel> ProcessDataPersonalBests(List<PersonalBestModel> personalBests)
         {
-            var categorys = CategoryStore.CategoryList();
-
             var res = personalBests.Select(c =>
              {
                  var item = new LeaderboardPersonalBestModel
@@ -32,9 +30,9 @@ namespace Ca.Skoolbo.Homesite.Helpers
                  };
 
                  var key = $"{c.Data.CategoryCode}{c.Data.Course}";
-                 if (categorys.ContainsKey(key))
+                 if (Categories.ContainsKey(key))
                  {
-                     item.CategoryName = categorys[key].CategoryName;
+                     item.CategoryName = Categories[key].CategoryName;
                  }
 
                  return item;
