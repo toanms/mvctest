@@ -33,7 +33,7 @@ function getRss(rssUrl) {
         $.get(rssUrl, function (data) {
 
             var rsssData = [];
-
+           
             $(data).find("item").each(function () { // or "item" or whatever suits your feed
                 var el = $(this);
 

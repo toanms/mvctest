@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.Caching;
 using System.Text;
 using System.Web;
 using System.Web.Configuration;
@@ -12,6 +13,7 @@ using System.Xml.Linq;
 using Ca.Skoolbo.Homesite.Extensions;
 using Ca.Skoolbo.Homesite.Helpers;
 using Ca.Skoolbo.Homesite.Models;
+using WebGrease;
 
 namespace Ca.Skoolbo.Homesite.Controllers
 {
@@ -129,51 +131,40 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
         //mannypacquiao
 
-        public ActionResult GetFeed()
+        public ContentResult GetFeed()
         {
-            List<FeedModel> dataShow = new List<FeedModel>();
+            string cacheKey = "NewsFeedCacheKey";
 
-            try
+            MemoryCache cache = MemoryCache.Default;
+
+            if (cache.Contains(cacheKey))
             {
-                var data = WebClientHelper.Download(_feedLink);
-
-                if (string.IsNullOrEmpty(data)) return PartialView(dataShow);
-
-                var xmlDoc = XDocument.Parse(data);
-                var channel = xmlDoc.Descendants("channel");
-                channel.ForEach(item =>
+                var feed = cache.Get(cacheKey);
+                if (feed != null)
                 {
-                    var result = item.Descendants("item");
-                    result.Take(3).ForEach(itemResult =>
-                    {
-                        var feedModel = new FeedModel
-                        {
-                            Title = GetValueElement(itemResult, "title"),
-                            Date = GetValueElement(itemResult, "pubDate").ToDateTimeOrDefault(null),
-                            Image = GetAttribvalueElement(itemResult, "enclosure", "url"),
-                            Link = GetValueElement(itemResult, "link"),
-                            Summary = GetValueElement(itemResult, "description")
-                        };
-
-                        if (!string.IsNullOrEmpty(feedModel.Summary))
-                        {
-                            var tagP = feedModel.Summary.IndexOf("</p>", StringComparison.Ordinal);
-                            if (tagP != -1 && tagP != 2)
-                            {
-                                feedModel.Summary = feedModel.Summary.Substring(0, tagP - 1);
-                            }
-                        }
-
-                        dataShow.Add(feedModel);
-                    });
-                });
+                    return Content(feed.ToString(), "text/xml");
+                }
             }
-            catch (Exception e)
+            else
             {
-                Trace.WriteLine(e);
-                Trace.Flush();
+                try
+                {
+                    var data = WebClientHelper.Download(_feedLink);
+
+                    if (!string.IsNullOrEmpty(data))
+                    {
+                        DateTimeOffset dt = DateTimeOffset.UtcNow;
+                        cache.Add(cacheKey, data, dt.Add(TimeSpan.FromMinutes(30)));
+                    }
+                    return Content(data, "text/xml");
+                }
+                catch (Exception e)
+                {
+                    Trace.WriteLine(e);
+                    Trace.Flush();
+                }
             }
-            return PartialView(dataShow);
+            return Content(string.Empty, "text/xml");
         }
 
 
@@ -218,5 +209,42 @@ namespace Ca.Skoolbo.Homesite.Controllers
             return result != null ? result.Value : string.Empty;
         }
         #endregion
+    }
+
+    public class XmlResult : ActionResult
+    {
+        private object objectToSerialize;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="XmlResult"/> class.
+        /// </summary>
+        /// <param name="objectToSerialize">The object to serialize to XML.</param>
+        public XmlResult(object objectToSerialize)
+        {
+            this.objectToSerialize = objectToSerialize;
+        }
+
+        /// <summary>
+        /// Gets the object to be serialized to XML.
+        /// </summary>
+        public object ObjectToSerialize
+        {
+            get { return this.objectToSerialize; }
+        }
+
+        /// <summary>
+        /// Serialises the object that was passed into the constructor to XML and writes the corresponding XML to the result stream.
+        /// </summary>
+        /// <param name="context">The controller context for the current request.</param>
+        public override void ExecuteResult(ControllerContext context)
+        {
+            if (this.objectToSerialize != null)
+            {
+                context.HttpContext.Response.Clear();
+                var xs = new System.Xml.Serialization.XmlSerializer(this.objectToSerialize.GetType());
+                context.HttpContext.Response.ContentType = "text/xml";
+                xs.Serialize(context.HttpContext.Response.Output, this.objectToSerialize);
+            }
+        }
     }
 }
