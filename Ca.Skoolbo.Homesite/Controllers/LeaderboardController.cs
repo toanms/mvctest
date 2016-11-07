@@ -58,11 +58,17 @@ namespace Ca.Skoolbo.Homesite.Controllers
                 if (location == Location.Global)
                 {
                     bonusScore = 80065595;
+                    int Ph = 118700;
+
+                    int Mx = 2903586;
+
+                    bonusScore = bonusScore + Mx + Ph;
                 }
                 else
                 {
                     bonusScore = 268249;
                 }
+
                 var totalAnswserList = totalizerResult.Result;
                 var currentTime = DateTime.UtcNow;
 
