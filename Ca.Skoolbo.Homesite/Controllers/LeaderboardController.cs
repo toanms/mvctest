@@ -111,7 +111,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
             leaderboardTotalAnswerModel.End = endScore;
 
-            var operationTime = (currentTime.Subtract(endTime)).TotalSeconds / (endTime.Subtract(startTime).TotalSeconds);
+            var operationTime = currentTime.Subtract(endTime).TotalSeconds / endTime.Subtract(startTime).TotalSeconds;
 
             double start = (startScore + operationTime * (endScore - startScore));
 
@@ -119,7 +119,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
             var timespan = new TimeSpan(endTime.Ticks * 2 - startTime.Ticks - currentTime.Ticks);
 
-            var duration = timespan.TotalSeconds + 30;
+            var duration = timespan.TotalSeconds;
 
             leaderboardTotalAnswerModel.Duration = duration;
 
