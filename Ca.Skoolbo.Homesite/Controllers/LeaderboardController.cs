@@ -64,8 +64,8 @@ namespace Ca.Skoolbo.Homesite.Controllers
                 endScore = totalAnswerFromGlobal.EndScore;
                 startScore = startfix > 0 ? startfix : totalAnswerFromGlobal.StartScore;
 
-                startTime = totalAnswerFromGlobal.StartTime.DateTime;
-                endTime = totalAnswerFromGlobal.EndTime.DateTime;
+                startTime = totalAnswerFromGlobal.StartTime.UtcDateTime;
+                endTime = totalAnswerFromGlobal.EndTime.UtcDateTime;
             }
             else
             {
