@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Ca.Skoolbo.Homesite.Helpers;
 using Ca.Skoolbo.Homesite.Helpers.Configs;
@@ -43,7 +44,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
             return View("_Widget", widgetModel);
         }
 
-        public ActionResult Totalizer(Location location = Location.Global, int startfix = 0)
+        public async Task<ActionResult> Totalizer(Location location = Location.Global, int startfix = 0)
         {
             var leaderboardTotalAnswerModel = new TotalAnswerReponseModel();
             if (!Request.IsAjaxRequest())
@@ -51,61 +52,85 @@ namespace Ca.Skoolbo.Homesite.Controllers
                 return Json(leaderboardTotalAnswerModel, JsonRequestBehavior.AllowGet);
             }
 
-            var totalizerResult = _analysisLeaderboardClient.GetLeaderboardTotalizer(location == Location.Global, WebConfigHelper.MasterToken);
-            if (totalizerResult != null && totalizerResult.Result.IsNotNullOrEmpty())
+            float endScore = 0;
+            float startScore = 0;
+
+            DateTime startTime = DateTime.UtcNow;
+            DateTime endTime = DateTime.UtcNow;
+
+            var totalAnswerFromGlobal = await _analysisLeaderboardClient.GetLeaderboardTotalizerFromGlobalServiceAsync(location == Location.Global);
+            if (totalAnswerFromGlobal != null)
             {
-                int bonusScore = 0;
-                if (location == Location.Global)
+                endScore = totalAnswerFromGlobal.EndScore;
+                startScore = startfix > 0 ? startfix : totalAnswerFromGlobal.StartScore;
+
+                startTime = totalAnswerFromGlobal.StartTime.DateTime;
+                endTime = totalAnswerFromGlobal.EndTime.DateTime;
+            }
+            else
+            {
+                var totalizerResult = _analysisLeaderboardClient.GetLeaderboardTotalizer(location == Location.Global, WebConfigHelper.MasterToken);
+                if (totalizerResult != null && totalizerResult.Result.IsNotNullOrEmpty())
                 {
-                    bonusScore = 80065595;
-                    int Ph = 118700;
+                    int bonusScore = 0;
+                    if (location == Location.Global)
+                    {
+                        bonusScore = 80065595;
+                        int Ph = 118700;
 
-                    int Mx = 2903586;
+                        int Mx = 2903586;
 
-                    bonusScore = bonusScore + Mx + Ph;
+                        bonusScore = bonusScore + Mx + Ph;
+                    }
+                    else
+                    {
+                        bonusScore = 268249;
+                    }
+
+                    var totalAnswserList = totalizerResult.Result;
+
+                    var leftScore = totalAnswserList.Count == 1 ? totalAnswserList : totalAnswserList.Where(w => totalAnswserList.IndexOf(w) % 2 != 0).ToList();
+                    var rightScore = totalAnswserList.Count == 1 ? totalAnswserList : totalAnswserList.Where(w => totalAnswserList.IndexOf(w) % 2 == 0).ToList();
+
+                    startScore = (startfix > 0 ? startfix : leftScore.Sum(s => s.Score));
+
+                    startScore = startScore + bonusScore;
+
+                    endScore = rightScore.Sum(s => s.Score);
+
+                    endScore = endScore + bonusScore;
+
+                    startTime = leftScore.Min(c => c.TimeStamp);
+
+                    endTime = rightScore.Max(c => c.TimeStamp);
                 }
-                else
-                {
-                    bonusScore = 268249;
-                }
-
-                var totalAnswserList = totalizerResult.Result;
-                var currentTime = DateTime.UtcNow;
-
-                var leftScore = totalAnswserList.Count == 1 ? totalAnswserList : totalAnswserList.Where(w => totalAnswserList.IndexOf(w) % 2 != 0).ToList();
-                var rightScore = totalAnswserList.Count == 1 ? totalAnswserList : totalAnswserList.Where(w => totalAnswserList.IndexOf(w) % 2 == 0).ToList();
-
-                var startScore = (startfix > 0 ? startfix : leftScore.Sum(s => s.Score));
-
-                var endScore = rightScore.Sum(s => s.Score);
-
-                var startTime = leftScore.Min(c => c.TimeStamp);
-
-                var endTime = rightScore.Max(c => c.TimeStamp);
-
-                leaderboardTotalAnswerModel.End = endScore + bonusScore;
-
-                var operationTime = (currentTime.Subtract(endTime)).TotalSeconds / (endTime.Subtract(startTime).TotalSeconds);
-
-                double start = (startScore + operationTime * (endScore - startScore));
-
-                leaderboardTotalAnswerModel.Start = (start < endScore ? Math.Round(start) + bonusScore : endScore);
-
-                var timespan = new TimeSpan(endTime.Ticks * 2 - startTime.Ticks - currentTime.Ticks);
-
-                var duration = timespan.TotalSeconds + 30;
-
-                leaderboardTotalAnswerModel.Duration = duration;
-
-                leaderboardTotalAnswerModel.StartTime = startTime;
-                leaderboardTotalAnswerModel.EndTime = endTime;
-
-                leaderboardTotalAnswerModel.StartScore = startScore;
-                leaderboardTotalAnswerModel.EndScore = endScore;
-                leaderboardTotalAnswerModel.TotalStartTime = start;
-                leaderboardTotalAnswerModel.TotalEndTime = duration;
 
             }
+
+            var currentTime = DateTime.UtcNow;
+
+            leaderboardTotalAnswerModel.End = endScore;
+
+            var operationTime = (currentTime.Subtract(endTime)).TotalSeconds / (endTime.Subtract(startTime).TotalSeconds);
+
+            double start = (startScore + operationTime * (endScore - startScore));
+
+            leaderboardTotalAnswerModel.Start = (start < endScore ? Math.Round(start) : endScore);
+
+            var timespan = new TimeSpan(endTime.Ticks * 2 - startTime.Ticks - currentTime.Ticks);
+
+            var duration = timespan.TotalSeconds + 30;
+
+            leaderboardTotalAnswerModel.Duration = duration;
+
+            leaderboardTotalAnswerModel.StartTime = startTime;
+            leaderboardTotalAnswerModel.EndTime = endTime;
+
+            leaderboardTotalAnswerModel.StartScore = startScore;
+            leaderboardTotalAnswerModel.EndScore = endScore;
+            leaderboardTotalAnswerModel.TotalStartTime = start;
+            leaderboardTotalAnswerModel.TotalEndTime = duration;
+
 
             return Json(leaderboardTotalAnswerModel, JsonRequestBehavior.AllowGet);
         }
@@ -173,9 +198,9 @@ namespace Ca.Skoolbo.Homesite.Controllers
         {
             var leaderboardDataOutPut = _analysisLeaderboardClient.GetLeaderboardSchools(string.Empty, location == Location.Global, WebConfigHelper.MasterToken);
 
-            var leaderboardData =LeaderboardHelper.LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
+            var leaderboardData = LeaderboardHelper.LeaderboardModelToRankLeaderBoard(leaderboardDataOutPut);
 
-            var viewModel=new LeaderboardViewModel()
+            var viewModel = new LeaderboardViewModel()
             {
                 LeaderboardData = leaderboardData,
                 Location = location
@@ -211,7 +236,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
                 location == Location.Country ? WebConfigHelper.DashboardLink + "personalbest" : string.Empty)
             {
                 Image = Url.Content("~/Images/Leaderboad/personalBest.png"),
-                Url = WebConfigHelper.DashboardLink+ "personalBest"
+                Url = WebConfigHelper.DashboardLink + "personalBest"
             };
 
             var school = new WidgetItemModel(model.SchoolRegistered,

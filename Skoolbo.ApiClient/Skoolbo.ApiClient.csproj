@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AnalysisLeaderboardModels\TotalAnswerSummaryModel.cs" />
     <Compile Include="Models\ZippyShinePaymentModel\ZippyLicenseModel.cs" />
     <Compile Include="ZippyShinePaymentClients\ZippyShinePaymentClient.cs" />
     <Compile Include="ZippyShinePaymentClients\IZippyShinePaymentClient.cs" />

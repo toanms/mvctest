@@ -92,9 +92,9 @@ namespace Skoolbo.ApiClient.AnalysisLeaderboardClients
             return response;
         }
 
-        public TotalAnswerSummaryModel GetLeaderboardTotalizerFromGlobalService(bool isGlobal)
+        public TotalAnswerSummaryModel GetLeaderboardTotalizerFromGlobalService(bool isGlobal, float startfix)
         {
-            var requestUri = $"/api/leaderboard/totalanswer?global={isGlobal}&region=ca";
+            var requestUri = $"/api/leaderboard/totalanswer?global={isGlobal}&region=ca&startfix={startfix}";
             var request = new RestRequest(requestUri, Method.GET)
             {
                 JsonSerializer = new JsonSerializer(),
@@ -105,9 +105,9 @@ namespace Skoolbo.ApiClient.AnalysisLeaderboardClients
             return reponse;
         }
 
-        public async Task<TotalAnswerSummaryModel> GetLeaderboardTotalizerFromGlobalServiceAsync(bool isGlobal)
+        public async Task<TotalAnswerSummaryModel> GetLeaderboardTotalizerFromGlobalServiceAsync(bool isGlobal, float startfix)
         {
-            var requestUri = $"/api/leaderboard/totalanswer?global={isGlobal}&region=ca";
+            var requestUri = $"/api/leaderboard/totalanswer?global={isGlobal}&region=ca&startfix={startfix}";
             var request = new RestRequest(requestUri, Method.GET)
             {
                 JsonSerializer = new JsonSerializer(),
