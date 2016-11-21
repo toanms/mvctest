@@ -1,0 +1,73 @@
+body {
+background: url('/img/background-tiny.png') no-repeat fixed top center transparent;
+background-size: cover;
+  background-color: #e4e6e9;
+    color: #393939;
+    font-family: "Open Sans";
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 100%;
+    padding-bottom: 0;
+}
+
+.wr-brainbreaks.content{
+    border:none;
+    background-color: #ffffff;
+}
+.wr-brainbreaks img {
+max-width: 100%;
+}
+.wr-brainbreaks {
+font-size: 15px;
+line-height: 1.7;
+}
+.show-mobi {display: none}
+html {
+min-height: 100%;
+position: relative;
+}
+.list-country {
+    list-style: none;
+    margin: 0;
+    line-height: 45px;
+}
+.thumbnail {
+    border: none;
+}
+@media  (min-width : 991px){
+    .video-brain-breaks {
+        max-width: 385px;
+    }
+    .buyNow-btn {
+        max-width: 250px;
+    }
+    .verity-quote-image {
+        margin-top: 18%;
+    }
+    .block-human .thumbnail img{
+         height: 200px;   
+    }
+    .col-md-offset-right-1{
+        margin-right:8.33333%;
+    }
+} 
+
+@media  (max-width : 992px){
+    .buyNow-btn {
+        max-width: 100%;
+    }
+} 
+
+.amp-quality-control.vjs-menu-button.vjs-control.quality-4, .vjs-fullscreen-control.vjs-control  {
+    display: none !important;
+}
+
+.amp-default-skin .amp-logo{
+    background-image: url('/img/brainbreaks/brainBreaks_logo.png')
+}
+.modal .modal-header {
+    background: none;
+    padding-top: 5px; 
+    padding-bottom: 5px;
+}
+

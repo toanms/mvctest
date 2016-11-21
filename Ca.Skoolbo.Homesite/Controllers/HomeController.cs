@@ -189,6 +189,12 @@ namespace Ca.Skoolbo.Homesite.Controllers
             return RedirectToAction("HoldingPage");
         }
 
+        [HttpGet, Route("brainbreaks")]
+        public ActionResult BrainBreaks()
+        {
+            return View();
+        }
+
         #region PrivateMethod
         private static string GetAttribvalueElement(XContainer item, string key, string attribKey)
         {
