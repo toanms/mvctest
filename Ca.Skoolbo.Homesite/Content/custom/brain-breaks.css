@@ -34,12 +34,13 @@ position: relative;
 .thumbnail {
     border: none;
 }
+
 @media  (min-width : 991px){
     .video-brain-breaks {
         max-width: 385px;
     }
     .buyNow-btn {
-        max-width: 250px;
+        max-width: 100px;
     }
     .verity-quote-image {
         margin-top: 18%;
@@ -50,6 +51,7 @@ position: relative;
     .col-md-offset-right-1{
         margin-right:8.33333%;
     }
+   
 } 
 
 @media  (max-width : 992px){

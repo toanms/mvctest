@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="~/Content/ace/css/ace-rtl.min.css">
     <link rel="stylesheet" href="//amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css">
     <link rel="stylesheet" href="~/Content/Site.css">
-    <link rel="stylesheet" href="~/Content/custom/brain-breaks.css?v=1">
+    <link rel="stylesheet" href="~/Content/custom/brain-breaks.css?v=2">
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
 </head>
 <body>
@@ -57,16 +57,22 @@
                     <h4 class="margin-top-0"><strong>Song List - a mixture of old classics and some catchy new tunes!</strong></h4>
                     <p><i>Ants go Marching, Banana Bopalop, Buzzy Buzzy Bee, Carrot Cha Cha Cha, Caterpillar Crawl, Cowgirl Karen Kitten, Dalmatian Dots, Dig Like a Pig, Donkey Dance Party, Flap Like a Bat, Goblin Grin, Head Shoulders Knees and Toes, Hokey Cokey, I'm a Cuckoo, Old MacDonald, Ooky Kooky Spooky, She'll be Coming Round the Mountain, Skunktastic, Swanning Around and Two Can Toucan</i></p>
                     <h4 class="margin-top-0"><strong>Price</strong></h4>
-                    <p>Permanent class use licence for $25. Able to be installed once on a PC or Mac. No need for internet connection in classroom!</p>
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-10 padding-left-0">
+                            Permanent class use licence for $25. Able to be installed once on a PC or Mac. No need for internet connection in classroom!
+                        </div>
+                        <div class="col-md-2">
+                            <form method="post" enctype="multipart/form-data" action="https://shop.skoolbo.com/ca/checkout/" class="cart">
+                                <input step="1" min="1" max="" name="quantity" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" type="hidden" class="input-text qty text">
+                                <input name="add-to-cart" value="601" type="hidden">
+                                <input type="image" src="~/Images/brainbreaks/buyNow_btn.png" class="buyNow-btn">
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div style="text-align: center" class="margin-top-10">
-                <form method="post" enctype="multipart/form-data" action="https://shop.skoolbo.com/ca/checkout/" class="cart">
-                    <input step="1" min="1" max="" name="quantity" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" type="hidden" class="input-text qty text">
-                    <input name="add-to-cart" value="601" type="hidden">
-                    <input type="image" src="~/Images/brainbreaks/buyNow_btn.png" class="buyNow-btn">
-                </form>
-            </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <h4 class="margin-top-10"><strong>The Team Behind Skoolbo Brain Breaks</strong></h4>
@@ -140,7 +146,7 @@
         @Scripts.Render("~/bundles/jquery")
         <script src="~/Scripts/bootstrap.min.js"></script>
         <script src="//amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
-        <script src="~/Scripts/custom/brain-breaks.js?v=1"></script>
+        <script src="~/Scripts/custom/brain-breaks.js?v=2"></script>
     </div>
 </body>
 </html>
