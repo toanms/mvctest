@@ -89,20 +89,20 @@ namespace Ca.Skoolbo.Homesite.Controllers
 
                     var totalAnswserList = totalizerResult.Result;
 
-                    var leftScore = totalAnswserList.Count == 1 ? totalAnswserList : totalAnswserList.Where(w => totalAnswserList.IndexOf(w) % 2 != 0).ToList();
-                    var rightScore = totalAnswserList.Count == 1 ? totalAnswserList : totalAnswserList.Where(w => totalAnswserList.IndexOf(w) % 2 == 0).ToList();
+                    var leftScore = totalAnswserList.Min(m => m.Score);
+                    var rightScore = totalAnswserList.Max(m => m.Score);
 
-                    startScore = (startfix > 0 ? startfix : leftScore.Sum(s => s.Score));
+                    startScore = (startfix > 0 ? startfix : leftScore);
 
                     startScore = startScore + bonusScore;
 
-                    endScore = rightScore.Sum(s => s.Score);
+                    endScore = rightScore;
 
                     endScore = endScore + bonusScore;
 
-                    startTime = leftScore.Min(c => c.TimeStamp);
+                    startTime = totalAnswserList.Min(c => c.TimeStamp);
 
-                    endTime = rightScore.Max(c => c.TimeStamp);
+                    endTime = totalAnswserList.Max(c => c.TimeStamp);
                 }
 
             }
