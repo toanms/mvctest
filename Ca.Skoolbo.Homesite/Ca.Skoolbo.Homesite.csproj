@@ -291,6 +291,7 @@
     <Content Include="Images\Banners\CODiE.png" />
     <Content Include="Images\Banners\Improvement-banner.png" />
     <Content Include="Images\Banners\Just-launched-banner.png" />
+    <Content Include="Images\Banners\sbb.png" />
     <Content Include="Images\Banners\technology-codie-award-finalist.png" />
     <Content Include="Images\Downloads\ZippyShine\zippy_shine_logo.png" />
     <Content Include="Images\header.png" />
