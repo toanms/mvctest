@@ -2,20 +2,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>@ViewBag.Title - Skoolbo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="P3P" content="CP=&quot;IDC DSP COR CURa ADMa  OUR IND PHY ONL COM STA&quot;">
     <meta name="keywords" content="Cricket, Learning, Learn, Reading, Literacy, Numeracy, Maths, Mathematics, eLearning, learning game, language, languages">
     <meta http-equiv="P3P" content="CP=&quot;IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT&quot;">
- 
-    <title>@ViewBag.Title - Skoolbo</title>
 
     <link rel="icon" type="image/ico" href="~/Images/favicon.ico">
 
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
+                (i[r].q = i[r].q || []).push(arguments);
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
@@ -23,16 +22,11 @@
         ga('create', 'UA-77297014-1', 'auto');
         ga('send', 'pageview');
     </script>
-
-
     @Scripts.Render("~/bundles/modernizr")
-
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-
     <link href="~/Content/font-awesome.css" rel="stylesheet" />
 
     @Styles.Render("~/Content/css")
-
     <script type="text/javascript">
         var rootUrl = '@Url.Content("~")';
     </script>
@@ -43,80 +37,87 @@
 
 </head>
 <body>
-    <div class="container body-content clear-padding">
-        <div class="container">
-            <div class="row">
-                <img src="~/Images/header.png?v=1" class="img-responsive" />
-            </div>
-        </div>
-        <div class="container site-container">
-            <header>
-                <div class="row navbar-top">
-                    <div class="navbar-header ">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-top">
-                            <span class="glyphicon glyphicon-list"></span>
-                        </button>
-                        <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#navbar-top">Menu</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbar-top">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a href="@Url.Content("~")">Home</a>
-                            </li>
-                            <li>
-                                <a href="@Url.RouteUrl("About")">About</a>
-                            </li>
-                            <li>
-                                <a href="@Url.RouteUrl("Pricing")">Pricing</a>
-                            </li>
-                            <li>
-                                <a href="@(WebConfigHelper.RegisterUrl)">Register</a>
-                            </li>
-                            <li>
-                                <a href="@Url.RouteUrl("Download")">Downloads</a>
-                            </li>
-                            <li>
-                                <a href="@(WebConfigHelper.DashboardLink)">Sign in</a>
-                            </li>
-                            @*<li>
-                                    <a href="@Url.RouteUrl("Contest")">Contest</a>
-                                </li>*@
-                            <li class="nav-play-btn">
-                                <a href="@(WebConfigHelper.DashboardLink)students/login">
-                                    <img src="~/Images/Play2D_button.png" height="26" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </header>
-            <div class="row main-container">
-                @RenderBody()
-            </div>
-            <footer>
-                <div class="row">
-                    <div class="footer">
-                        <ul class="nav navbar-nav-footer">
-                            <li><a href="@Url.Action("TermsAndConditions", "Home")">Terms and Conditions</a></li>
-                            <li><a href="@Url.Action("PrivacyPolicy", "Home")">Privacy Policy</a></li>
-                            <li><a href="@Url.Action("ChildSafetyPolicy", "Home")">Child Safety Policy</a></li>
-                            <li><a href="@WebConfigHelper.BlogLink" target="_blank">Blog</a></li>
-                            <li><a href="@Url.Action("Faq", "Home")">FAQ</a></li>
-                            <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
+
+<div class="container body-content clear-padding">
+    <div class="container">
+        <div class="row">
+            <img src="~/Images/header.png?v=1" class="img-responsive"/>
         </div>
     </div>
+    <div class="container site-container">
+        <header>
+            <div class="row navbar-top">
+                <div class="navbar-header ">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-top">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#navbar-top">Menu</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-top">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="@Url.Content("~")">Home</a>
+                        </li>
+                        <li>
+                            <a href="@Url.RouteUrl("About")">About</a>
+                        </li>
+                        <li>
+                            <a href="@Url.RouteUrl("Pricing")">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="@(WebConfigHelper.RegisterUrl)">Register</a>
+                        </li>
+                        <li>
+                            <a href="@Url.RouteUrl("Download")">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="@(WebConfigHelper.DashboardLink)">Sign in</a>
+                        </li>
+                        <li class="nav-play-btn">
+                            <a href="@(WebConfigHelper.DashboardLink)students/login">
+                                <img src="~/Images/Play2D_button.png" height="26"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="row main-container">
+            @RenderBody()
+        </div>
+        <footer>
+            <div class="row">
+                <div class="footer">
+                    <ul class="nav navbar-nav-footer">
+                        <li><a href="@Url.Action("TermsAndConditions", "Home")">Terms and Conditions</a></li>
+                        <li><a href="@Url.Action("PrivacyPolicy", "Home")">Privacy Policy</a></li>
+                        <li><a href="@Url.Action("ChildSafetyPolicy", "Home")">Child Safety Policy</a></li>
+                        <li><a href="@WebConfigHelper.BlogLink" target="_blank">Blog</a></li>
+                        <li><a href="@Url.Action("Faq", "Home")">FAQ</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script src="~/node_modules/zone.js/dist/zone.js"></script>
+<script src="~/node_modules/reflect-metadata/Reflect.js"></script>
+<script src="~/node_modules/systemjs/dist/system.src.js"></script>
+<script src="~/Scripts/src/systemjs.config.js"></script>
+
+<script> System.import('app').catch(function(err) { console.error(err); });</script>
+
+@Scripts.Render("~/bundles/bootstrap")
+
+<script src="node_modules/core-js/client/shim.min.js"></script>
 
 
-    @Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/custom/site.js"></script>
 
-    @{Html.RenderPartial("Partials/_Chat");}
+@RenderSection("scripts", required: false)
 
-    <script src="~/Scripts/custom/site.js"></script>
-
-    @RenderSection("scripts", required: false)
+@{Html.RenderPartial("Partials/_Chat");}
 </body>
 </html>
