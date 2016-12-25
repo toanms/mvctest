@@ -3,11 +3,11 @@ using System.Reflection;
 using System.Text;
 using Autofac;
 using Autofac.Integration.Mvc;
+using Autofac.Integration.WebApi;
 using Ca.Skoolbo.Homesite.Helpers.Configs;
 using RestSharp;
 using Skoolbo.ApiClient.AnalysisLeaderboardClients;
 using Skoolbo.ApiClient.RestSharpGlobalServices;
-using Skoolbo.ApiClient.ZippyShinePaymentClients;
 using Skoolbo.RestSharpExtension.Extensions;
 using Skoolbo.RestSharpExtension.Services;
 
@@ -18,16 +18,16 @@ namespace Ca.Skoolbo.Homesite.BootStrapper
         public static void RegisterComponents(ContainerBuilder builder)
         {
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
-            //builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
+            builder.RegisterModule<AutofacWebTypesModule>();
          
             builder.RegisterType<AnalysisLeaderboardClient>().As<IAnalysisLeaderboardClient>().InstancePerLifetimeScope();
-            builder.RegisterType<ZippyShinePaymentClient>().As<IZippyShinePaymentClient>().InstancePerLifetimeScope();
 
-
-            Func<IRestClient> restClientFactory = () =>
+            Func<string, IRestClient> restClientFactory = apiClient =>
             {
-                var restClient = new RestClient(WebConfigHelper.ApiClient)
+                var restClient = new RestClient(apiClient)
                 {
                     Encoding = Encoding.UTF8
                 };
@@ -42,36 +42,22 @@ namespace Ca.Skoolbo.Homesite.BootStrapper
               
             };
 
-            builder.Register<IRestSharpService>(context => new RestSharpService(restClientFactory, loggingFactory)).InstancePerLifetimeScope();
-
-            Func<IRestClient> restGlobalClientFactory = () =>
+            builder.Register<IRestSharpService>(context =>
             {
-                var restClient = new RestClient(WebConfigHelper.ApiGlobalClient)
-                {
-                    Encoding = Encoding.UTF8
-                };
+                var clientFactory = restClientFactory(WebConfigHelper.ApiClient);
 
-                restClient.AddHandler("application/json", new RestSharpJsonDeserializer());
-
-                return restClient;
-            };
-
-            builder.Register<IRestSharpGlobalService>(context => new RestSharpGlobalService(restGlobalClientFactory, loggingFactory)).InstancePerLifetimeScope();
+                return new RestSharpService(clientFactory, loggingFactory);
+            }).InstancePerLifetimeScope();
 
 
-            //Func<IRestClient> restZippyShineClientFactory = () =>
-            //{
-            //    var restClient = new RestClient(WebConfigHelper.ApiZippyShinePaymentClient)
-            //    {
-            //        Encoding = Encoding.UTF8
-            //    };
+            builder.Register<IRestSharpGlobalService>(context =>
+            {
+                var clientFactory = restClientFactory(WebConfigHelper.ApiGlobalClient);
 
-            //    restClient.AddHandler("application/json", new RestSharpJsonDeserializer());
+                return new RestSharpGlobalService(clientFactory, loggingFactory);
 
-            //    return restClient;
-            //};
+            }).InstancePerLifetimeScope();
 
-            //builder.Register<IRestSharpGlobalService>(context => new RestSharpGlobalService(restZippyShineClientFactory, loggingFactory)).InstancePerLifetimeScope();
         }
     }
 }

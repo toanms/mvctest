@@ -74,8 +74,6 @@
   <ItemGroup>
     <Compile Include="Models\AnalysisLeaderboardModels\TotalAnswerSummaryModel.cs" />
     <Compile Include="Models\ZippyShinePaymentModel\ZippyLicenseModel.cs" />
-    <Compile Include="ZippyShinePaymentClients\ZippyShinePaymentClient.cs" />
-    <Compile Include="ZippyShinePaymentClients\IZippyShinePaymentClient.cs" />
     <Compile Include="AnalysisLeaderboardClients\AnalysisLeaderboardClient.cs" />
     <Compile Include="AnalysisLeaderboardClients\IAnalysisLeaderboardClient.cs" />
     <Compile Include="Models\AnalysisLeaderboardModels\DailyAnalysisModel.cs" />
@@ -87,8 +85,6 @@
     <Compile Include="Models\BaseNotDataOutput.cs" />
     <Compile Include="Models\BaseOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestSharpZippyShinePaymentServices\IRestSharpZippyShinePaymentService.cs" />
-    <Compile Include="RestSharpZippyShinePaymentServices\RestSharpZippyShinePaymentService.cs" />
     <Compile Include="RestSharpGlobalServices\IRestSharpGlobalService.cs" />
     <Compile Include="RestSharpGlobalServices\RestSharpGlobalService.cs" />
   </ItemGroup>

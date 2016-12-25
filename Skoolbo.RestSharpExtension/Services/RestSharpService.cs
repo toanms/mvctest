@@ -10,10 +10,10 @@ namespace Skoolbo.RestSharpExtension.Services
     {
         private const string ConstAppilicationErrorMessage = "Error retrieving response.  Check inner details for more info.";
 
-        private readonly Func<IRestClient> _restClient;
+        private readonly IRestClient _restClient;
         private readonly Action<Exception> _log;
 
-        public RestSharpService(Func<IRestClient> restClient, Action<Exception> log)
+        public RestSharpService(IRestClient restClient, Action<Exception> log)
         {
             _restClient = restClient;
             _log = log;
@@ -21,12 +21,12 @@ namespace Skoolbo.RestSharpExtension.Services
 
         public T Execute<T>(IRestRequest request, out string messageError) where T : new()
         {
-            return Execute<T>(_restClient.Invoke(), request, out messageError);
+            return Execute<T>(_restClient, request, out messageError);
         }
 
         public T Execute<T>(IRestRequest request) where T : new()
         {
-            return Execute<T>(_restClient.Invoke(), request);
+            return Execute<T>(_restClient, request);
         }
 
         public T Execute<T>(IRestClient restClient, IRestRequest request) where T : new()
@@ -63,19 +63,19 @@ namespace Skoolbo.RestSharpExtension.Services
 
         public IRestResponse Execute(IRestRequest request, out string messageError)
         {
-            return Execute(_restClient.Invoke(), request, out messageError);
+            return Execute(_restClient, request, out messageError);
         }
 
         public IRestResponse Execute(IRestRequest request)
         {
-            return Execute(_restClient.Invoke(), request);
+            return Execute(_restClient, request);
         }
 
         public IRestResponse Execute(IRestClient restClient, IRestRequest request, out string messageError)
         {
             return ExecuteCommand(() =>
             {
-                IRestClient client = _restClient.Invoke();
+                IRestClient client = _restClient;
 
                 AddParamaterForRequest(request);
 
@@ -93,7 +93,7 @@ namespace Skoolbo.RestSharpExtension.Services
         {
             return ExecuteCommand(() =>
             {
-                IRestClient client = _restClient.Invoke();
+                IRestClient client = _restClient;
 
                 AddParamaterForRequest(request);
 
@@ -109,19 +109,19 @@ namespace Skoolbo.RestSharpExtension.Services
 
         public async Task<T> ExecuteAsync<T>(IRestRequest request) where T : new()
         {
-            return await ExecuteAsync<T>(_restClient.Invoke(), request);
+            return await ExecuteAsync<T>(_restClient, request);
         }
 
         public async Task<IRestResponse> ExecuteAsync(IRestRequest request)
         {
-            return await ExecuteAsync(_restClient.Invoke(), request);
+            return await ExecuteAsync(_restClient, request);
         }
 
         public async Task<T> ExecuteAsync<T>(IRestClient restClient, IRestRequest request) where T : new()
         {
             var executeCommand = ExecuteCommand(async () =>
             {
-                IRestClient client = _restClient.Invoke();
+                IRestClient client = _restClient;
 
                 AddParamaterForRequest(request);
 
@@ -155,7 +155,7 @@ namespace Skoolbo.RestSharpExtension.Services
             var executeCommand = ExecuteCommand(async () =>
             {
 
-                IRestClient client = _restClient.Invoke();
+                IRestClient client = _restClient;
 
                 AddParamaterForRequest(request);
 

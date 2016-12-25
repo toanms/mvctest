@@ -6,7 +6,7 @@ namespace Skoolbo.ApiClient.RestSharpGlobalServices
 {
     public class RestSharpGlobalService : RestSharpService, IRestSharpGlobalService
     {
-        public RestSharpGlobalService(Func<IRestClient> restClient, Action<Exception> log) : base(restClient, log)
+        public RestSharpGlobalService(IRestClient restClient, Action<Exception> log) : base(restClient, log)
         {
         }
     }
