@@ -90,3 +90,6 @@ Ca.Skoolbo.Homesite/bin/ClosedXML.xml
 Ca.Skoolbo.Homesite/bin/CsvHelper.Excel.xml
 Ca.Skoolbo.Homesite/bin/CsvHelper.xml
 Ca.Skoolbo.Homesite/bin/Humanizer.xml
+/Ca.Skoolbo.Homesite/bin
+/Ca.Skoolbo.Test/bin
+/Ca.Skoolbo.Test/obj
