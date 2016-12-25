@@ -8,6 +8,5 @@ E:\skoolbo-web-site-ca\Ca.Skoolbo.Test\obj\Debug\Ca.Skoolbo.Test.pdb
 F:\Working\Skoolbo\skoolbo-web-site-ca\Ca.Skoolbo.Test\bin\Debug\Ca.Skoolbo.Test.dll
 F:\Working\Skoolbo\skoolbo-web-site-ca\Ca.Skoolbo.Test\bin\Debug\Ca.Skoolbo.Test.pdb
 F:\Working\Skoolbo\skoolbo-web-site-ca\Ca.Skoolbo.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-F:\Working\Skoolbo\skoolbo-web-site-ca\Ca.Skoolbo.Test\obj\Debug\Ca.Skoolbo.Test.csprojResolveAssemblyReference.cache
 F:\Working\Skoolbo\skoolbo-web-site-ca\Ca.Skoolbo.Test\obj\Debug\Ca.Skoolbo.Test.dll
 F:\Working\Skoolbo\skoolbo-web-site-ca\Ca.Skoolbo.Test\obj\Debug\Ca.Skoolbo.Test.pdb
