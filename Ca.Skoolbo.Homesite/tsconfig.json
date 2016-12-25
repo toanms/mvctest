@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es5",
+    "alwaysStrict": true,
+    "module": "commonjs",
+    "lib": [ "es2015", "dom" ],
+    "suppressExcessPropertyErrors": true
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot",
+    "**/*-aot.ts"
+  ]
+}

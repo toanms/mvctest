@@ -2674,6 +2674,7 @@
     <Content Include="fonts\opensans-regular-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\src\gulpfile.js" />
     <Content Include="Images\About\our_dream-tiny.jpg" />
     <Content Include="Images\Banners\canada_sliding_banner_register.png" />
     <Content Include="Images\Banners\classbo.png" />
@@ -2762,6 +2763,9 @@
     <Content Include="Images\Pricing\teachers.png" />
     <Content Include="Images\Register-button.png" />
     <Content Include="Images\sample-left-edit.png" />
+    <Content Include="Scripts\src\karma-test-shim.js" />
+    <Content Include="Scripts\src\karma.conf.js" />
+    <Content Include="Scripts\src\protractor.config.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\brain-breaks.js" />
@@ -2878,6 +2882,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="package.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\addEventListener.js" />
     <Content Include="Scripts\bindChan.js" />
@@ -2921,6 +2926,8 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\src\systemjs.config.extras.js" />
+    <Content Include="Scripts\src\systemjs.config.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2961,6 +2968,8 @@
     <Content Include="Views\Home\BrainBreaks.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\ace\assets\css\less\bootstrap\mixins\" />
@@ -2975,6 +2984,7 @@
     <Folder Include="Content\ace\components\bootstrap-markdown\less\" />
     <Folder Include="Content\ace\components\bootstrap-multiselect\dist\less\" />
     <Folder Include="Content\ace\components\bootstrap\less\mixins\" />
+    <Folder Include="Scripts\src\app\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Project_Readme.html" />
