@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Net;
 using System.Runtime.Caching;
-using System.Text;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Xml.Linq;
-using Ca.Skoolbo.Homesite.Extensions;
 using Ca.Skoolbo.Homesite.Helpers;
-using Ca.Skoolbo.Homesite.Models;
-using WebGrease;
 
 namespace Ca.Skoolbo.Homesite.Controllers
 {

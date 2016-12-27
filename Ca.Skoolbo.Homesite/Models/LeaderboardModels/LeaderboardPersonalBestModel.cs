@@ -1,8 +1,4 @@
-﻿using System.Drawing;
-using Ca.Skoolbo.Homesite.Helpers.Configs;
-using Ca.Skoolbo.Homesite.Resources;
-
-namespace Ca.Skoolbo.Homesite.Models.LeaderboardModels
+﻿namespace Ca.Skoolbo.Homesite.Models.LeaderboardModels
 {
     public class LeaderboardPersonalBestModel
     {

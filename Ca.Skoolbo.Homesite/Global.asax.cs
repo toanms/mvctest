@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Autofac;
 using Ca.Skoolbo.Homesite.BootStrapper;
 using Ca.Skoolbo.Homesite.Extensions;
 

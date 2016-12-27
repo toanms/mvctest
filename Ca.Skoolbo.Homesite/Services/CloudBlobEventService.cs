@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.Configuration;
-using Ca.Skoolbo.Homesite.Extensions;
 using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace Ca.Skoolbo.Homesite.Services
