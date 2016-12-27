@@ -2962,7 +2962,6 @@
     <Folder Include="Content\ace\components\bootstrap-multiselect\dist\less\" />
     <Folder Include="Content\ace\components\bootstrap\less\mixins\" />
     <Folder Include="Scripts\src\app\about\" />
-    <Folder Include="Scripts\src\app\directives\" />
     <Folder Include="Scripts\src\app\home\" />
     <Folder Include="Scripts\src\app\pricing\" />
   </ItemGroup>
@@ -2995,8 +2994,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\src\app\directives\rssDirective.ts" />
     <TypeScriptCompile Include="Scripts\src\app\appComponent.ts" />
     <TypeScriptCompile Include="Scripts\src\app\bootstrap.ts" />
+    <TypeScriptCompile Include="Scripts\src\app\directives\bannerDirective.ts" />
     <TypeScriptCompile Include="Scripts\src\app\mainModule.ts" />
     <TypeScriptCompile Include="Scripts\src\app\siteRouteModule.ts" />
   </ItemGroup>
