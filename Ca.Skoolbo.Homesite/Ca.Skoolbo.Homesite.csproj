@@ -2962,6 +2962,7 @@
     <Folder Include="Content\ace\components\bootstrap-multiselect\dist\less\" />
     <Folder Include="Content\ace\components\bootstrap\less\mixins\" />
     <Folder Include="Scripts\src\app\about\" />
+    <Folder Include="Scripts\src\app\directives\" />
     <Folder Include="Scripts\src\app\home\" />
     <Folder Include="Scripts\src\app\pricing\" />
   </ItemGroup>
