@@ -168,27 +168,6 @@ namespace Ca.Skoolbo.Homesite.Controllers
         }
 
 
-        [HttpGet]
-        public ActionResult HoldingPage()
-        {
-            var model = new SubscribeModel();
-            return View(model);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult HoldingPage(SubscribeModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                BlobHelper blobHelper = new BlobHelper();
-                blobHelper.SaveToBlob(model.Email);
-                TempData["IsRegister"] = true;
-            }
-
-            return RedirectToAction("HoldingPage");
-        }
-
         [HttpGet, Route("brainbreaks")]
         public ActionResult BrainBreaks()
         {
