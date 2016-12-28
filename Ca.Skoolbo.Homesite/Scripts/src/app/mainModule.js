@@ -10,6 +10,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var appComponent_1 = require("./appComponent");
+var siteRouteModule_1 = require("./siteRouteModule");
 var MainModule = (function () {
     function MainModule() {
     }
@@ -23,6 +24,7 @@ MainModule = __decorate([
             http_1.HttpModule,
             http_1.JsonpModule,
             forms_1.ReactiveFormsModule,
+            siteRouteModule_1.SiteRouteModule
         ],
         providers: [],
         exports: [],
