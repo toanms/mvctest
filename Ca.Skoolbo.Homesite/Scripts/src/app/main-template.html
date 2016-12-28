@@ -1,0 +1,54 @@
+﻿<header>
+    <div class="row navbar-top">
+        <div class="navbar-header ">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-top">
+                <span class="glyphicon glyphicon-list"></span>
+            </button>
+            <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#navbar-top">Menu</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-top">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a [routerLink]="['/']">Home</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/about']">About</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/pricing']">Pricing</a>
+                </li>
+                <li>
+                    <a href="">Register</a>
+                </li>
+                <li>
+                    <a href="">Downloads</a>
+                </li>
+                <li>
+                    <a href="">Sign in</a>
+                </li>
+                <li class="nav-play-btn">
+                    <a href="">
+                        <img src="/Images/Play2D_button.png" height="26" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="row main-container">
+    <router-outlet></router-outlet>
+</div>
+<footer>
+    <div class="row">
+        <div class="footer">
+            <ul class="nav navbar-nav-footer">
+                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Child Safety Policy</a></li>
+                <li><a href="" target="_blank">Blog</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>

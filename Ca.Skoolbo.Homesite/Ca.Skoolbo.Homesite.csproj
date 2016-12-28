@@ -2661,6 +2661,13 @@
     <Content Include="fonts\opensans-regular-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Scripts\src\app\about\about-template.html" />
+    <Content Include="Scripts\src\app\about\about.css" />
+    <Content Include="Scripts\src\app\home\home-template.html" />
+    <Content Include="Scripts\src\app\main-template.html" />
+    <Content Include="Scripts\src\app\pricing\pricing-template.html" />
+    <Content Include="Scripts\src\app\pricing\pricing.css" />
     <Content Include="Scripts\src\gulpfile.js" />
     <Content Include="Images\About\our_dream-tiny.jpg" />
     <Content Include="Images\Banners\canada_sliding_banner_register.png" />
@@ -2961,9 +2968,6 @@
     <Folder Include="Content\ace\components\bootstrap-markdown\less\" />
     <Folder Include="Content\ace\components\bootstrap-multiselect\dist\less\" />
     <Folder Include="Content\ace\components\bootstrap\less\mixins\" />
-    <Folder Include="Scripts\src\app\about\" />
-    <Folder Include="Scripts\src\app\home\" />
-    <Folder Include="Scripts\src\app\pricing\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Project_Readme.html" />
@@ -2994,11 +2998,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\src\app\about\aboutComponent.ts" />
     <TypeScriptCompile Include="Scripts\src\app\directives\rssDirective.ts" />
-    <TypeScriptCompile Include="Scripts\src\app\appComponent.ts" />
+    <TypeScriptCompile Include="Scripts\src\app\home\homeComponent.ts" />
     <TypeScriptCompile Include="Scripts\src\app\bootstrap.ts" />
     <TypeScriptCompile Include="Scripts\src\app\directives\bannerDirective.ts" />
     <TypeScriptCompile Include="Scripts\src\app\mainModule.ts" />
+    <TypeScriptCompile Include="Scripts\src\app\mainComponent.ts" />
+    <TypeScriptCompile Include="Scripts\src\app\pricing\pricingComponent.ts" />
     <TypeScriptCompile Include="Scripts\src\app\siteRouteModule.ts" />
   </ItemGroup>
   <PropertyGroup>

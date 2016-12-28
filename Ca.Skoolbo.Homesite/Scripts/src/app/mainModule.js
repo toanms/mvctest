@@ -9,7 +9,11 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
-var appComponent_1 = require("./appComponent");
+var siteRouteModule_1 = require("./siteRouteModule");
+var mainComponent_1 = require("./mainComponent");
+var homeComponent_1 = require("./home/homeComponent");
+var aboutComponent_1 = require("./about/aboutComponent");
+var pricingComponent_1 = require("./pricing/pricingComponent");
 var MainModule = (function () {
     function MainModule() {
     }
@@ -23,11 +27,17 @@ MainModule = __decorate([
             http_1.HttpModule,
             http_1.JsonpModule,
             forms_1.ReactiveFormsModule,
+            siteRouteModule_1.SiteRouteModule
         ],
         providers: [],
         exports: [],
-        declarations: [],
-        bootstrap: [appComponent_1.AppComponent]
+        declarations: [
+            mainComponent_1.MainComponent,
+            homeComponent_1.HomeComponent,
+            aboutComponent_1.AboutComponent,
+            pricingComponent_1.PricingComponent
+        ],
+        bootstrap: [mainComponent_1.MainComponent]
     })
 ], MainModule);
 exports.MainModule = MainModule;

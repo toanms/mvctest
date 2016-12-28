@@ -9,6 +9,7 @@
     });
     expandableAndCollapsible();
 });
+
 function expandableAndCollapsible() {
     $(".table-licence").addClass("hidden");
     $("[class*=-icon-action]").click(function () {

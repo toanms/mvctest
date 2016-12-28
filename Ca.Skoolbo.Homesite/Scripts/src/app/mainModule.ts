@@ -1,11 +1,15 @@
-﻿import { NgModule } from "@angular/core"
+﻿import { NgModule, AfterViewInit } from "@angular/core"
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
-import { AppComponent } from "./appComponent"
+
 import { SiteRouteModule } from "./siteRouteModule"
 
+import { MainComponent } from "./mainComponent"
+import { HomeComponent } from "./home/homeComponent"
+import { AboutComponent } from "./about/aboutComponent"
+import { PricingComponent } from "./pricing/pricingComponent"
 
 @NgModule({
     imports: [
@@ -20,8 +24,12 @@ import { SiteRouteModule } from "./siteRouteModule"
     ],
     exports: [],
     declarations: [
+        MainComponent,
+        HomeComponent,
+        AboutComponent,
+        PricingComponent
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [MainComponent]
 })
 export class MainModule {
     

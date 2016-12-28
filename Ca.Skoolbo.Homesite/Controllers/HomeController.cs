@@ -14,13 +14,16 @@ namespace Ca.Skoolbo.Homesite.Controllers
     {
 
         private string _feedLink = WebConfigurationManager.AppSettings["Blog"] + "/feed/";
-        
+
+        [Route("")]
+        [Route("about")]
+        [Route("pricing")]
         public ActionResult Index()
         {
             return View();
         }
 
-        [Route("about", Name = "About")]
+       
         public ActionResult About()
         {
             return View();
@@ -50,7 +53,7 @@ namespace Ca.Skoolbo.Homesite.Controllers
             return View();
         }
 
-        [Route("pricing", Name = "Pricing")]
+        
         public ActionResult Pricing()
         {
             return View();
