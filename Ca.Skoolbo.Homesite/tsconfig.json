@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noEmitOnError": true,
     "removeComments": true,
     "sourceMap": true,
@@ -11,8 +11,8 @@
     "experimentalDecorators": true
   },
   "exclude": [
-    "node_modules",
-    "wwwroot"
+    "node_modules/*",
+    "**/*-aot.ts"
   ],
   "compileOnSave": true
 }
