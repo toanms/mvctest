@@ -1,24 +1,19 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": false,
-    "removeComments": false,
-    "types": [],
-    "noEmit": true,
-    "forceConsistentCasingInFileNames": true
+    "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
-    "node_modules/*",
     "node_modules",
-    "**/*-aot.ts"
+    "typings/main",
+    "typings/main.d.ts"
   ],
   "compileOnSave": true
 }
-
-
