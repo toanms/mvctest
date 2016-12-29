@@ -18,10 +18,6 @@
     "node_modules",
     "**/*-aot.ts"
   ],
-  "files": [
-    "index.d.ts",
-    "azure-tests.ts"
-  ],
   "compileOnSave": true
 }
 
