@@ -9,7 +9,7 @@ import { HomeComponent } from "./home/homeComponent"
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: '', component: HomeComponent, useAsDefault: true },
+            { path: '', component: HomeComponent },
             { path: 'about', component: AboutComponent },
             { path: 'pricing', component: PricingComponent }
         ])
