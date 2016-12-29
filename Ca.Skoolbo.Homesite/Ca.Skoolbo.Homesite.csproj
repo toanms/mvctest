@@ -3045,6 +3045,6 @@
   </Target> -->
     <Target Name="BeforeBuild">
 	 <Exec Command="npm install" />
-	
+	 <Exec Command="tsc" />
 	</Target>
 </Project>
