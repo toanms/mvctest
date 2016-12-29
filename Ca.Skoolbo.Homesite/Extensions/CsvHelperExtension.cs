@@ -180,16 +180,12 @@ namespace Ca.Skoolbo.Homesite.Extensions
 
         public static void CsvReaderConfig(CsvReader reader, Encoding encoding = null)
         {
-            reader.Configuration.TrimHeaders = true;
             reader.Configuration.Encoding = encoding ?? Encoding.UTF8;
             reader.Configuration.WillThrowOnMissingField = false;
         }
 
         public static void CsvWriterConfig(CsvWriter writer, Encoding encoding = null)
         {
-            writer.Configuration.TrimHeaders = true;
-            writer.Configuration.Encoding = encoding ?? Encoding.UTF8;
-            writer.Configuration.WillThrowOnMissingField = false;
         }
         #endregion
     }
