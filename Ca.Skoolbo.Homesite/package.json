@@ -1,5 +1,7 @@
 {
-
+  "engines": {
+    "node": "6.9.1"
+  },
   "name": "skoolbo-ca",
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
