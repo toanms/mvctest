@@ -11,8 +11,8 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
-    "node_modules",
-    "wwwroot/lib"
+    "node_modules/*",
+    "**/*-aot.ts"
   ],
   "compileOnSave": true
 }
