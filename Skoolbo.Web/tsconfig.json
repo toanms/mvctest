@@ -11,7 +11,16 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
-    "node_modules"
+    "**/*.d.ts",
+    "node_modules",
+    "node_modules/**/*",
+    "**/node_modules",
+    "node_modules/@typings/**/*",
+    "typings",
+    "typings/browser",
+    "typings/main",
+    "typings/main",
+    "typings/main.d.ts"
   ],
   "compileOnSave": true
 }
