@@ -1,0 +1,10 @@
+/Skoolbo.Web.Tests/bin
+/Skoolbo.Web.Tests/obj
+/Skoolbo.Web/obj
+/Skoolbo.Web/bin
+/Skoolbo.Repository/bin
+/Skoolbo.Repository/obj
+/Skoolbo.Data/bin
+/Skoolbo.Data/obj
+/packages
+/.vs
