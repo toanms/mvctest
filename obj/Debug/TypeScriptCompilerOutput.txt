@@ -1,0 +1,6 @@
+C:\Users\toan\Downloads\repository\Skoolbo.Web\Scripts\src\app\main.js
+C:\Users\toan\Downloads\repository\Skoolbo.Web\Scripts\src\app\main.js.map
+C:\Users\toan\Downloads\repository\Skoolbo.Web\Scripts\src\app\app.Module.js
+C:\Users\toan\Downloads\repository\Skoolbo.Web\Scripts\src\app\app.Module.js.map
+C:\Users\toan\Downloads\repository\Skoolbo.Web\Scripts\src\app\bootstrap.js
+C:\Users\toan\Downloads\repository\Skoolbo.Web\Scripts\src\app\bootstrap.js.map

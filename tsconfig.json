@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "exclude": [
+    "**/*.d.ts",
+    "node_modules",
+    "node_modules/**/*",
+    "**/node_modules",
+    "node_modules/@typings/**/*",
+    "typings",
+    "typings/browser",
+    "typings/main",
+    "typings/main",
+    "typings/main.d.ts"
+  ],
+  "compileOnSave": true
+}
